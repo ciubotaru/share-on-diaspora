@@ -26,7 +26,7 @@ This plugin adds a "Share on D*" button at the bottom of your posts.
 
 == Screenshots ==
 
-1. `images/screenshot-1.png' features the "Share on D*" button under the default "Hello World"
+1. `assets/screenshot-1.png' features the "Share on D*" button under the default "Hello World"
 post in "Twenty Thirteen" theme.
 
 == Changelog ==
