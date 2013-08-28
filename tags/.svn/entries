@@ -1,7 +1,7 @@
 10
 
 dir
-763376
+763684
 http://plugins.svn.wordpress.org/share-on-diaspora/tags
 http://plugins.svn.wordpress.org
 
@@ -25,4 +25,11 @@ plugin-master
 
 
 b8457f37-d9ea-0310-8a92-e5e31aec5664
+
+0.1
+dir
+
+
+
+add
 

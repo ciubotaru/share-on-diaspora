@@ -1,15 +1,15 @@
 10
 
 dir
-763376
+763684
 http://plugins.svn.wordpress.org/share-on-diaspora/assets
 http://plugins.svn.wordpress.org
 
 
 
-2013-08-27T03:12:59.984968Z
-762726
-plugin-master
+2013-08-28T02:41:56.821850Z
+763378
+Vitalie Ciubotaru
 
 
 
@@ -28,11 +28,11 @@ b8457f37-d9ea-0310-8a92-e5e31aec5664
 
 screenshot-1.png
 file
-763378
 
 
 
-2013-08-28T02:35:08.000000Z
+
+2013-08-28T14:40:16.891461Z
 103dc79c8b663f33f41c9d75dd4526c0
 2013-08-28T02:41:56.821850Z
 763378
@@ -59,4 +59,32 @@ has-props
 
 
 43718
+
+screenshot-2.png
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+screenshot-3.png
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
 

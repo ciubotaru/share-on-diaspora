@@ -3,6 +3,18 @@ svn:wc:ra_dav:version-url
 V 40
 /!svn/ver/763257/share-on-diaspora/trunk
 END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/!svn/ver/763257/share-on-diaspora/trunk/readme.txt
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/763257/share-on-diaspora/trunk/README.md
+END
 LICENSE
 K 25
 svn:wc:ra_dav:version-url
@@ -26,16 +38,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 55
 /!svn/ver/763257/share-on-diaspora/trunk/new_window.php
-END
-readme.txt
-K 25
-svn:wc:ra_dav:version-url
-V 51
-/!svn/ver/763257/share-on-diaspora/trunk/readme.txt
-END
-README.md
-K 25
-svn:wc:ra_dav:version-url
-V 50
-/!svn/ver/763257/share-on-diaspora/trunk/README.md
 END
