@@ -4,7 +4,7 @@ Donate link:
 Tags: diaspora, share, button
 Requires at least: 3.6
 Tested up to: 3.6
-Stable tag: trunk
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,5 +36,11 @@ post in "Twenty Thirteen" theme.
 
 = 0.1 =
 * First release
+
+= 0.2 =
+* Pod selection dialog renewed
+
+= 0.3 =
+* Customizable button settings (text color, background color, size and rounded corners)
 
 == Upgrade Notice ==
