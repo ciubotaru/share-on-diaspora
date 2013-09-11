@@ -46,29 +46,32 @@ function set_default()
         }
     }
 
-function diaspora_button_display($content)
-{
-//$bc = preg_match('/^[a-f0-9]{6}$/i', $_GET['bc']) ? $_GET['bc'] : '3c72c2';
-$options_array = get_option('share-on-diaspora-settings');
-$bc = ( $options_array['button_color'] != '' ) ? $options_array['button_color'] : get_default('button_color');
-// border-color: #aabbd2; border-width: 1px; color: #3c72c2;
-//$bb = preg_match('/^[a-f0-9]{6}$/i', $_GET['bb']) ? $_GET['bb'] : 'ecf2f6';
-$bb = ( $options_array['button_background'] != '' ) ? $options_array['button_background'] : get_default('button_background');
-// background-color: #ecf2f6; 
+function generate_button($preview)
+    {
+    $options_array = get_option('share-on-diaspora-settings');
+    $bc = ( $options_array['button_color'] != '' ) ? $options_array['button_color'] : get_default('button_color');
+    $bb = ( $options_array['button_background'] != '' ) ? $options_array['button_background'] : get_default('button_background');
 
-switch ($options_array['button_size']) {
-    case '2': $bs = '28'; $fs = '17'; $bwidth = '120'; break;
-    case '3': $bs = '33'; $fs = '20'; $bwidth = '140'; break;
-    case '4': $bs = '48'; $fs = '29'; $bwidth = '204'; break;
-    default: $bs = '23'; $fs = '14'; $bwidth = '98'; 
-}
-$br =  ( $options_array['button_rounded'] != '' ) ? $options_array['button_rounded'] : get_default('button_rounded');
+    switch ($options_array['button_size'])
+        {
+        case '2': $bs = '28'; $fs = '17'; $bwidth = '120'; break;
+        case '3': $bs = '33'; $fs = '20'; $bwidth = '140'; break;
+        case '4': $bs = '48'; $fs = '29'; $bwidth = '204'; break;
+        default: $bs = '23'; $fs = '14'; $bwidth = '98'; 
+        }
+    $br =  ( $options_array['button_rounded'] != '' ) ? $options_array['button_rounded'] : get_default('button_rounded');
 
-$button_box = "<br><a href=\"javascript:(function(){var url = window.location.href;var title = document.title;   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
-<div id=\"diaspora-button-box\" style=\"box-sizing: content-box; -moz-box-sizing: content-box; float:left; margin-right: 10px; width:" . $bwidth . "px; height:" . $bs . "px; background-color: #" . $bb . "; -moz-border-radius:" . $br . "px; border-radius:" . $br . "px; border-color: #" . $bc . "; border-width: 1px; color: #" . $bc . "; border-style: solid; padding: 0 5px 0 5px; text-align: center;\"><font style=\"font-family:arial,helvetica,sans-serif;font-size:" . $fs ."px;margin: 0; line-height:" . ($bs-2) . "px;\">share this</font> <div style=\"float: right; margin: 1px 1px 1px 1px;height:" . ($bs-3) . "px;\"><img style=\"vertical-align: top; margin:0 auto; padding:0; border:0;\" src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
+    $button_box = "<a href=\"javascript:(function(){var url = ". (($preview) ? "'[Page address here]'" : "window.location.href") . " ;var title = ". (($preview) ?  "'[Page title here]'" :  "document.title") . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
+<div id=\"diaspora-button-box\" style=\"box-sizing: content-box; -moz-box-sizing: content-box; float:left; margin-right: 10px; width:" . $bwidth . "px; height:" . $bs . "px; background-color: #" . $bb . "; -moz-border-radius:" . $br . "px; border-radius:" . $br . "px; border-color: #" . $bc . "; border-width: 1px; color: #" . $bc . "; border-style: solid; padding: 0 5px 0 5px; text-align: center;\" onMouseOver=\"this.style.backgroundColor='#B8CCD9'\" onMouseOut=\"this.style.backgroundColor='#" . $bb . "'\"><font style=\"font-family:arial,helvetica,sans-serif;font-size:" . $fs ."px;margin: 0; line-height:" . ($bs-2) . "px;\">share this</font> <div id=\"diaspora-button-inner\" style=\"float: right; margin: 1px 1px 1px 1px;height:" . ($bs-3) . "px; background-color: #" . $bb . ";\"><img style=\"vertical-align: top; margin:0 auto; padding:0; border:0;\" src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
 </div></a>";
-		return $content . $button_box;
-}
+    return $button_box;
+    }
+
+function diaspora_button_display($content)
+    {
+    $button_box = generate_button(FALSE);
+    return $content . "<br>" . $button_box;
+    }
 
 add_action("the_content", "diaspora_button_display");
 
@@ -136,7 +139,7 @@ function my_text_input( $args ) {
     $name = esc_attr( $args['name'] );
     $value = esc_attr( $args['value'] );
     $comment = $args['comment'];
-    echo "<input type='text' name='$name'value='$value' /> ".$comment;
+    echo "<input type='text' name='$name' value='$value' /> ".$comment;
 }
 
 function my_radio_group( $args ) {
@@ -185,6 +188,9 @@ function share_on_diaspora_options_page() {
     <div class="wrap">
         <?php screen_icon(); ?>
         <h2>Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</h2>
+        <h3>Button Preview</h3>
+        <?php echo generate_button(TRUE); ?>
+        <br>
         <form action="options.php" method="POST">
             <?php settings_fields( 'share_on_diaspora_options-group' ); ?>
             <?php do_settings_sections( 'share_on_diaspora_options' ); ?>
