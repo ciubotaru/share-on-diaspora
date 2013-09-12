@@ -31,6 +31,7 @@ $defaults = array(
     'button_background_hover' => 'B8CCD9',
     'button_size' => '1',
     'button_rounded' => '5',
+    'button_text' => 'share this'
     );
 
 function get_default($key)
@@ -63,10 +64,11 @@ function generate_button($preview)
         case '4': $bs = '48'; $fs = '29'; $bwidth = '204'; break;
         default: $bs = '23'; $fs = '14'; $bwidth = '98'; 
         }
-    $br =  ( $options_array['button_rounded'] != '' ) ? $options_array['button_rounded'] : get_default('button_rounded');
+    $br = ( $options_array['button_rounded'] != '' ) ? $options_array['button_rounded'] : get_default('button_rounded');
+    $bt = ( $options_array['button_text'] != '' ) ? $options_array['button_text'] : get_default('button_text');
 
     $button_box = "<a href=\"javascript:(function(){var url = ". (($preview) ? "'[Page address here]'" : "window.location.href") . " ;var title = ". (($preview) ?  "'[Page title here]'" :  "document.title") . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
-<div id=\"diaspora-button-box\" style=\"box-sizing: content-box; -moz-box-sizing: content-box; float:left; margin-right: 10px; width:" . $bwidth . "px; height:" . $bs . "px; background-color: #" . $bb . "; -moz-border-radius:" . $br . "px; border-radius:" . $br . "px; border-color: #" . $bc . "; border-width: 1px; color: #" . $bc . "; border-style: solid; padding: 0 5px 0 5px; text-align: center;\" onMouseOver=\"this.style.backgroundColor='#" . $bb_h . "'; this.style.color='#" . $bc_h . "'; this.style.borderColor='#" . $bc_h . "'\" onMouseOut=\"this.style.backgroundColor='#" . $bb . "'; this.style.color='#" . $bc . "' ; this.style.borderColor='#" . $bc . "'\"><font style=\"font-family:arial,helvetica,sans-serif;font-size:" . $fs ."px;margin: 0; line-height:" . ($bs-2) . "px;\">share this</font> <div id=\"diaspora-button-inner\" style=\"float: right; margin: 1px 1px 1px 1px;height:" . ($bs-3) . "px; background-color: #" . $bb . ";\"><img style=\"vertical-align: top; margin:0 auto; padding:0; border:0;\" src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
+<div id=\"diaspora-button-box\" style=\"box-sizing: content-box; -moz-box-sizing: content-box; float:left; margin-right: 10px; height:" . $bs . "px; background-color: #" . $bb . "; -moz-border-radius:" . $br . "px; border-radius:" . $br . "px; border-color: #" . $bc . "; border-width: 1px; color: #" . $bc . "; border-style: solid; padding: 0 0 0 5px; text-align: center;\" onMouseOver=\"this.style.backgroundColor='#" . $bb_h . "'; this.style.color='#" . $bc_h . "'; this.style.borderColor='#" . $bc_h . "'\" onMouseOut=\"this.style.backgroundColor='#" . $bb . "'; this.style.color='#" . $bc . "' ; this.style.borderColor='#" . $bc . "'; overflow: auto;\"><font style=\"font-family:arial,helvetica,sans-serif;font-size:" . $fs ."px;margin: 0; line-height:" . ($bs-2) . "px;\">" . $bt  . "</font> <div id=\"diaspora-button-inner\" style=\"float: right; margin: 1px 1px 1px 5px;height:" . ($bs-3) . "px; background-color: #" . $bb . ";\"><img style=\"vertical-align: top; margin:0 auto; padding:0; border:0;\" src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
 </div></a>";
     return $button_box;
     }
@@ -125,6 +127,11 @@ function my_admin_init() {
         'labels' => array('5' => 'Rounded', '0' => 'Square')
         )
     );
+    add_settings_field( 'button_text', 'Text on the button', 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
+        'name' => 'share-on-diaspora-settings[button_text]',
+        'value' => (($options_array['button_text'] != '' ) ? $options_array['button_text'] : get_default('button_text'))
+        )
+    );
     add_settings_field( 'reset', 'Restore defaults', 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
 }
 
@@ -172,7 +179,7 @@ function share_on_diaspora_reset_callback()
 function my_settings_validate( $input ) {
 //    $output = get_option( 'share-on-diaspora-settings' );
     $output = $input;
-    $colors = array('button_color', 'button_background');
+    $colors = array('button_color', 'button_background', 'button_color_hover', 'button_background_hover');
     foreach ($colors as $i)
         {
         if ($output[$i] != '')
