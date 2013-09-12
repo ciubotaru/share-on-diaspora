@@ -289,7 +289,11 @@ function share_on_diaspora_options_page() {
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
-        <h2>Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</h2>
+        <h2 class="nav-tab-wrapper">
+        <a href="#" class="nav-tab">Tab #1</a>
+        <a href="#" class="nav-tab nav-tab-active">Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</a>
+        <a href="#" class="nav-tab">Tab #2</a>
+        </h2>
         <h3>Button Preview</h3>
         <?php echo generate_button(TRUE); ?>
         <br>
