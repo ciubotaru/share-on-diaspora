@@ -207,10 +207,6 @@ function my_admin_init() {
     add_settings_field( 'reset', 'Restore defaults', 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
 }
 
-function prefix_on_deactivate() {
-       delete_option('share-on-diaspora-settings');
-}
-
 function activate_share_on_diaspora_plugin()
     {
     set_default();
@@ -220,7 +216,6 @@ function activate_share_on_diaspora_plugin()
     }
 
 register_activation_hook(__FILE__, 'activate_share_on_diaspora_plugin');
-register_deactivation_hook(__FILE__, 'prefix_on_deactivate');
 
 function section_one_callback() {
     echo 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like <strong>000000</strong> or <strong>ffffff</strong>. Leave empty to restore the default value.';
