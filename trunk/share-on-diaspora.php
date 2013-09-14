@@ -48,6 +48,8 @@ function set_default()
 
 function diaspora_button_display($content)
 {
+    if( in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] ) ) return $content;
+
 //$bc = preg_match('/^[a-f0-9]{6}$/i', $_GET['bc']) ? $_GET['bc'] : '3c72c2';
 $options_array = get_option('share-on-diaspora-settings');
 $bc = ( $options_array['button_color'] != '' ) ? $options_array['button_color'] : get_default('button_color');
