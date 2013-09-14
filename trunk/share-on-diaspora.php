@@ -40,16 +40,7 @@ function get_default($key)
     return $defaults[$key];
     }
 
-function set_default()
-    {
-    global $defaults;
-    foreach ($defaults as $key => $value)
-        {
-        update_option('$key', '$value');
-        }
-    }
-
-function generate_button($preview)
+function create_css_file()
     {
     $options_array = get_option('share-on-diaspora-settings');
     $bc = ( $options_array['button_color'] != '' ) ? $options_array['button_color'] : get_default('button_color');
@@ -59,16 +50,97 @@ function generate_button($preview)
 
     switch ($options_array['button_size'])
         {
-        case '2': $bs = '28'; $fs = '17'; $bwidth = '120'; break;
-        case '3': $bs = '33'; $fs = '20'; $bwidth = '140'; break;
-        case '4': $bs = '48'; $fs = '29'; $bwidth = '204'; break;
-        default: $bs = '23'; $fs = '14'; $bwidth = '98'; 
+        case '2': $bs = '28'; $fs = '17'; break;
+        case '3': $bs = '33'; $fs = '20'; break;
+        case '4': $bs = '48'; $fs = '29'; break;
+        default: $bs = '23'; $fs = '14';  
         }
     $br = ( $options_array['button_rounded'] != '' ) ? $options_array['button_rounded'] : get_default('button_rounded');
+
+    $css_path = plugin_dir_path( __FILE__ ). 'share-on-diaspora.css';
+    $css_content = "#diaspora-button-box {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    float: left;
+    margin-right: 10px;
+    height: " . $bs . "px;
+    background-color: #" . $bb . ";
+    -moz-border-radius: " . $br . "px;
+    border-radius: " . $br . "px;
+    border-color: #" . $bc . ";
+    border-width: 1px;
+    color: #" . $bc . ";
+    border-style: solid;
+    padding: 0 0 0 5px;
+    text-align: center;
+    font-size: ". $fs . "px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 100%;
+    overflow: auto}
+
+#diaspora-button-box:hover {
+    background-color: #" . $bb_h . ";
+    border-color: #" . $bc_h . ";
+    color: #" . $bc_h . "}  
+
+#diaspora-button-box font {
+    font-family: arial,helvetica,sans-serif;
+    font-size: " . $fs ."px;
+    margin: 0;
+    line-height: " . ($bs-2) . "px}
+
+#diaspora-button-inner {
+    float: right;
+    margin: 1px 1px 1px 5px;
+    height: " . ($bs-3) . "px;
+    background-color: #" . $bb . "}
+
+#diaspora-button-inner img {
+    vertical-align: top;
+    margin: 0 auto;
+    padding: 0;
+    border: 0}
+";
+
+    file_put_contents( $css_path, $css_content );
+    }
+
+function set_default()
+    {
+    global $defaults;
+    foreach ($defaults as $key => $value)
+        {
+        update_option('$key', '$value');
+        }
+    }
+
+// Register style sheet.
+add_action( 'wp_enqueue_scripts', 'register_share_on_diaspora_css' );
+
+/**
+ * Register style sheet.
+ */
+function register_share_on_diaspora_css()
+    {
+    wp_register_style( 'share-on-diaspora', plugins_url( 'share-on-diaspora.css' , __FILE__ ) );
+    wp_enqueue_style( 'share-on-diaspora' );
+    }
+
+function generate_button($preview)
+    {
+    $options_array = get_option('share-on-diaspora-settings');
+    switch ($options_array['button_size'])
+        {
+        case '2': $bs = '28'; break;
+        case '3': $bs = '33'; break;
+        case '4': $bs = '48'; break;
+        default: $bs = '23';
+        }
     $bt = ( $options_array['button_text'] != '' ) ? $options_array['button_text'] : get_default('button_text');
 
     $button_box = "<a href=\"javascript:(function(){var url = ". (($preview) ? "'[Page address here]'" : "window.location.href") . " ;var title = ". (($preview) ?  "'[Page title here]'" :  "document.title") . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
-<div id=\"diaspora-button-box\" style=\"box-sizing: content-box; -moz-box-sizing: content-box; float:left; margin-right: 10px; height:" . $bs . "px; background-color: #" . $bb . "; -moz-border-radius:" . $br . "px; border-radius:" . $br . "px; border-color: #" . $bc . "; border-width: 1px; color: #" . $bc . "; border-style: solid; padding: 0 0 0 5px; text-align: center;\" onMouseOver=\"this.style.backgroundColor='#" . $bb_h . "'; this.style.color='#" . $bc_h . "'; this.style.borderColor='#" . $bc_h . "'\" onMouseOut=\"this.style.backgroundColor='#" . $bb . "'; this.style.color='#" . $bc . "' ; this.style.borderColor='#" . $bc . "'; overflow: auto;\"><font style=\"font-family:arial,helvetica,sans-serif;font-size:" . $fs ."px;margin: 0; line-height:" . ($bs-2) . "px;\">" . $bt  . "</font> <div id=\"diaspora-button-inner\" style=\"float: right; margin: 1px 1px 1px 5px;height:" . ($bs-3) . "px; background-color: #" . $bb . ";\"><img style=\"vertical-align: top; margin:0 auto; padding:0; border:0;\" src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
+<div id=\"diaspora-button-box\"><font>" . $bt  . "</font> <div id=\"diaspora-button-inner\"><img src=\"" . plugin_dir_url(__FILE__) . "/images/asterisk-" . ($bs-3) . ".png\"></div>
 </div></a>";
     return $button_box;
     }
@@ -135,13 +207,15 @@ function my_admin_init() {
     add_settings_field( 'reset', 'Restore defaults', 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
 }
 
-add_action( 'set_default', 'set_option_defaults' );
+function activate_share_on_diaspora_plugin()
+    {
+    set_default();
+    $css_path = plugin_dir_path( __FILE__ ). 'share-on-diaspora.css';
+    if (!file_exists($css_path))
+        create_css_file();
+    }
 
-function prefix_on_deactivate() {
-       delete_option('share-on-diaspora-settings');
-}
-
-register_deactivation_hook(__FILE__, 'prefix_on_deactivate');
+register_activation_hook(__FILE__, 'activate_share_on_diaspora_plugin');
 
 function section_one_callback() {
     echo 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like <strong>000000</strong> or <strong>ffffff</strong>. Leave empty to restore the default value.';
@@ -208,6 +282,8 @@ function share_on_diaspora_options_page() {
     if ( !current_user_can( 'manage_options' ) )  {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	};
+    create_css_file();
+    register_share_on_diaspora_css();
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
@@ -222,7 +298,6 @@ function share_on_diaspora_options_page() {
         </form>
     </div>
     <?php
-
 };
  
 ?>
