@@ -30,7 +30,7 @@ This plugin adds a "Share on D*" button at the bottom of your posts.
 post in "Twenty Thirteen" theme.
 2. Choose a Diaspora pod from the list or type it in the text field.
 3. Verify the text of your post, Aspects that will see it etc, and press the Post button.
-
+4. To customize the look of you button, go to the Settings page.
 
 == Changelog ==
 
