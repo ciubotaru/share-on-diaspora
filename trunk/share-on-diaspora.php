@@ -280,6 +280,23 @@ function my_settings_validate( $input ) {
     else return $output;
     }
 
+function share_on_diaspora_tab1()
+    {
+    echo "<h3>Button Preview</h3>";
+    echo generate_button(TRUE); 
+    echo "<br>" .
+    "<form action=\"options.php\" method=\"POST\">";
+    settings_fields( 'share_on_diaspora_options-group' );
+    do_settings_sections( 'share_on_diaspora_options' ); 
+    submit_button('Update', 'primary',  'submit-form', false);
+    echo "</form>";
+    }
+
+function share_on_diaspora_tab2()
+    {
+    echo "<h3>Pod list</h3><br>Nothing here yet";
+    }
+
 function share_on_diaspora_options_page() {
     if ( !current_user_can( 'manage_options' ) )  {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
@@ -290,18 +307,15 @@ function share_on_diaspora_options_page() {
     <div class="wrap">
         <?php screen_icon(); ?>
         <h2 class="nav-tab-wrapper">
-        <a href="#" class="nav-tab">Tab #1</a>
-        <a href="#" class="nav-tab nav-tab-active">Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</a>
-        <a href="#" class="nav-tab">Tab #2</a>
+        <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <? if ( ( $_GET['tab'] == '1' ) || !isset($_GET['tab'])) echo "nav-tab-active"; ?>">Button options</a>
+        <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <? if ( $_GET['tab'] == '2' ) echo "nav-tab-active"; ?>">Pod list options</a>
         </h2>
-        <h3>Button Preview</h3>
-        <?php echo generate_button(TRUE); ?>
-        <br>
-        <form action="options.php" method="POST">
-            <?php settings_fields( 'share_on_diaspora_options-group' ); ?>
-            <?php do_settings_sections( 'share_on_diaspora_options' ); ?>
-            <?php submit_button('Update', 'primary',  'submit-form', false); ?>
-        </form>
+        <?php $current_tab = $_GET['tab'];
+        switch ($current_tab)
+            {
+            case '2' : share_on_diaspora_tab2(); break;
+            default: share_on_diaspora_tab1();
+            } ?>
     </div>
     <?php
 };
