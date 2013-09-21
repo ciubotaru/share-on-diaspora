@@ -261,14 +261,14 @@ function share_on_diaspora_reset_callback()
     }
 
 function section_two_callback() {
-    echo 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drow-down menue in the pod selection window.';
+    echo 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drop-down menu in the pod selection window.';
 }
 
 function my_checkboxes($args)
     {
     $options_array = get_option('share-on-diaspora-settings2');
     $podname = esc_attr( $args['podname'] );
-    echo "<input type='checkbox' name='share-on-diaspora-settings2[" . $podname . "]' value='1'";
+    echo "<input type='checkbox' name='share-on-diaspora-settings2[" . $podname . "]' value='1' ";
     echo !empty( $options_array[$podname] ) ? "checked":"";
     echo "/>".$options_array['$podname'];
     }
@@ -318,7 +318,7 @@ function share_on_diaspora_tab1()
 
 function share_on_diaspora_tab2()
     {
-    "<form action=\"options.php\" method=\"POST\">";
+    echo "<form action=\"options.php\" method=\"POST\">";
     settings_fields( 'share_on_diaspora_options-group2' );
     do_settings_sections( 'share_on_diaspora_options2' ); 
     submit_button('Update', 'primary',  'submit-form', false);
