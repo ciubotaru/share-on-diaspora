@@ -207,7 +207,15 @@ function my_admin_init() {
         )
     );
     add_settings_field( 'reset', 'Restore defaults', 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
-}
+    
+    register_setting( 'share_on_diaspora_options-group2', 'share-on-diaspora-settings2', 'my_settings_validate2' );
+    add_settings_section( 'section-two', 'Pod properties', 'section_two_callback', 'share_on_diaspora_options2' );
+    require_once(plugin_dir_path( __FILE__ ).'pod_list.php');
+    foreach ($podlist as $i)
+        {
+        add_settings_field( $i, $i, 'my_checkboxes', 'share_on_diaspora_options2', 'section-two', array('podname' => $i));
+        }
+    }
 
 function activate_share_on_diaspora_plugin()
     {
@@ -252,6 +260,19 @@ function share_on_diaspora_reset_callback()
     echo "<input type='submit' name='share-on-diaspora-settings[reset]' value='Defaults'>";
     }
 
+function section_two_callback() {
+    echo 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drow-down menue in the pod selection window.';
+}
+
+function my_checkboxes($args)
+    {
+    $options_array = get_option('share-on-diaspora-settings2');
+    $podname = esc_attr( $args['podname'] );
+    echo "<input type='checkbox' name='share-on-diaspora-settings2[" . $podname . "]' value='1'";
+    echo !empty( $options_array[$podname] ) ? "checked":"";
+    echo "/>".$options_array['$podname'];
+    }
+
 function my_settings_validate( $input ) {
 //    $output = get_option( 'share-on-diaspora-settings' );
     $output = $input;
@@ -280,6 +301,9 @@ function my_settings_validate( $input ) {
     else return $output;
     }
 
+//just a placeholder for tab #2.
+function my_settings_validate2( $input ) { return $input; } 
+
 function share_on_diaspora_tab1()
     {
     echo "<h3>Button Preview</h3>";
@@ -294,7 +318,11 @@ function share_on_diaspora_tab1()
 
 function share_on_diaspora_tab2()
     {
-    echo "<h3>Pod list</h3><br>Nothing here yet";
+    "<form action=\"options.php\" method=\"POST\">";
+    settings_fields( 'share_on_diaspora_options-group2' );
+    do_settings_sections( 'share_on_diaspora_options2' ); 
+    submit_button('Update', 'primary',  'submit-form', false);
+    echo "</form>";
     }
 
 function share_on_diaspora_options_page() {
@@ -306,6 +334,7 @@ function share_on_diaspora_options_page() {
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
+        <h2>Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</h2>
         <h2 class="nav-tab-wrapper">
         <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <? if ( ( $_GET['tab'] == '1' ) || !isset($_GET['tab'])) echo "nav-tab-active"; ?>">Button options</a>
         <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <? if ( $_GET['tab'] == '2' ) echo "nav-tab-active"; ?>">Pod list options</a>
@@ -319,5 +348,4 @@ function share_on_diaspora_options_page() {
     </div>
     <?php
 };
- 
 ?>
