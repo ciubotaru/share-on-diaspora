@@ -230,7 +230,14 @@ function crealinks()
 <select style="background: transparent; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none;"  onchange="share(this.options[this.selectedIndex].value)">
 <option>- Select from the list -</option>
 <?php
-include './pod_list.php';
+if (file_exists( './pod_list_show.php') )
+    {
+    require_once './pod_list_show.php';
+    }
+else
+    {
+    require_once './pod_list_all.php';
+    }
 foreach ($podlist as &$i)
 {
 print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
