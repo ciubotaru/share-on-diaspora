@@ -24,6 +24,8 @@ License: GPL2
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+global $defaults;
+
 $defaults = array(
     'button_color' => '3c72c2',
     'button_background' => 'ecf2f6',
@@ -88,7 +90,8 @@ function create_css_file()
     font-family: arial,helvetica,sans-serif;
     font-size: " . $fs ."px;
     margin: 0;
-    line-height: " . ($bs-2) . "px}
+    line-height: " . ($bs-2) . "px;
+    text-decoration: none} 
 
 #diaspora-button-inner {
     float: right;
@@ -117,6 +120,7 @@ function set_default()
 
 // Register style sheet.
 add_action( 'wp_enqueue_scripts', 'register_share_on_diaspora_css' );
+add_action( 'admin_enqueue_scripts', 'register_share_on_diaspora_css' ); 
 
 /**
  * Register style sheet.
@@ -228,7 +232,7 @@ function activate_share_on_diaspora_plugin()
 register_activation_hook(__FILE__, 'activate_share_on_diaspora_plugin');
 
 function section_one_callback() {
-    echo 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like <strong>000000</strong> or <strong>ffffff</strong>. Leave empty to restore the default value.';
+    echo 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like <code>000000</code> or <code>ffffff</code>. Leave empty to restore the default value.';
 }
 
 function field_one_callback() {
@@ -274,7 +278,6 @@ function my_checkboxes($args)
     }
 
 function my_settings_validate( $input ) {
-//    $output = get_option( 'share-on-diaspora-settings' );
     $output = $input;
     $colors = array('button_color', 'button_background', 'button_color_hover', 'button_background_hover');
     foreach ($colors as $i)
@@ -329,8 +332,11 @@ function share_on_diaspora_options_page() {
     if ( !current_user_can( 'manage_options' ) )  {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	};
-    create_css_file();
-    register_share_on_diaspora_css();
+    if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] )
+        {
+        //plugin settings have been saved. Here goes your code
+        create_css_file();
+        }
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
