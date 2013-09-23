@@ -237,7 +237,7 @@ function my_admin_init() {
     
     register_setting( 'share_on_diaspora_options-group2', 'share-on-diaspora-settings2', 'my_settings_validate2' );
     add_settings_section( 'section-two', 'Pod properties', 'section_two_callback', 'share_on_diaspora_options2' );
-    require_once(plugin_dir_path( __FILE__ ).'pod_list.php');
+    require_once(plugin_dir_path( __FILE__ ).'pod_list_all.php');
     foreach ($podlist as $i)
         {
         add_settings_field( $i, $i, 'my_checkboxes', 'share_on_diaspora_options2', 'section-two', array('podname' => $i));
