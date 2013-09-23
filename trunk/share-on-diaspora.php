@@ -112,9 +112,13 @@ function create_css_file()
 function set_default()
     {
     global $defaults;
+    $options_array = get_option('share-on-diaspora-settings');
     foreach ($defaults as $key => $value)
         {
-        update_option('$key', '$value');
+        if ( empty($options_array[$key]) )
+            {
+            update_option('$key', '$value');
+            }
         }
     }
 
@@ -161,13 +165,13 @@ add_action("the_content", "diaspora_button_display");
 
 add_action( 'admin_menu', 'share_on_diaspora_menu' );
 
-function share_on_diaspora_menu() {
+function share_on_diaspora_menu()
+    {
     add_options_page( 'Share on D* Options', 'Share on D*', 'manage_options', 'share_on_diaspora_options_page', 'share_on_diaspora_options_page' );
-
-//'My Plugin', 'My Plugin', 'manage_options', 'my-plugin', 'my_options_page' );
-}
+    }
 
 add_action( 'admin_init', 'my_admin_init' );
+
 function my_admin_init() {
     register_setting( 'share_on_diaspora_options-group', 'share-on-diaspora-settings', 'my_settings_validate' );
 //    register_setting( 'share_on_diaspora_options-group', 'share-on-diaspora-settings' );
@@ -299,9 +303,13 @@ function my_settings_validate( $input ) {
     if ($output['reset'] != '')
         {
         add_settings_error( 'share-on-diaspora-settings', 'reverted to defaults', 'All parameters reverted to their default values.' );
-        return $defaults;
+        $output = $defaults;
         }
-    else return $output;
+    if ( !is_writable(plugin_dir_path(__FILE__) ) )
+        {
+        add_settings_error( 'share-on-diaspora-settings', 'not writable', 'Plugin directory is not writable. Can not save css file.' );
+        }
+    return $output;
     }
 
 //just a placeholder for tab #2.
@@ -329,9 +337,10 @@ function share_on_diaspora_tab2()
     }
 
 function share_on_diaspora_options_page() {
-    if ( !current_user_can( 'manage_options' ) )  {
+    if ( !current_user_can( 'manage_options' ) )
+        {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
-	};
+        };
     if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] )
         {
         //plugin settings have been saved. Here goes your code
