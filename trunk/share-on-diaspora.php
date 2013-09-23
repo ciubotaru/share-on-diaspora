@@ -109,6 +109,25 @@ function create_css_file()
     file_put_contents( $css_path, $css_content );
     }
 
+function create_pod_list_file()
+    {
+    include_once plugin_dir_path( __FILE__ ) . 'pod_list_all.php';
+    $pod_list_path = plugin_dir_path( __FILE__ ) . 'pod_list_show.php';
+    $pod_list_content = '<?php $podlist = array(\'';
+    $options_array = get_option('share-on-diaspora-settings2');
+    foreach ( $options_array as $key => $value )
+        {
+        if ( $value == '1' )
+           {
+           $list[] = $key;
+           }
+        }
+    $pod_list_content .= implode("', '",$list); 
+    $pod_list_content .= '\'
+); ?>';
+    file_put_contents( $pod_list_path, $pod_list_content );
+    } 
+
 function set_default()
     {
     global $defaults;
@@ -341,10 +360,16 @@ function share_on_diaspora_options_page() {
         {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
         };
-    if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] )
+    if ( isset($_GET['settings-updated']) && $_GET['settings-updated'])
         {
-        //plugin settings have been saved. Here goes your code
-        create_css_file();
+        $tab = $_GET['tab'];
+        switch ($tab)
+            {
+            //button settings have been saved. Put them into a css file.
+            case '1': create_css_file(); break;
+            //pod list settings saved. Put the into a file.
+            case '2': create_pod_list_file(); break;
+            }
         }
     ?>
     <div class="wrap">
