@@ -230,7 +230,14 @@ function crealinks()
 <select style="background: transparent; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none;"  onchange="share(this.options[this.selectedIndex].value)">
 <option>- Select from the list -</option>
 <?php
-include './pod_list.php';
+if (file_exists( './pod_list_show.php') )
+    {
+    require_once './pod_list_show.php';
+    }
+else
+    {
+    require_once './pod_list_all.php';
+    }
 foreach ($podlist as &$i)
 {
 print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
@@ -247,6 +254,7 @@ foreach ($podlist as &$i)
 print '<option  value="' . $i .'"></option>';
 }
 ?>
-</datalist><br><input type=submit id=podurlsm value=Share></form></section><span class=clear></span><div class=bot_opt><input type=checkbox id=remember><label for=remember>Remember my choice, don't ask again</label></div><div class=advanced><a class=openao id=openao>Advanced options</a><div class=hideopt id=contopt><span class=opttit>Advanced options</span><br><input type=checkbox id=markdown><label for=markdown>Use Markdown syntax for link</label><br><input type=checkbox id=shorten><label for=shorten>Shorten URL (j.mp)</label><p><input type=checkbox id=norem><label for=norem>Never remember my last 3 pods</label><br><a class=delete id=delete>Forget my last 3 pods</a><br></p></div></div>
+</datalist><br><input type=submit id=podurlsm value=Share></form><hr>
+<small>by <a href="http://wordpress.org/plugins/share-on-diaspora/">Share on Diaspora</a> plugin for <a href="http://wordpress.org/">WordPress</a>.</small></section><span class=clear></span><div class=bot_opt><input type=checkbox id=remember><label for=remember>Remember my choice, don't ask again</label></div><div class=advanced><a class=openao id=openao>Advanced options</a><div class=hideopt id=contopt><span class=opttit>Advanced options</span><br><input type=checkbox id=markdown><label for=markdown>Use Markdown syntax for link</label><br><input type=checkbox id=shorten><label for=shorten>Shorten URL (j.mp)</label><p><input type=checkbox id=norem><label for=norem>Never remember my last 3 pods</label><br><a class=delete id=delete>Forget my last 3 pods</a><br></p></div></div>
 </body>
 </html>
