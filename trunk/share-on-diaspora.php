@@ -59,7 +59,7 @@ function create_css_file()
         default: $bs = '23'; $fs = '14';  
         }
 
-    $br = !empty( $options_array['button_rounded'] ) ? $options_array['button_rounded'] : get_default('button_rounded');
+    $br = isset( $options_array['button_rounded'] ) ? $options_array['button_rounded'] : get_default('button_rounded');
 
     $css_path = plugin_dir_path( __FILE__ ). 'share-on-diaspora.css';
     $css_content = "#diaspora-button-box {
