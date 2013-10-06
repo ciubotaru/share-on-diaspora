@@ -144,10 +144,12 @@ function set_default()
         }
     }
 
-function myplugin_init() {
- load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ) );
-}
-add_action('plugins_loaded', 'myplugin_init');
+function i18n_init()
+    {
+    load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ).'/i18n' );
+    }
+
+add_action('plugins_loaded', 'i18n_init');
 
 // Register style sheet.
 add_action( 'wp_enqueue_scripts', 'register_share_on_diaspora_css' );
@@ -336,13 +338,13 @@ function my_settings_validate2( $input ) { return $input; }
 
 function share_on_diaspora_tab1()
     {
-    echo _e( "<h3>Button Preview</h3>", 'share-on-diaspora' );
+    echo "<h3>".__( "Button Preview", 'share-on-diaspora' )."</h3>";
     echo generate_button(TRUE); 
     echo "<br>" .
     "<form action=\"options.php\" method=\"POST\">";
     settings_fields( 'share_on_diaspora_options-group' );
     do_settings_sections( 'share_on_diaspora_options' ); 
-    submit_button('Update', 'primary',  'submit-form', false);
+    submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
     }
 

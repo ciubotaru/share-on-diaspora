@@ -229,7 +229,7 @@ function crealinks()
 </header>
 <section id=podlist><h3><?php _e('Choose your Diaspora* pod', 'share-on-diaspora'); ?></h3>
 <select style="background: transparent; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none;"  onchange="share(this.options[this.selectedIndex].value)">
-<option>- Select from the list -</option>
+<option>- <?php _e('Select from the list', 'share-on-diaspora'); ?> -</option>
 <?php
 if (file_exists( './pod_list_show.php') )
     {
@@ -247,7 +247,7 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 </select>
 <h3><?php _e('or choose from history', 'share-on-diaspora'); ?></h3>
 </section>
-<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="share(document.getElementById('podurl').value); return false"><input id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
+<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="share(document.getElementById('podurl').value); return false"><input id=podurl placeholder="<?php _e('Example:', 'share-on-diaspora'); print " ".$podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
 <datalist id="datalist1">
 <?php
 foreach ($podlist as &$i)
@@ -255,7 +255,7 @@ foreach ($podlist as &$i)
 print '<option  value="' . $i .'"></option>';
 }
 ?>
-</datalist><br><input type=submit id=podurlsm value=Share></form><hr>
+</datalist><br><input type=submit id=podurlsm value="<?php _e('Share', 'share-on-diaspora'); ?>"></form><hr>
 <small>by <a href="http://wordpress.org/plugins/share-on-diaspora/">Share on Diaspora</a> plugin for <a href="http://wordpress.org/">WordPress</a>.</small></section><span class=clear></span><div class=bot_opt><input type=checkbox id=remember><label for=remember><?php _e("Remember my choice, don't ask again", 'share-on-diaspora'); ?></label></div><div class=advanced><a class=openao id=openao><?php _e('Advanced options', 'share-on-diaspora'); ?></a><div class=hideopt id=contopt><span class=opttit><?php _e('Advanced options', 'share-on-diaspora'); ?></span><br><input type=checkbox id=markdown><label for=markdown><?php _e('Use Markdown syntax for link', 'share-on-diaspora'); ?></label><br><input type=checkbox id=shorten><label for=shorten><?php _e('Shorten URL (j.mp)', 'share-on-diaspora'); ?></label><p><input type=checkbox id=norem><label for=norem><?php _e('Never remember my last 3 pods', 'share-on-diaspora'); ?></label><br><a class=delete id=delete><?php _e('Forget my last 3 pods', 'share-on-diaspora'); ?></a><br></p></div></div>
 </body>
 </html>
