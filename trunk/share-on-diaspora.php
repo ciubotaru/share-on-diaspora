@@ -256,7 +256,7 @@ function my_admin_init() {
     }
 
 function section_one_callback() {
-    echo printf( _e( 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1%s or %2%s. Leave empty to restore the default value.', 'share-on-diaspora' ), '<code>000000</code>', '<code>ffffff</code>');
+    printf( __( 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1%s or %2%s. Leave empty to restore the default value.', 'share-on-diaspora' ), '<code>000000</code>', '<code>ffffff</code>');
 }
 
 function field_one_callback() {
@@ -376,7 +376,7 @@ function share_on_diaspora_options_page() {
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
-        <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( _e('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
+        <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
         <h2 class="nav-tab-wrapper">
         <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <? if ( @( $_GET['tab'] == '1' ) || !isset($_GET['tab'])) echo "nav-tab-active"; ?>"><?php _e('Button options', 'share-on-diaspora' ); ?></a>
         <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <? if ( $_GET['tab'] == '2' ) echo "nav-tab-active"; ?>"><?php _e('Pod list options', 'share-on-diaspora' ); ?></a>
