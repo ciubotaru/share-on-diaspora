@@ -168,8 +168,22 @@ function generate_button($preview)
         default: $bs = '23';
         }
     $bt = !empty( $options_array['button_text'] ) ? $options_array['button_text'] : get_default('button_text');
-
-    $button_box = "<a href=\"javascript:(function(){var url = ". (($preview) ? "'[Page address here]'" : "window.location.href") . " ;var title = ". (($preview) ?  "'[Page title here]'" :  "document.title") . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
+    if (is_admin())
+        {
+        $url = "'[".__('Page address here', 'share-on-diaspora' )."]'";
+        $title = "'[".__('Page title here', 'share-on-diaspora' )."]'";
+        }
+    elseif (is_single())
+        {
+        $url = "window.location.href";
+        $title = "document.title";
+        }
+    else
+        {
+        $url = "'".esc_url(get_permalink())."'";
+        $title = "'".get_the_title()."'";
+        }
+    $button_box = "<a href=\"javascript:(function(){var url = ". (($preview) ? "'[".__('Page address here', 'share-on-diaspora' )."]'" : $url) . " ;var title = ". (($preview) ?  "'[".__('Page title here', 'share-on-diaspora' )."]'" :  $title) . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
 <div id=\"diaspora-button-box\"><font>" . $bt  . "</font> <div id=\"diaspora-button-inner\"><img src=\"" . plugin_dir_url(__FILE__) . "images/asterisk-" . ($bs-3) . ".png\"></div>
 </div></a>";
     return $button_box;
