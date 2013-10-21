@@ -238,7 +238,7 @@ else
     {
     require_once './pod_list_all.php';
     }
-foreach ($podlist as &$i)
+foreach ($share_on_diaspora_podlist as &$i)
 {
 print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 }
@@ -249,7 +249,7 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 <section id=podinput><h3>or introduce your pod URL</h3><form onsubmit="share(document.getElementById('podurl').value); return false"><input id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
 <datalist id="datalist1">
 <?php
-foreach ($podlist as &$i)
+foreach ($share_on_diaspora_podlist as &$i)
 {
 print '<option  value="' . $i .'"></option>';
 }
