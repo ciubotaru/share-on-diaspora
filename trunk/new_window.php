@@ -246,7 +246,7 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 </select>
 <h3>or choose from history</h3>
 </section>
-<section id=podinput><h3>or introduce your pod URL</h3><form onsubmit="share(document.getElementById('podurl').value); return false"><input id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
+<section id=podinput><h3>or introduce your pod URL</h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false;"><input id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
 <datalist id="datalist1">
 <?php
 foreach ($share_on_diaspora_podlist as &$i)
