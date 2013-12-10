@@ -65,7 +65,7 @@ function share_on_diaspora_create_css_file()
     $css_content = "#diaspora-button-box {
     box-sizing: content-box;
     -moz-box-sizing: content-box;
-    float: left;
+    display: inline-block;
     margin-right: 10px;
     height: " . $bs . "px;
     background-color: #" . $bb . ";
@@ -194,7 +194,7 @@ function diaspora_button_display($content)
     if( in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] ) ) return $content;
 
     $button_box = share_on_diaspora_share_on_diaspora_generate_button(FALSE);
-    return $content . "<br>" . $button_box;
+    return $content . $button_box;
     }
 
 add_action("the_content", "diaspora_button_display");
