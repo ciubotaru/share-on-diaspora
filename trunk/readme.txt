@@ -19,8 +19,10 @@ accordance with the overall look and feel of their blogs.
 = i18n =
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are completed:
+* Spanish -- contributed by Andrew Kurtis
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
+* Russian
 
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
