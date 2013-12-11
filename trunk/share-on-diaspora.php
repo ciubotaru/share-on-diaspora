@@ -144,6 +144,13 @@ function share_on_diaspora_set_default()
         }
     }
 
+function i18n_init()
+    {
+    load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ).'/i18n' );
+    }
+
+add_action('plugins_loaded', 'i18n_init');
+
 // Register style sheet.
 add_action( 'wp_enqueue_scripts', 'register_share_on_diaspora_css' );
 add_action( 'admin_enqueue_scripts', 'register_share_on_diaspora_css' ); 
@@ -203,7 +210,7 @@ add_action( 'admin_menu', 'share_on_diaspora_menu' );
 
 function share_on_diaspora_menu()
     {
-    add_options_page( 'Share on D* Options', 'Share on D*', 'manage_options', 'share_on_diaspora_options_page', 'share_on_diaspora_options_page' );
+    add_options_page( 'Share on D* Options', __( 'Share on D*', 'share-on-diaspora' ), 'manage_options', 'share_on_diaspora_options_page', 'share_on_diaspora_options_page' );
     }
 
 add_action( 'admin_init', 'share_on_diaspora_admin_init' );
@@ -212,48 +219,48 @@ function share_on_diaspora_admin_init() {
     register_setting( 'share_on_diaspora_options-group', 'share-on-diaspora-settings', 'share_on_diaspora_settings_validate' );
 //    register_setting( 'share_on_diaspora_options-group', 'share-on-diaspora-settings' );
     $options_array = get_option('share-on-diaspora-settings');
-    add_settings_section( 'section-one', 'Button properties', 'share_on_diaspora_section_one_callback', 'share_on_diaspora_options' );
-    add_settings_field( 'button_background', 'Background color', 'share_on_diaspora_text_input', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_section( 'section-one', __( 'Button properties', 'share-on-diaspora' ), 'section_one_callback', 'share_on_diaspora_options' );
+    add_settings_field( 'button_background', __( 'Background color', 'share-on-diaspora' ), 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_background]',
         'value' => (isset($options_array['button_background']) ? $options_array['button_background'] : share_on_diaspora_get_default('button_background'))
         )
     );
-    add_settings_field( 'button_background_hover', 'Background color on mouse-over', 'share_on_diaspora_text_input', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_background_hover', __( 'Background color on mouse-over', 'share-on-diaspora' ), 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_background_hover]',
         'value' => (isset($options_array['button_background_hover']) ? $options_array['button_background_hover'] : share_on_diaspora_get_default('button_background_hover'))
         )
     );
-    add_settings_field( 'button_color', 'Text and border color', 'share_on_diaspora_text_input', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_color', __( 'Text and border color', 'share-on-diaspora' ), 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_color]',
         'value' => (isset($options_array['button_color']) ? $options_array['button_color'] : share_on_diaspora_get_default('button_color'))
         )
     );
-    add_settings_field( 'button_color_hover', 'Text and border color on mouse-over', 'share_on_diaspora_text_input', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_color_hover', __( 'Text and border color on mouse-over', 'share-on-diaspora' ), 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_color_hover]',
         'value' => (isset($options_array['button_color_hover']) ? $options_array['button_color_hover'] : share_on_diaspora_get_default('button_color_hover'))
         )
     );
-    add_settings_field( 'button_rounded', 'Rounded corners', 'share_on_diaspora_radio_group', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_rounded', __( 'Rounded corners', 'share-on-diaspora' ), 'my_radio_group', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_rounded]',
-        'value' => (isset($options_array['button_rounded']) ? $options_array['button_rounded'] : share_on_diaspora_get_default('button_rounded')),
-        'labels' => array('5' => 'Rounded', '0' => 'Square')
+        'value' => (isset($options_array['button_rounded']) ? $options_array['button_rounded'] : get_default('button_rounded')),
+        'labels' => array('5' => __( 'Rounded', 'share-on-diaspora' ), '0' => __( 'Square', 'share-on-diaspora' ))
         )
     );
-    add_settings_field( 'button_size', 'Button size', 'share_on_diaspora_radio_group', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_size', __( 'Button size', 'share-on-diaspora' ), 'my_radio_group', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_size]',
-        'value' => (isset($options_array['button_size']) ? $options_array['button_size'] : share_on_diaspora_get_default('button_size')),
-        'labels' => array('1' => 'Small', '2' => 'Medium', '3' => 'Large', '4' => 'Huge')
+        'value' => (isset($options_array['button_size']) ? $options_array['button_size'] : get_default('button_size')),
+        'labels' => array('1' => __( 'Small', 'share-on-diaspora' ), '2' => __( 'Medium', 'share-on-diaspora' ), '3' => __( 'Large', 'share-on-diaspora' ), '4' => __( 'Huge', 'share-on-diaspora' ))
         )
     );
-    add_settings_field( 'button_text', 'Text on the button', 'share_on_diaspora_text_input', 'share_on_diaspora_options', 'section-one', array(
+    add_settings_field( 'button_text', __( 'Text on the button', 'share-on-diaspora' ), 'my_text_input', 'share_on_diaspora_options', 'section-one', array(
         'name' => 'share-on-diaspora-settings[button_text]',
         'value' => (isset($options_array['button_text']) ? $options_array['button_text'] : share_on_diaspora_get_default('button_text'))
         )
     );
-    add_settings_field( 'reset', 'Restore defaults', 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
+    add_settings_field( 'reset', __( 'Restore defaults', 'share-on-diaspora' ), 'share_on_diaspora_reset_callback', 'share_on_diaspora_options', 'section-one');
     
     register_setting( 'share_on_diaspora_options-group2', 'share-on-diaspora-settings2', 'my_settings_validate2' );
-    add_settings_section( 'section-two', 'Pod properties', 'share_on_diaspora_section_two_callback', 'share_on_diaspora_options2' );
+    add_settings_section( 'section-two', __( 'Pod properties', 'share-on-diaspora' ), 'section_two_callback', 'share_on_diaspora_options2' );
     require_once(plugin_dir_path( __FILE__ ).'pod_list_all.php');
     foreach ($podlist as $i)
         {
@@ -263,7 +270,7 @@ function share_on_diaspora_admin_init() {
     }
 
 function share_on_diaspora_section_one_callback() {
-    echo 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like <code>000000</code> or <code>ffffff</code>. Leave empty to restore the default value.';
+    printf( __( 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1%s or %2%s. Leave empty to restore the default value.', 'share-on-diaspora' ), '<code>000000</code>', '<code>ffffff</code>');
 }
 
 //not used. safe to delete.
@@ -297,7 +304,7 @@ function share_on_diaspora_reset_callback()
     }
 
 function share_on_diaspora_section_two_callback() {
-    echo 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drop-down menu in the pod selection window.';
+    echo _e( 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drop-down menu in the pod selection window.', 'share-on-diaspora' );
 }
 
 function share_on_diaspora_checkboxes($args)
@@ -320,7 +327,7 @@ function share_on_diaspora_settings_validate( $input ) {
             $output[$i] = $match_array[0];
             if (empty( $output[$i] ))
                 {
-                add_settings_error( 'share-on-diaspora-settings', 'invalid-color', 'Invalid value for \''. $i . '\'. Reverting to default.' );
+                add_settings_error( 'share-on-diaspora-settings', 'invalid-color', printf( __('Invalid value for %s. Reverting to default.', 'share-on-diaspora' ), '\''. $i . '\'') );
                 }
             }
         else
@@ -330,13 +337,13 @@ function share_on_diaspora_settings_validate( $input ) {
         }
     if (!empty( $output['reset'] ))
         {
-        add_settings_error( 'share-on-diaspora-settings', 'reverted to defaults', 'All parameters reverted to their default values.' );
+        add_settings_error( 'share-on-diaspora-settings', 'reverted to defaults', __('All parameters reverted to their default values.', 'share-on-diaspora' ) );
         global $share_on_diaspora_defaults;
         $output = $share_on_diaspora_defaults;
         }
     if ( !is_writable(plugin_dir_path(__FILE__) ) )
         {
-        add_settings_error( 'share-on-diaspora-settings', 'not writable', 'Plugin directory is not writable. Can not save css file.' );
+        add_settings_error( 'share-on-diaspora-settings', 'not writable', __( 'Plugin directory is not writable. Can not save css file.', 'share-on-diaspora' ) );
         }
     return $output;
     }
@@ -346,13 +353,13 @@ function my_settings_validate2( $input ) { return $input; }
 
 function share_on_diaspora_tab1()
     {
-    echo "<h3>Button Preview</h3>";
+    echo "<h3>".__( "Button Preview", 'share-on-diaspora' )."</h3>";
     echo share_on_diaspora_generate_button(TRUE); 
     echo "<br>" .
     "<form action=\"options.php\" method=\"POST\">";
     settings_fields( 'share_on_diaspora_options-group' );
     do_settings_sections( 'share_on_diaspora_options' ); 
-    submit_button('Update', 'primary',  'submit-form', false);
+    submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
     }
 
@@ -361,14 +368,14 @@ function share_on_diaspora_tab2()
     echo "<form action=\"options.php\" method=\"POST\">";
     settings_fields( 'share_on_diaspora_options-group2' );
     do_settings_sections( 'share_on_diaspora_options2' ); 
-    submit_button('Update', 'primary',  'submit-form', false);
+    submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
     }
 
 function share_on_diaspora_options_page() {
     if ( !current_user_can( 'manage_options' ) )
         {
-        wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+        wp_die( __( 'You do not have sufficient permissions to access this page.' , 'share-on-diaspora') );
         };
     if ( isset($_GET['settings-updated']) && $_GET['settings-updated'])
         {
@@ -384,10 +391,10 @@ function share_on_diaspora_options_page() {
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
-        <h2>Share on Diaspora (ver. <?php $plugin_data_array = get_plugin_data(__FILE__); echo $plugin_data_array['Version']; ?>) Options</h2>
+        <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
         <h2 class="nav-tab-wrapper">
-        <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <? if ( @( $_GET['tab'] == '1' ) || !isset($_GET['tab'])) echo "nav-tab-active"; ?>">Button options</a>
-        <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <? if ( $_GET['tab'] == '2' ) echo "nav-tab-active"; ?>">Pod list options</a>
+        <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <? if ( @( $_GET['tab'] == '1' ) || !isset($_GET['tab'])) echo "nav-tab-active"; ?>"><?php _e('Button options', 'share-on-diaspora' ); ?></a>
+        <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <? if ( $_GET['tab'] == '2' ) echo "nav-tab-active"; ?>"><?php _e('Pod list options', 'share-on-diaspora' ); ?></a>
         </h2>
         <?php $current_tab = $_GET['tab'];
         switch ($current_tab)

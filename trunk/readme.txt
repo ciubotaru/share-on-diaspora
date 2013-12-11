@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: Vitalie Ciubotaru
+Contributors: Vitalie Ciubotaru, Vostok
 Donate link: 
 Tags: diaspora, share, button
 Requires at least: 3.2.1
@@ -15,6 +15,12 @@ This plugin adds a "Share on Diaspora" button at the bottom of your posts. Unlik
 this one is not tied to one single pod. Instead it allowes the users to select their favorite pod from the list, 
 or type it directly. The button is highly customizable, allowing blog admins to set the color, size and shape in 
 accordance with the overall look and feel of their blogs.
+
+= i18n =
+There is an ongoing effort to translate the plugin into other languages.
+So far, the following translations are completed:
+* Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
+* Romanian
 
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory

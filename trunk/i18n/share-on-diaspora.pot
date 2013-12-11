@@ -1,0 +1,206 @@
+# Copyright (C) 2013 Share on Diaspora
+# This file is distributed under the same license as the Share on Diaspora package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Share on Diaspora 0.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/share-on-diaspora\n"
+"POT-Creation-Date: 2013-10-06 12:35:20+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: new_window.php:224
+msgid "Sharing"
+msgstr ""
+
+#: new_window.php:230
+msgid "Choose your Diaspora* pod"
+msgstr ""
+
+#: new_window.php:232
+msgid "Select from the list"
+msgstr ""
+
+#: new_window.php:248
+msgid "or choose from history"
+msgstr ""
+
+#: new_window.php:250
+msgid "or introduce your pod URL"
+msgstr ""
+
+#: new_window.php:250
+msgid "Example:"
+msgstr ""
+
+#: new_window.php:258
+msgid "Share"
+msgstr ""
+
+#: new_window.php:259
+msgid "Remember my choice, don't ask again"
+msgstr ""
+
+#: new_window.php:259
+msgid "Advanced options"
+msgstr ""
+
+#: new_window.php:259
+msgid "Use Markdown syntax for link"
+msgstr ""
+
+#: new_window.php:259
+msgid "Shorten URL (j.mp)"
+msgstr ""
+
+#: new_window.php:259
+msgid "Never remember my last 3 pods"
+msgstr ""
+
+#: new_window.php:259
+msgid "Forget my last 3 pods"
+msgstr ""
+
+#: share-on-diaspora.php:177
+msgid "Page address here"
+msgstr ""
+
+#: share-on-diaspora.php:177
+msgid "Page title here"
+msgstr ""
+
+#: share-on-diaspora.php:197
+msgid "Share on D*"
+msgstr ""
+
+#: share-on-diaspora.php:206
+msgid "Button properties"
+msgstr ""
+
+#: share-on-diaspora.php:207
+msgid "Background color"
+msgstr ""
+
+#: share-on-diaspora.php:212
+msgid "Background color on mouse-over"
+msgstr ""
+
+#: share-on-diaspora.php:217
+msgid "Text and border color"
+msgstr ""
+
+#: share-on-diaspora.php:222
+msgid "Text and border color on mouse-over"
+msgstr ""
+
+#: share-on-diaspora.php:227
+msgid "Rounded corners"
+msgstr ""
+
+#: share-on-diaspora.php:230
+msgid "Rounded"
+msgstr ""
+
+#: share-on-diaspora.php:230
+msgid "Square"
+msgstr ""
+
+#: share-on-diaspora.php:233
+msgid "Button size"
+msgstr ""
+
+#: share-on-diaspora.php:236
+msgid "Small"
+msgstr ""
+
+#: share-on-diaspora.php:236
+msgid "Medium"
+msgstr ""
+
+#: share-on-diaspora.php:236
+msgid "Large"
+msgstr ""
+
+#: share-on-diaspora.php:236
+msgid "Huge"
+msgstr ""
+
+#: share-on-diaspora.php:239
+msgid "Text on the button"
+msgstr ""
+
+#: share-on-diaspora.php:244
+msgid "Restore defaults"
+msgstr ""
+
+#: share-on-diaspora.php:247
+msgid "Pod properties"
+msgstr ""
+
+#: share-on-diaspora.php:257
+msgid ""
+"Use the parameters below to change the look and feel of your share button. "
+"All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty "
+"to restore the default value."
+msgstr ""
+
+#: share-on-diaspora.php:290
+msgid ""
+"Below is the list of Diaspora pods. Check the ones that you what to appear "
+"in the drop-down menu in the pod selection window."
+msgstr ""
+
+#: share-on-diaspora.php:313
+msgid "Invalid value for %s. Reverting to default."
+msgstr ""
+
+#: share-on-diaspora.php:323
+msgid "All parameters reverted to their default values."
+msgstr ""
+
+#: share-on-diaspora.php:329
+msgid "Plugin directory is not writable. Can not save css file."
+msgstr ""
+
+#: share-on-diaspora.php:339
+msgid "Button Preview"
+msgstr ""
+
+#: share-on-diaspora.php:345 share-on-diaspora.php:354
+msgid "Update"
+msgstr ""
+
+#: share-on-diaspora.php:361
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: share-on-diaspora.php:377
+msgid "Share on Diaspora (ver. %s) Options"
+msgstr ""
+
+#: share-on-diaspora.php:379
+msgid "Button options"
+msgstr ""
+
+#: share-on-diaspora.php:380
+msgid "Pod list options"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Share on Diaspora"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vitalie Ciubotaru"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/ciubotaru"
+msgstr ""
