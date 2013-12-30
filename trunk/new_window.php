@@ -13,22 +13,29 @@
 <head>
 <title>Share to Diaspora*</title>
 <style>
-body{font-family:Helvetica, Helvetica, Arial, sans-serif;font-size:15px;max-height:100%;margin:0;padding:0 0 2em}
-a{color:#3F8FBA;text-decoration:none;-webkit-transition:opacity .1s ease;-moz-transition:opacity .1s ease;-o-transition:opacity .1s ease;transition:opacity .1s ease;cursor:pointer}
+body{font-family:Helvetica, Helvetica, Arial, sans-serif;font-size:15px;max-height:100%;margin:0;padding:0 0 2em; background: #1b4053; color: #fff}
+a{color:#88FFFF;text-decoration:none;-webkit-transition:opacity .1s ease;-moz-transition:opacity .1s ease;-o-transition:opacity .1s ease;transition:opacity .1s ease;cursor:pointer}
 a:hover{opacity:.85;text-decoration:underline}
 span.clear{clear:both;display:block}
 header{background-color:#222;-webkit-box-shadow:0 0 2px #777;-moz-box-shadow:0 0 2px #777;box-shadow:0 0 2px #777;filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=rgb(35,30,30),endColorstr=#231e1e);-ms-filter:"progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=rgba(35, 30, 30, 0.95), endColorstr=#231e1e)";background-image:0 0 100%;color:#dadada;padding:8px 10px}
 header h2{float:left;font-size:inherit;font-weight:inherit;border-right:1px solid #aaa;margin:0;padding:.6em 20px .6em 10px}
 header #sharedet{text-align:center;width:auto;margin:0}
-header #sharedet div{display:block;height:1.2em;max-height:1.2em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;color:#dadada;padding:0 10px 0 20px}
+header #sharedet div{display:block;height:1.2em;max-height:1.2em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;color:#fafafa;padding:0 10px 0 20px}
 header #sharedet #sharetitle{font-weight:700}
 section{width:auto;float:left;margin:10px 0 0;padding:0 20px}
-section h3{font-size:inherit;font-weight:inherit;color:#888}
+section h3{font-size:inherit;font-weight:inherit;color:#88FFFF}
 section#podlist{border-right:1px solid #ccc;min-width:200px}
 section#podlist a{display:block;border:1px solid #eee;text-decoration:none;color:#444;-webkit-transition:border .2s ease, color .2s ease;-moz-transition:border .2s ease, color .2s ease;-o-transition:border .2s ease, color .2s ease;transition:border .2s ease, color .2s ease;margin:0 0 6px;padding:3px 6px}
-section#podlist a.lastpod{color:#222;border-color:#bbcad0}
+section#podlist a.lastpod{color:#fff;border-color:#bbcad0}
 section#podlist a:hover{border:1px solid #888;color:#000}
-#podurl{width:200px;font-size:15px;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:.1s border-color ease;-o-transition:.1s border-color ease;transition:.1s border-color ease;margin:0;padding:3px 6px}#podurl:focus{border:1px solid #bbcad0}#podurlsm{margin:6px 0 0;padding:4px 10px}:focus{outline:none}input.error,input#podurl.error{border:1px solid #a00}span.check{display:inline-block;background:#f5f5f5;amargin:10px 6px 3px;border:1px solid #eee;padding-left:3px}span.check label{display:inline-block;font-size:14px;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;padding:5px 6px 4px 0}div.bot_opt{position:fixed;bottom:0;height:1.6em;border-top:1px solid #eee;left:0;right:0;width:auto;background:#fafafa}div.bot_opt label{display:inline-block;width:auto;left:0;right:0;position:absolute;padding-left:1.6em;top:0;bottom:0;height:auto;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;margin:0}.advanced{padding:10px 0 0 20px}#contopt{apadding-top:6px;line-height:1.2em}#contopt input[type=checkbox]{margin-left:0}a.openao,.opttit{font-size:13px}section#podlist a.hidepod,.hideopt{display:none}span.check input:checked + label,div.bot_opt :checked + label{color:#060}
+#podurl{width:200px;font-size:15px;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:.1s border-color ease;-o-transition:.1s border-color ease;transition:.1s border-color ease;margin:0;padding:3px 6px}
+#podurl:focus{border:1px solid #bbcad0}
+#podurlsm{margin:6px 0 0;padding:4px 10px}
+:focus{outline:none}
+input.error,input#podurl.error{border:1px solid #a00}
+span.check{display:inline-block;background:#f5f5f5;amargin:10px 6px 3px;border:1px solid #eee;padding-left:3px}
+span.check label{display:inline-block;font-size:14px;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;padding:5px 6px 4px 0}
+div.bot_opt{position:fixed;bottom:0;height:1.6em;border-top:1px solid #eee;left:0;right:0;width:auto;background:#82A6B6}div.bot_opt label{display:inline-block;width:auto;left:0;right:0;position:absolute;padding-left:1.6em;top:0;bottom:0;height:auto;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;margin:0}.advanced{padding:10px 0 0 20px}#contopt{apadding-top:6px;line-height:1.2em}#contopt input[type=checkbox]{margin-left:0}a.openao,.opttit{font-size:13px}section#podlist a.hidepod,.hideopt{display:none}span.check input:checked + label,div.bot_opt :checked + label{color:#060}
 </style>
 
 <script type="text/javascript">
@@ -228,9 +235,10 @@ function crealinks()
 </div>
 </header>
 <section id=podlist><h3><?php _e('Choose your Diaspora* pod', 'share-on-diaspora'); ?></h3>
-<select style="background: transparent; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none;"  onchange="share(this.options[this.selectedIndex].value)">
+<select style="background: #82A6B6; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none; color: #fff"  onchange="share(this.options[this.selectedIndex].value)">
 <option>- <?php _e('Select from the list', 'share-on-diaspora'); ?> -</option>
 <?php
+/**
 if (file_exists( './pod_list_show.php') )
     {
     require_once './pod_list_show.php';
@@ -239,7 +247,14 @@ else
     {
     require_once './pod_list_all.php';
     }
-foreach ($share_on_diaspora_podlist as &$i)
+*/
+/**
+$podlist = ShareOnDiaspora::$podlist_defaults['podlist'];
+*/
+$options_array = get_option('share-on-diaspora-settings');
+$podlist = array_keys($options_array['podlist']);
+error_log("Pod list is: " . print_r($podlist, true));
+foreach ($podlist as &$i)
 {
 print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 }
@@ -247,10 +262,10 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 </select>
 <h3><?php _e('or choose from history', 'share-on-diaspora'); ?></h3>
 </section>
-<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="share(document.getElementById('podurl').value); return false"><input id=podurl placeholder="<?php _e('Example:', 'share-on-diaspora'); print " ".$podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
+<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
 <datalist id="datalist1">
 <?php
-foreach ($share_on_diaspora_podlist as &$i)
+foreach ($podlist as &$i)
 {
 print '<option  value="' . $i .'"></option>';
 }
