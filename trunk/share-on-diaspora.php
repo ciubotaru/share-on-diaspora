@@ -3,7 +3,7 @@
 Plugin Name: Share on Diaspora
 Plugin URI:
 Description: This plugin adds a "Share on D*" button at the bottom of your posts.
-Version: 0.4.1
+Version: 0.5
 Author: Vitalie Ciubotaru
 Author URI: https://github.com/ciubotaru
 License: GPL2
@@ -44,15 +44,18 @@ public $image_defaults = array(
 
 public $podlist_defaults = array(
     'podlist' => array(
-        'joindiaspora.com',
-        'diasp.org',
-        'pod.geraspora.de',
-        'diasp.eu',
-        'diasp.de',
-        'despora.de'
+        'joindiaspora.com' => '1',
+        'diasp.org' => '1',
+        'pod.geraspora.de' => '1',
+        'diasp.eu' => '1',
+        'diasp.de' => '1',
+        'despora.de' => '1'
     )
 );
 
+public $plugin_version = array('version' => '0.5');
+
+/**
 function create_css_file() {
     $button_defaults = $this -> button_defaults;
     $options_array = get_option('share-on-diaspora-settings');
@@ -121,40 +124,27 @@ function create_css_file() {
     file_put_contents( $css_path, $css_content );
 }
 
-/**
-function create_pod_list_file() {
-    include_once plugin_dir_path( __FILE__ ) . 'pod_list_all.php';
-    $pod_list_path = plugin_dir_path( __FILE__ ) . 'pod_list_show.php';
-    $pod_list_content = '<?php $podlist = array(\'';
-    $options_array = get_option('share-on-diaspora-settings');
-    foreach ( $options_array['podlist'] as $key => $value ) {
-        if ( $value == '1' ) {
-            $list[] = $key;
-        }
-    }
-    $pod_list_content .= implode("', '",$list); 
-    $pod_list_content .= '\'
-); ?>';
-    file_put_contents( $pod_list_path, $pod_list_content );
-}
 */
 
 function set_default() {
+    error_log("We're in set_default function");
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
     $podlist_defaults = $this -> podlist_defaults;
-    $defaults = $button_defaults + $image_defaults + $podlist_defaults;
+    $plugin_version = $this -> plugin_version;
+    $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
     $options_array = get_option('share-on-diaspora-settings');
     foreach ($defaults as $key => $value) {
         if ( empty($options_array[$key]) ) {
             $options_array[$key] = $value;
         }
     }
+    $options_array['section'] = 'set_default';
     update_option('share-on-diaspora-settings', $options_array);
 }
 
 function register_share_on_diaspora_css() {
-    wp_register_style( 'share-on-diaspora', plugins_url( 'share-on-diaspora.css' , __FILE__ ) );
+    wp_register_style( 'share-on-diaspora', plugins_url( 'share-on-diaspora-css.php' , __FILE__ ) );
     wp_enqueue_style( 'share-on-diaspora' );
 }
 
@@ -168,7 +158,7 @@ function generate_button($preview, $use_own_image) {
      */
     $button_defaults = $this -> button_defaults;
     $options_array = get_option('share-on-diaspora-settings');
-    error_log("We got options for generate_button: " . print_r($options_array, true));
+//    error_log("We got options for generate_button: " . print_r($options_array, true));
     if ( $use_own_image ) {
         //use own image
         $button_box = "<div style='border-width:0;padding:0;'><img style='margin:0;padding:0;border-width:0;' src='" . $options_array['image_file'] . "'></div>";
@@ -201,7 +191,7 @@ function generate_button($preview, $use_own_image) {
         }
     }
 
-    $button = "<div style='display:block;'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
+    $button = "<div style='display:block;'><a style='display:inline;' href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
 " . $button_box . "</a></div>";
 
     return $button;
@@ -211,6 +201,13 @@ function generate_podlist() {
     $podlist_preview = "<select style=\"background: #82A6B6; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none; color: #fff\">
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
+    if (! $options_array) {
+        $temp = $this -> podlist_defaults;
+        $options_array = array('podlist' => $temp);
+    } elseif (empty($options_array['podlist'])) {
+        $temp = $this -> podlist_defaults;
+        $options_array['podlist'] = $temp;
+    }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
     }
@@ -240,17 +237,39 @@ function my_admin_init() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
     $podlist_defaults = $this -> podlist_defaults;
-    $defaults = $button_defaults + $image_defaults + $podlist_defaults;
-/**
-delete_option('share-on-diaspora-settings');
-delete_option('share-on-diaspora-settings2');
-$zyu = (array) get_option('share-on-diaspora-settings');
-$zyu2 = (array) get_option('share-on-diaspora-settings2');
-error_log("checking if options were deleted: ". print_r($zyu, true));
-error_log("checking if options were deleted: ". print_r($zyu2, true));
-*/
-    register_setting( 'share_on_diaspora_options', 'share-on-diaspora-settings', array($this, 'my_settings_validate') );
+    $plugin_version = $this -> plugin_version;
+    $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
+
+    //Let's check if it's a fresh install, a fresh update, or normal version
+    if (!get_option('share-on-diaspora-settings')) {
+        //No saved options. Probably a fresh install.
+        error_log("Settings not created. Creating now...");
+        $this -> set_default();
+    } elseif (($result = get_option('share-on-diaspora-settings')) && ($result['version'] != $plugin_version['version'])) {
+        //Saved options exist, but versions differ. Probably a fresh update. Need to save updated options.
+        error_log("Versions differ. Saved version is " . $result['version'] . " and plugin is version " . $plugin_version['version']);
+        $saved_options = get_option('share-on-diaspora-settings');
+        //let's fill the gaps in saved options with defaults and replace the version.
+        $current_options = array_merge($defaults, $saved_options);
+        if ( $old_settings = get_option('share-on-diaspora-settings2') ) {
+            //old settings exist. Let's put them into the new options and delete them.
+            error_log("Old settings exist. " . print_r($old_settings, true));
+            $current_options = array_merge($current_options, $old_settings);
+            delete_option('share-on-diaspora-settings2');
+        }
+        $current_options['version'] = $plugin_version['version'];
+        $current_options['section'] = 'set_default';
+        update_option('share-on-diaspora-settings', $current_options);
+    } else {
+        $result = get_option('share-on-diaspora-settings');
+        // error_log("Currennt verion is: " . $result['version']);
+    }
+
     $options_array = get_option('share-on-diaspora-settings');
+
+    //do we really need this line?
+    add_option('share-on-diaspora-settings');
+    register_setting( 'share_on_diaspora_options', 'share-on-diaspora-settings', array($this, 'my_settings_validate') );
     add_settings_section( 'section-button', __( 'Button properties', 'share-on-diaspora' ), array($this, 'section_one_callback'), 'share_on_diaspora_options-button' );
     add_settings_field( 'button_background', __( 'Background color', 'share-on-diaspora' ), array($this, 'my_text_input'), 'share_on_diaspora_options-button', 'section-button', array(
         'name' => 'share-on-diaspora-settings[button_background]',
@@ -292,19 +311,20 @@ error_log("checking if options were deleted: ". print_r($zyu2, true));
     add_settings_field( 'reset', __( 'Restore defaults', 'share-on-diaspora' ), array($this, 'share_on_diaspora_reset_callback'), 'share_on_diaspora_options-button', 'section-button');
 
     add_settings_section( 'section-upload', __( 'Upload button image', 'share-on-diaspora' ), array($this, 'section_upload_callback'), 'share_on_diaspora_options-upload' );
-    add_settings_field( 'image_file', __( 'Image URL', 'share-on-diaspora' ), array($this, 'share_on_diaspora_url_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
     add_settings_field( 'image', __( 'Upload new custom image', 'share-on-diaspora' ), array($this, 'image_upload_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
-    add_settings_field( 'delete_image', __( 'Delete custom image', 'share-on-diaspora' ), array($this, 'share_on_diaspora_delete_callback'), 'share_on_diaspora_options-upload', 'section-upload');
+    add_settings_field( 'image_file', __( 'OR provide image URL', 'share-on-diaspora' ), array($this, 'share_on_diaspora_url_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
+    add_settings_field( 'delete_image', __( 'Clear current image', 'share-on-diaspora' ), array($this, 'share_on_diaspora_delete_callback'), 'share_on_diaspora_options-upload', 'section-upload');
     add_settings_field( 'use_own_image', __( 'Use custom image', 'share-on-diaspora' ), array($this, 'use_image_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
-//    error_log("Added settings field use_own_image. Option setting is equal to " .  $options_array['use_own_image']);
-//    add_settings_section( 'image_file');
-//$id, $title, $callback, $page, $section, $args
+
     add_settings_section( 'section-podlist', __( 'Pod properties', 'share-on-diaspora' ), array($this, 'section_two_callback'), 'share_on_diaspora_options-podlist' );
     require_once(plugin_dir_path( __FILE__ ).'pod_list_all.php');
     foreach ($podlist as $i) {
         add_settings_field( $i, $i, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $i));
     }
-    array($this,"set_default()");
+
+
+//    $options_array = get_option('share-on-diaspora-settings');
+//    error_log('Settings are: ' . print_r($options_array, true));    
 }
 
 function section_one_callback() {
@@ -345,14 +365,13 @@ function share_on_diaspora_url_callback() {
 }
 
 function share_on_diaspora_delete_callback() {
-    echo "<input type='submit' name='share-on-diaspora-settings[delete]' value='Delete image'>";
+    echo "<input type='submit' name='share-on-diaspora-settings[delete]' value='Clear'>";
 }
 
 function use_image_callback() {
     $image_defaults = $this -> image_defaults;
     $options_array = get_option('share-on-diaspora-settings');
     if (!isset($options_array['use_own_image'])) { $options_array['use_own_image'] = $image_defaults['use_own_image']; } 
-    error_log('use_image_callback f-n. checked = ' . $options_array['use_own_image']);
     echo "<input type='checkbox' name='share-on-diaspora-settings[use_own_image]' value='checked'" . ( ($options_array['use_own_image'] == '1') ? 'checked' : '') . ">";
 }
 
@@ -362,6 +381,10 @@ function section_two_callback() {
 
 function my_checkboxes($args) {
     $options_array = get_option('share-on-diaspora-settings');
+    if (! $options_array) {
+        $temp = $this -> podlist_defaults;
+        $options_array = array('podlist' => $temp);
+    }
     $podname = esc_attr( $args['podname'] );
     echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' ";
     echo !empty( $options_array['podlist'][$podname] ) ? "checked":"";
@@ -369,24 +392,29 @@ function my_checkboxes($args) {
 }
 
 function my_settings_validate( $input ) {
-    error_log("My settings_validate: " . print_r($input, true));
-    if ( $input['section'] && $input['section'] == 'button' ) {
-        error_log("Validating the button options");
+//    error_log("My settings_validate: " . print_r($input, true));
+    if ( $input && $input['section'] && $input['section'] == 'button' ) {
+//        error_log("Validating the button options");
         $output = $this -> button_settings_validate($input);
-    } elseif ( $input['section'] && $input['section'] == 'image' ) {
-        error_log("Validating the custom image options");
+    } elseif ( $input && $input['section'] && $input['section'] == 'image' ) {
+//        error_log("Validating the custom image options");
         $output = $this -> image_settings_validate($input);
-    } elseif ( $input['section'] && $input['section'] == 'podlist' ) {
-        error_log("Validating the pod list options");
+    } elseif ( $input && $input['section'] && $input['section'] == 'podlist' ) {
+//        error_log("Validating the pod list options");
         $output = $this -> podlist_settings_validate($input);
+    } elseif ( $input && $input['section'] && $input['section'] == 'set_default' ) {
+//        error_log("Validating defaults");
+        unset($input['section']);
+        return $input;
     } else {
-        error_log("Where am I???");
-        return;
+//        error_log("Where am I???");
+        return $input;
     }
     unset($output['section']);
-    $options_array = (array) get_option('share-on-diaspora-settings');
+    //getting the saved options, or creating an empty array if fresh install
+    $options_array = ( $result = get_option('share-on-diaspora-settings')) ? $result : array();
     $output = array_merge($options_array, $output);
-    unset($output['0']);
+//    unset($output['0']);
 //    update_option('share-on-diaspora-settings', $output);
     return $output;
 }
@@ -418,9 +446,15 @@ function button_settings_validate($input) {
 }
 
 function image_settings_validate($input) {
-     // just a placeholder at this point;
-    if (!empty($input['use_own_image'])) {
-        error_log("Got value for use_own_image. Cool. " . print_r($input, true));
+//    error_log("Validating image settings. " . print_r($input, true));
+    if ($input['use_own_image'] == '1' && empty($input['image_file'])) {
+        add_settings_error( 'share-on-diaspora-settings', 'toggle_disabled', 'No image file specified. Falling back to standard button.', 'error' );
+/**
+        global $wp_settings_errors;
+        error_log(print_r($wp_settings_errors, true));
+        set_transient('settings_errors', $wp_settings_errors);
+*/
+        $input['use_own_image'] = '0';
     }
     return $input;
 }
@@ -430,6 +464,10 @@ function podlist_settings_validate($input) {
         {
         add_settings_error( 'share-on-diaspora-settings', 'not writable', __( 'Plugin directory is not writable. Can not save css file.', 'share-on-diaspora' ) );
         }
+    if (empty($input['podlist'])) {
+        add_settings_error( 'share-on-diaspora-settings', 'empty-podlist', sprintf( __('Value missing for %s. Reverting to default.', 'share-on-diaspora' ), "'podlist'") );
+        $input = array_merge($input, $this -> podlist_defaults);
+    }
     return $input;
 }
 
@@ -448,21 +486,19 @@ function share_on_diaspora_tab2() {
     echo "<h3>".__( "Custom Image Preview", 'share-on-diaspora' )."</h3>";
     echo $this -> show_button_image();
     echo "<br>";
-    echo "<form method='post' name='upload' enctype=\"multipart/form-data\">";
-    error_log("Drawing form...");
+    echo "<form method='post' name='upload' enctype='multipart/form-data'>";
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='image'>";
     settings_fields( 'share_on_diaspora_options' );
     do_settings_sections( 'share_on_diaspora_options-upload' );
     submit_button(__('Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
-    error_log("Finished drawing form");
 }
 
 function share_on_diaspora_tab3() {
     echo "<h3>" . __('Podlist Preview', 'share-on-diaspora') . "</h3>";
     echo $this -> generate_podlist(); 
     echo "<br>";
-    echo "<form action=\"options.php\" method=\"POST\">";
+    echo "<form action='options.php' method='POST'>";
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='podlist'>";
     settings_fields( 'share_on_diaspora_options' );
     do_settings_sections( 'share_on_diaspora_options-podlist' ); 
@@ -471,30 +507,22 @@ function share_on_diaspora_tab3() {
 }
 
 function share_on_diaspora_options_page() {
+    //open first tab by default
     $tab = isset($_GET['tab']) ? $_GET['tab'] : '1';
     if ( !current_user_can( 'manage_options' ) ) {
         wp_die( __( 'You do not have sufficient permissions to access this page.' , 'share-on-diaspora') );
     }
-    if ( isset($_GET['settings-updated']) && $_GET['settings-updated']) {
-        switch ($tab) {
-            //button settings have been saved. Put them into a css file.
-            case '1': $this -> create_css_file(); break;
-            //pod list settings saved. Put the into a file.
-            case '3': 
-            //$this -> create_pod_list_file();
-            break;
-        }
-    }
     if (!empty($_POST)) {
-        error_log("Received a POST request. Someone's updating his custom image settings. Let's see it.");
-        error_log(print_r($_POST, true));
         // now lets use the info from the post
         $image_settings = array();
-        $image_settings['use_own_image'] = (!empty($_POST['share-on-diaspora-settings']['use_own_image'])) ? '1' : '0';
-        error_log("Now use_own_image is equal to " . $image_settings['use_own_image']);
-        if (!empty($_FILES) && !empty($_FILES['file']) && ($_FILES['file']['error'] == '0')) {
-            error_log("Someone's uploading files. Let's see what's inside...");
-            error_log(print_r($_FILES, true));
+        if (!empty($_POST['share-on-diaspora-settings']['delete'])) {
+            // if "clear" was pressed, then clear image_file and ignore other options
+            $image_settings['image_file'] = '';
+            add_settings_error( 'share-on-diaspora-settings', 'image deleted', __('Image URL cleared.', 'share-on-diaspora' ) );
+        } elseif (!empty($_FILES) && !empty($_FILES['file']) && ($_FILES['file']['error'] == '0')) {
+            // if something was uploaded, handle it and ignore other options
+            // error_log("Someone's uploading files. Let's see what's inside...");
+            // error_log(print_r($_FILES, true));
             $uploadedfile = $_FILES['file'];
             $upload_overrides = array( 'test_form' => false );
             $movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
@@ -509,51 +537,45 @@ function share_on_diaspora_options_page() {
                     'post_content' => '',
                     'post_status' => 'inherit'
                 );
+/**
+                error_log("filename is: " . $filename);
+                error_log("attachment is: " . print_r($attachment, true));
+                error_log("wp_upload_dir is: " . print_r($wp_upload_dir, true));
+*/
                 $attach_id = wp_insert_attachment( $attachment, $filename);
+                // error_log("attach_id is: " . $attach_id);
                 require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-                $attach_data = wp_generate_attachment_metadata($attach_id,$wp_upload_dir.$attachment['post_title'] );
-                wp_update_attachment_metadata( $attach_id, $attach_data );
+                $attach_data = wp_generate_attachment_metadata($attach_id,$attachment['guid'] );
+                // error_log("attach_data is: " . print_r($attach_data, true));
+                $result = wp_update_attachment_metadata( $attach_id, $attach_data );
+                // error_log("wp_update_attachment_metadata returned result: " . print_r($result, true));
             }
-            error_log("Uploaded file status: " . print_r($movefile, true));
             $image_settings['image_file'] = $movefile['url'];
             add_settings_error( 'share-on-diaspora-settings', 'image uploaded', __('Custom image file uploaded.', 'share-on-diaspora' ) );
+        } elseif (!empty($_POST['share-on-diaspora-settings']['image_file'])) {
+            //finally, if image URL was provided, use it
+            $image_settings['image_file'] = $_POST['share-on-diaspora-settings']['image_file'];
+//            error_log("Image url provided. POST['share-on-diaspora-settings']['image_file'] is " . $_POST['share-on-diaspora-settings']['image_file'] . ". image_settings['image_file'] is " . $image_settings['image_file']);
         }
-        if (!empty($_POST['share-on-diaspora-settings']['delete'])) {
-            error_log("Got a delete request");
-            $image_settings['image_file'] = '';
-            add_settings_error( 'share-on-diaspora-settings', 'image deleted', __('Custom image file deleted.', 'share-on-diaspora' ) );
-        }
-    //let's merge it with old options
-    $options_array = (array) get_option('share-on-diaspora-settings');
-    $options_array = array_merge($options_array, $image_settings);
-    $options_array['section'] = 'image';
-    error_log("Let's update image settings, together with the rest... " . print_r($options_array, true));
-    update_option('share-on-diaspora-settings', $options_array);
-    error_log("Finished updating image options.");
+        // now let's handle the use_image toggle
+        $image_settings['use_own_image'] = (!empty($_POST['share-on-diaspora-settings']['use_own_image'])) ? '1' : '0';
+        //let's merge it with existing options
+        $options_array = (array) get_option('share-on-diaspora-settings');
+        $options_array = array_merge($options_array, $image_settings);
+        $options_array['section'] = 'image';
+        // well, this sends the entire option array to validation function. kinda double work
+        update_option('share-on-diaspora-settings', $options_array);
     }
-
-
-/**
-    $attachment = array(
-    'post_title' => $uploadedfile['name'],
-    'post_content' => '',
-    'post_type' => 'attachment',
-    'post_parent' => $post->ID,
-    'post_mime_type' => $uploadedfile['type'],
-    'guid' => $movefile['url']
-    );
-
-// Create an Attachment in WordPress
-    $id = wp_insert_attachment( $attachment,$uploaded_file[ 'file' ], $post->ID );
-    wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $uploaded_file['file'] ) );
- 
-    update_post_meta($post->ID, $field, $id);
-*/
 
     ?>
     <div class="wrap">
-        <?php screen_icon(); ?>
+        <?php
+        screen_icon();
+        //form in tab 2 is updated manually, so settings errrors are not shown properly. Thus workaround.
+        if ($_GET['tab'] == '2') settings_errors('share-on-diaspora-settings');
+        ?>
         <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
+        <p><?php printf( __('Visit the %1$s plugin\'s homepage %2$s for further details.', 'share-on-diaspora'), "<a href='http://wordpress.org/plugins/share-on-diaspora'>", '</a>'); ?></p>
         <h2 class="nav-tab-wrapper">
         <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <?php if ( $tab == '1' ) echo "nav-tab-active"; ?>"><?php echo __('Button options', 'share-on-diaspora'); ?></a>
         <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <?php if ( $tab == '2' ) echo "nav-tab-active"; ?>"><?php echo __('Custom image', 'share-on-diaspora'); ?></a>
@@ -578,7 +600,7 @@ public function __construct() {
     // Register style sheet.
     add_action( 'wp_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
     add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_css') ); 
-    add_action("the_content", array($this, 'diaspora_button_display') );
+    add_action('the_content', array($this, 'diaspora_button_display') );
     add_action( 'admin_menu', array($this, 'share_on_diaspora_menu') );
     add_action( 'admin_init', array($this, 'my_admin_init') );
 } //end function
