@@ -253,7 +253,7 @@ $podlist = ShareOnDiaspora::$podlist_defaults['podlist'];
 */
 $options_array = get_option('share-on-diaspora-settings');
 $podlist = array_keys($options_array['podlist']);
-error_log("Pod list is: " . print_r($podlist, true));
+//error_log("Pod list is: " . print_r($podlist, true));
 foreach ($podlist as &$i)
 {
 print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
@@ -262,7 +262,7 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 </select>
 <h3><?php _e('or choose from history', 'share-on-diaspora'); ?></h3>
 </section>
-<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="Example: <?php print $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
+<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="<?php _e('Example:', 'share-on-diaspora'); print " " . $podlist[array_rand($podlist)]; ?>" type="text" list="datalist1" />
 <datalist id="datalist1">
 <?php
 foreach ($podlist as &$i)

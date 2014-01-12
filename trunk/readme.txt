@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: Vitalie Ciubotaru, Vostok
+Contributors: Vitalie Ciubotaru
 Donate link: 
 Tags: diaspora, share, button
 Requires at least: 3.2.1
@@ -16,14 +16,6 @@ this one is not tied to one single pod. Instead it allowes the users to select t
 or type it directly. The button is highly customizable, allowing blog admins to set the color, size and shape in 
 accordance with the overall look and feel of their blogs.
 
-= i18n =
-There is an ongoing effort to translate the plugin into other languages.
-So far, the following translations are completed:
-* Spanish -- contributed by Andrew Kurtis
-* Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
-* Romanian
-* Russian
-
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -31,42 +23,21 @@ So far, the following translations are completed:
 
 == Frequently Asked Questions ==
 = Is it another button linked to JoinDiaspora? =
-No. Users can reshare to any Diaspora pod: select from the list or type their
-own.
+No. Users can reshare to any Diaspora pod: select from the list or type their own.
 
-= I want to report a bug, request a feature or contribute code. What shall I
-do? =
-Bug reports, feature requests and real code are always welcome. Check out
-https://github.com/ciubotaru/share-on-diaspora or drop a line to "vitalie at
-ciubotaru dot tk".
+= I want to report a bug, request a feature or contribute code. What shall I do? =
+Bug reports, feature requests and real code are always welcome. Check out https://github.com/ciubotaru/share-on-diaspora or drop a line to "vitalie at ciubotaru dot tk".
 
 = Does your plugin collect private information about blog visitors? =
 No.
-
-= The button color scheme does not fit into my blog theme. Can I change it? =
-Yes. In the plugin settings panel, go to 'Button options' tab (default) and
-tweak the colors, size and shape of your button. After you are done, press
-'Update'.
-
-= I want to use my own image. Is it possible? =
-Yes. In the plugin settings panel, go to 'Custom image' tab and upload your
-image or insert the URL of an existing image (e.g. from your Media gallery).
-After you are done, press 'Update'.
-
-= I want to change the list of pods. Is it possible? =
-Yes. In the plugin settings panel, go to 'Pod list options' tab and check those
-pods that you want to see in the dialog. After you are done, press 'Update'.
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"
 post in "Twenty Thirteen" theme.
 2. Choose a Diaspora pod from the list or type it in the text field.
-3. Verify the text of your post, Aspects that will see it etc, and press the
-Post button.
-4. To customize the look of you button, go to the Settings page, 'Button
-options' tab.
-5. To choose the pods to be included in the drop-down list, go to the Settings
-page, 'Pod list options' tab.
+3. Verify the text of your post, Aspects that will see it etc, and press the Post button.
+4. To customize the look of you button, go to the Settings page, 'Button options' tab.
+5. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
 
 == Changelog ==
 = 0.4.1 =
@@ -88,8 +59,7 @@ page, 'Pod list options' tab.
 * Bug-fix: function names can cause conflict
 
 = 0.3 =
-* Customizable button settings (text color, background color, size and rounded
-corners)
+* Customizable button settings (text color, background color, size and rounded corners)
 
 = 0.2 =
 * Pod selection dialog renewed
@@ -98,6 +68,4 @@ corners)
 * First release
 
 == Upgrade Notice ==
-Version 0.3.3 introduces new ways to customize you share button. The default
-values for these options may not match your preferences, so please make sure to
-check the "Share on D*" settings page and tweak them to your liking.
+Version 0.3.3 introduces new ways to customize you share button. The default values for these options may not match your preferences, so please make sure to check the "Share on D*" settings page and tweak them to your liking.

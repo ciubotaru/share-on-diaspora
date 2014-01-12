@@ -5,7 +5,7 @@
  * Sorted by version code, percent uptime and months online
  */
 
-$share_on_diaspora_podlist = array(
+$podlist = array(
   'joindiaspora.com',
   'diasp.org',
   'pod.geraspora.de',

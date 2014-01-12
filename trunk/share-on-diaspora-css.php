@@ -22,7 +22,6 @@ include "../../../wp-load.php";
     $css_content = "#diaspora-button-box {
     box-sizing: content-box;
     -moz-box-sizing: content-box;
-    margin-right: 10px;
     display: inline-block;
     height: " . $bs . "px;
     background-color: #" . $bb . ";
