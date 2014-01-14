@@ -143,10 +143,11 @@ function generate_podlist() {
 }
 
 function diaspora_button_display($content) {
-    if( in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] ) ) return $content;
-    $options_array = get_option('share-on-diaspora-settings');
-    $button_box = $this -> generate_button(FALSE, $options_array['use_own_image']);
-    return $content . $button_box;
+    if ( get_post_type() == 'post' && (!in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] ))) {
+        $options_array = get_option('share-on-diaspora-settings');
+        $button_box = $this -> generate_button(FALSE, $options_array['use_own_image']);
+        return $content . $button_box;
+    } else return $content;
 }
 
 function share_on_diaspora_menu() {
@@ -511,7 +512,7 @@ public function __construct() {
     // Register style sheet.
     add_action( 'wp_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
     add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_css') ); 
-    add_action('the_content', array($this, 'diaspora_button_display') );
+    add_filter('the_content', array($this, 'diaspora_button_display') );
     add_action( 'admin_menu', array($this, 'share_on_diaspora_menu') );
     add_action( 'admin_init', array($this, 'my_admin_init') );
 } //end function
