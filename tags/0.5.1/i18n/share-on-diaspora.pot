@@ -1,0 +1,279 @@
+# Copyright (C) 2014 Share on Diaspora
+# This file is distributed under the same license as the Share on Diaspora package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Share on Diaspora 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/share-on-diaspora\n"
+"POT-Creation-Date: 2014-01-12 12:14:46+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: new_window.php:231
+msgid "Sharing"
+msgstr ""
+
+#: new_window.php:237
+msgid "Choose your Diaspora* pod"
+msgstr ""
+
+#: new_window.php:239 share-on-diaspora.php:129
+msgid "Select from the list"
+msgstr ""
+
+#: new_window.php:263
+msgid "or choose from history"
+msgstr ""
+
+#: new_window.php:265
+msgid "or introduce your pod URL"
+msgstr ""
+
+#: new_window.php:265
+msgid "Example:"
+msgstr ""
+
+#: new_window.php:273
+msgid "Share"
+msgstr ""
+
+#: new_window.php:274
+msgid "Remember my choice, don't ask again"
+msgstr ""
+
+#: new_window.php:274
+msgid "Advanced options"
+msgstr ""
+
+#: new_window.php:274
+msgid "Use Markdown syntax for link"
+msgstr ""
+
+#: new_window.php:274
+msgid "Shorten URL (j.mp)"
+msgstr ""
+
+#: new_window.php:274
+msgid "Never remember my last 3 pods"
+msgstr ""
+
+#: new_window.php:274
+msgid "Forget my last 3 pods"
+msgstr ""
+
+#: share-on-diaspora.php:105 share-on-diaspora.php:110
+msgid "Page address here"
+msgstr ""
+
+#: share-on-diaspora.php:106 share-on-diaspora.php:111
+msgid "Page title here"
+msgstr ""
+
+#: share-on-diaspora.php:153
+msgid "Share on D*"
+msgstr ""
+
+#: share-on-diaspora.php:207
+msgid "Button properties"
+msgstr ""
+
+#: share-on-diaspora.php:208
+msgid "Background color"
+msgstr ""
+
+#: share-on-diaspora.php:213
+msgid "Background color on mouse-over"
+msgstr ""
+
+#: share-on-diaspora.php:218
+msgid "Text and border color"
+msgstr ""
+
+#: share-on-diaspora.php:223
+msgid "Text and border color on mouse-over"
+msgstr ""
+
+#: share-on-diaspora.php:228
+msgid "Rounded corners"
+msgstr ""
+
+#: share-on-diaspora.php:231
+msgid "Rounded"
+msgstr ""
+
+#: share-on-diaspora.php:231
+msgid "Square"
+msgstr ""
+
+#: share-on-diaspora.php:234
+msgid "Button size"
+msgstr ""
+
+#: share-on-diaspora.php:237
+msgid "Small"
+msgstr ""
+
+#: share-on-diaspora.php:237
+msgid "Medium"
+msgstr ""
+
+#: share-on-diaspora.php:237
+msgid "Large"
+msgstr ""
+
+#: share-on-diaspora.php:237
+msgid "Huge"
+msgstr ""
+
+#: share-on-diaspora.php:240
+msgid "Text on the button"
+msgstr ""
+
+#: share-on-diaspora.php:245
+msgid "Restore defaults"
+msgstr ""
+
+#: share-on-diaspora.php:247
+msgid "Upload button image"
+msgstr ""
+
+#: share-on-diaspora.php:248
+msgid "Upload new custom image"
+msgstr ""
+
+#: share-on-diaspora.php:249
+msgid "OR provide image URL"
+msgstr ""
+
+#: share-on-diaspora.php:250
+msgid "Clear current image"
+msgstr ""
+
+#: share-on-diaspora.php:251
+msgid "Use custom image"
+msgstr ""
+
+#: share-on-diaspora.php:253
+msgid "Pod properties"
+msgstr ""
+
+#: share-on-diaspora.php:261
+msgid ""
+"Use the parameters below to change the look and feel of your share button. "
+"All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty "
+"to restore the default value."
+msgstr ""
+
+#: share-on-diaspora.php:280
+msgid "Defaults"
+msgstr ""
+
+#: share-on-diaspora.php:284
+msgid "Select an image to upload and use as button."
+msgstr ""
+
+#: share-on-diaspora.php:288
+msgid "Filename"
+msgstr ""
+
+#: share-on-diaspora.php:298
+msgid "Clear"
+msgstr ""
+
+#: share-on-diaspora.php:309
+msgid ""
+"Below is the list of Diaspora pods. Check the ones that you what to appear "
+"in the drop-down menu in the pod selection window."
+msgstr ""
+
+#: share-on-diaspora.php:349
+msgid "All parameters reverted to their default values."
+msgstr ""
+
+#: share-on-diaspora.php:360
+msgid "Invalid value for %s. Reverting to default."
+msgstr ""
+
+#: share-on-diaspora.php:364 share-on-diaspora.php:388
+msgid "Value missing for %s. Reverting to default."
+msgstr ""
+
+#: share-on-diaspora.php:385
+msgid "Plugin directory is not writable. Can not save css file."
+msgstr ""
+
+#: share-on-diaspora.php:395
+msgid "Button Preview"
+msgstr ""
+
+#: share-on-diaspora.php:401 share-on-diaspora.php:412
+#: share-on-diaspora.php:424
+msgid "Update"
+msgstr ""
+
+#: share-on-diaspora.php:406
+msgid "Custom Image Preview"
+msgstr ""
+
+#: share-on-diaspora.php:417
+msgid "Podlist Preview"
+msgstr ""
+
+#: share-on-diaspora.php:432
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: share-on-diaspora.php:440
+msgid "Image URL cleared."
+msgstr ""
+
+#: share-on-diaspora.php:463
+msgid "Custom image file uploaded."
+msgstr ""
+
+#: share-on-diaspora.php:485
+msgid "Share on Diaspora (ver. %s) Options"
+msgstr ""
+
+#: share-on-diaspora.php:486
+msgid "Need help? Please read %1$s plugin's FAQ page %2$s."
+msgstr ""
+
+#: share-on-diaspora.php:488
+msgid "Button options"
+msgstr ""
+
+#: share-on-diaspora.php:489
+msgid "Custom image"
+msgstr ""
+
+#: share-on-diaspora.php:490
+msgid "Pod list options"
+msgstr ""
+
+#: share-on-diaspora.php:499
+msgid "Source code repository"
+msgstr ""
+
+#: share-on-diaspora.php:500
+msgid "Donate BTC"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Share on Diaspora"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vitalie Ciubotaru"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/ciubotaru"
+msgstr ""
