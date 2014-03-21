@@ -54,9 +54,14 @@ Yes. In the plugin settings panel, go to 'Custom image' tab and upload your
 image or insert the URL of an existing image (e.g. from your Media gallery).
 After you are done, press 'Update'.
 
-= I want to change the list of pods. Is it possible? =
+= I want to change the list of displayed pods. Is it possible? =
 Yes. In the plugin settings panel, go to 'Pod list options' tab and check those
 pods that you want to see in the dialog. After you are done, press 'Update'.
+
+= My pod is not in the list. How can I add it? =
+I would suggest that you let me know the pod URL, so that I can add it and 
+update everybody's list. Of course, you can do it yourself by editing the 
+`pod_list_all.php' in your plugin's directory. Watch out for commas and quotes!
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"
