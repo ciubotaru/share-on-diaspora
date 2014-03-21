@@ -19,6 +19,7 @@ accordance with the overall look and feel of their blogs.
 = i18n =
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are completed:
+
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
@@ -35,8 +36,7 @@ So far, the following translations are completed:
 No. Users can reshare to any Diaspora pod: select from the list or type their
 own.
 
-= I want to report a bug, request a feature or contribute code. What shall I
-do? =
+= I want to report a bug, request a feature or contribute code. What shall I do? =
 Bug reports, feature requests and real code are always welcome. Check out
 https://github.com/ciubotaru/share-on-diaspora or drop a line to "vitalie at
 ciubotaru dot tk".
