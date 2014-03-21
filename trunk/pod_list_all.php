@@ -13,7 +13,7 @@ $podlist = array(
   'diasp.de',
   'diasporabrazil.org',
   'diasporabr.com.br',
-  '',
+  'diaspora-japan.com',
   'despora.de',
   'poddery.com',
   'londondiaspora.org',
