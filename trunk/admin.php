@@ -116,6 +116,11 @@ public function filter_plugin_actions($l, $file) {
 			'value' => (isset($options_array['button_color']) ? $options_array['button_color'] : $button_defaults['button_color'])
 			)
 		);
+		add_settings_field( 'color', __( 'Just color', 'share-on-diaspora' ), array($this, 'my_text_input'), 'share_on_diaspora_options-button', 'section-button', array(
+			'name' => 'color',
+			'value' => ''
+			)
+		);
 		add_settings_field( 'button_color_hover', __( 'Text and border color on mouse-over', 'share-on-diaspora' ), array($this, 'my_text_input'), 'share_on_diaspora_options-button', 'section-button', array(
 			'name' => 'share-on-diaspora-settings[button_color_hover]',
 			'value' => (isset($options_array['button_color_hover']) ? $options_array['button_color_hover'] : $button_defaults['button_color_hover'])
@@ -205,7 +210,7 @@ public function filter_plugin_actions($l, $file) {
 	function my_text_input( $args ) {
 		$name = esc_attr( $args['name'] );
 		$value = esc_attr( $args['value'] );
-		echo "<input type='text' name='$name' value='$value' /> ";
+		echo "<input type='text' class='color' name='$name' value='$value' /> ";
 	}
 
 	function my_radio_group( $args ) {

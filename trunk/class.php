@@ -7,6 +7,11 @@ class ShareOnDiaspora {
 		// Register style sheet.
 		add_action( 'wp_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
 		add_filter( 'the_content', array($this, 'diaspora_button_display') );
+/**
+		add_filter('plugin_row_meta', array($this, 'wppa_donate_link'), 10, 2);
+		$plugin = plugin_basename(__FILE__);
+		add_filter("plugin_action_links_$plugin", array( $this, 'your_plugin_settings_link') );
+**/
 	}
 
 	public static function plugin_activation() {
@@ -21,9 +26,40 @@ class ShareOnDiaspora {
 		load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n' );
 	}
 
+/* This function will add "donate" link to main plugins page */
+/**
+	function wppa_donate_link($links, $file) { 
+		if ( $file == plugin_basename(__FILE__) ) { 
+			$donate_link_usd = '<a target="_blank" title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=WP-Photo-Album-Plus&item_number=Support-Open-Source&currency_code=USD&lc=US">Donate USD</a>'; 
+			$donate_link_eur = '<a target="_blank" title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=OpaJaap@OpaJaap.nl&item_name=WP-Photo-Album-Plus&item_number=Support-Open-Source&currency_code=EUR&lc=US">Donate EUR</a>';
+			$docs_link = '<a target="_blank" href="http://wppa.opajaap.nl/" title="Docs & Demos" >Documentation and examples</a>';
+		
+			$links[] = $donate_link_usd . ' | ' . $donate_link_eur . ' | ' . $docs_link;  
+		}
+		return $links; 
+	}
+**/
+
+/* Add settings link on plugin page */
+/**
+	function your_plugin_settings_link($links) { 
+		$settings_link = '<a href="options-general.php?page=share_on_diaspora_settings_page">' . __('Settings') . '</a>'; 
+		array_unshift($links, $settings_link); 
+		return $links; 
+	}
+**/
+
 	public static function register_share_on_diaspora_css() {
 		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . 'share-on-diaspora-css.php' );
 		wp_enqueue_style( 'share-on-diaspora' );
+
+//		for testing only
+//		wp_register_style( 'color-picker-css', 'http://make.simplesharebuttons.com/colorpicker/mcColorPicker.css' );
+//		wp_enqueue_style( 'color-picker-css' );
+//		wp_register_script( 'color-picker-js', 'http://make.simplesharebuttons.com/colorpicker/mcColorPicker.js' );
+//		wp_enqueue_script( 'color-picker-js' );
+//		end test block
+
 	}
 
 	public static function register_share_on_diaspora_js() {
