@@ -88,7 +88,7 @@ function generate_button($preview, $use_own_image) {
     $options_array = get_option('share-on-diaspora-settings');
     if ( $use_own_image ) {
         //use own image
-        $button_box = "<div style='border-width:0;padding:0;'><img style='margin:0;padding:0;border-width:0;' src='" . $options_array['image_file'] . "'></div>";
+        $button_box = "<div id='diaspora-button-ownimage-div''><img id='diaspora-button-ownimage-img' src='" . $options_array['image_file'] . "'></div>";
     } else {
         //use standard image
         switch ($options_array['button_size']) {
@@ -118,14 +118,14 @@ function generate_button($preview, $use_own_image) {
         }
     }
 
-    $button = "<div title='Diaspora*' style='display:block;'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
+    $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
 " . $button_box . "</a></div>";
 
     return $button;
 }
 
 function generate_podlist() {
-    $podlist_preview = "<select style=\"background: #82A6B6; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none; color: #fff\">
+    $podlist_preview = "<select id='diaspora-button-podlist'>
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
     if (! $options_array) {

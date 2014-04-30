@@ -60,8 +60,8 @@ pods that you want to see in the dialog. After you are done, press 'Update'.
 
 = My pod is not in the list. How can I add it? =
 I would suggest that you let me know the pod URL, so that I can add it and 
-update everybody's list. Of course, you can do it yourself by editing the 
-`pod_list_all.php' in your plugin's directory. Watch out for commas and quotes!
+update everybody's list. Of course, you can do it yourself by adding a line 
+to `pod_list_all.txt' in your plugin's directory.
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"

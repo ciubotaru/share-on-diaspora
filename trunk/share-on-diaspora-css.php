@@ -61,6 +61,31 @@ include "../../../wp-load.php";
     margin: 0 auto;
     padding: 0;
     border: 0}
+
+#diaspora-button-ownimage-div {
+    border: 0px none;
+    padding: 0px}
+
+#diaspora-button-ownimage-img {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none}
+
+#diaspora-button-container {
+    display: block}
+
+#diaspora-button-podlist {
+    background: #82A6B6;
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -moz-appearance: none
+    -webkit-appearance: none;
+    color: #fff}
 ";
 echo $css_content;
 ?>
