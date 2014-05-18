@@ -437,7 +437,6 @@ function share_on_diaspora_tab3() {
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='podlist'>";
     settings_fields( 'share_on_diaspora_options' );
     do_settings_sections( 'share_on_diaspora_options-podlist' ); 
-    echo "<table class='form-table' name='custom-pods'></table>"; 
     submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
 }
