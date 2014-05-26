@@ -20,11 +20,12 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are completed:
 
-* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com
+* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
 * Japanese (partial so far)
+* French (just some words translated)
 
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
@@ -77,6 +78,13 @@ page, 'Custom Image' tab.
 page, 'Pod list options' tab.
 
 == Changelog ==
+= 0.5.3 =
+* New feature (admin can add custom pods from plugin settings panel)
+* i18n: minor updates in translation
+
+= 0.5.2 =
+* Updated the list of active pods
+
 = 0.5.1 =
 * Bug-fix: Button on pages (changed to posts-only)
 * i18n: Portuguese (Brasil) and Romanian translations updated. A [parial]
