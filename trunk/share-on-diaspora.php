@@ -53,6 +53,45 @@ public $podlist_defaults = array(
     )
 );
 
+public $color_profiles = array(
+    'Vitalie' => array(
+        'button_color' => '3b5998',
+        'button_background' => 'eceef5',
+        'button_color_hover' => '3b5998',
+        'button_background_hover' => 'ffffff'
+        ),
+    'Ramoth' => array(
+        'button_color' => 'cccccc',
+        'button_background' => '222222',
+        'button_color_hover' => 'ffffff',
+        'button_background_hover' => '222222'
+        ),
+    'Simons' => array(
+        'button_color' => '51A2C1',
+        'button_background' => 'ffffff',
+        'button_color_hover' => '51A2C1',
+        'button_background_hover' => 'ffffff'
+        ),
+    'Fûdo' => array(
+        'button_color' => '006633',
+        'button_background' => 'A9C599',
+        'button_color_hover' => 'fef4cc',
+        'button_background_hover' => '006633'
+        ),
+   'Irene' => array(
+        'button_color' => '0d9b50',
+        'button_background' => 'edf9d2',
+        'button_color_hover' => 'dd3333',
+        'button_background_hover' => 'e4c0bb'
+        ),
+    'Asso' => array(
+        'button_color' => 'FF9D45',
+        'button_background' => '333333',
+        'button_color_hover' => 'ff9d45',
+        'button_background_hover' => '222222'
+        )
+    );
+
 public $plugin_version = array('version' => '0.5');
 
 function set_default() {
@@ -184,6 +223,7 @@ function my_admin_init() {
     $image_defaults = $this -> image_defaults;
     $podlist_defaults = $this -> podlist_defaults;
     $plugin_version = $this -> plugin_version;
+    $color_profiles = $this -> color_profiles;
     $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
 
     //Let's check if it's a fresh install, a fresh update, or normal version
@@ -210,6 +250,12 @@ function my_admin_init() {
     //do we really need this line?
     add_option('share-on-diaspora-settings');
     register_setting( 'share_on_diaspora_options', 'share-on-diaspora-settings', array($this, 'my_settings_validate') );
+
+    add_settings_section( 'section-colorprofile', __( 'Choose a preset color profile', 'share-on-diaspora' ), array($this, 'section_colorprofile_callback'), 'share_on_diaspora_options-colorprofile' );
+    foreach ($color_profiles as $profile_name => $profile) {
+        add_settings_field( $profile_name, $profile_name, array($this, 'my_color_profile'), 'share_on_diaspora_options-colorprofile', 'section-colorprofile', $profile);
+    };
+
     add_settings_section( 'section-button', __( 'Button properties', 'share-on-diaspora' ), array($this, 'section_one_callback'), 'share_on_diaspora_options-button' );
     add_settings_field( 'button_background', __( 'Background color', 'share-on-diaspora' ), array($this, 'my_text_input'), 'share_on_diaspora_options-button', 'section-button', array(
         'name' => 'share-on-diaspora-settings[button_background]',
@@ -266,6 +312,31 @@ function my_admin_init() {
         add_settings_field( $i, $i, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $i));
     };
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
+}
+
+function section_colorprofile_callback() {
+    printf( __( 'You can choose a preset color profile for your button on this tab, or fine-tune it on the \'Button Options\' tab'), 'share-on-diaspora' );
+    echo "<input type='hidden' name='share-on-diaspora-settings[button_background]'/>";
+    echo "<input type='hidden' name='share-on-diaspora-settings[button_background_hover]' />";
+    echo "<input type='hidden' name='share-on-diaspora-settings[button_color]' />";
+    echo "<input type='hidden' name='share-on-diaspora-settings[button_color_hover]' />";
+}
+
+function my_color_profile( $args ) {
+    $bg = esc_attr( $args['button_background'] );
+    $bg_mouse = esc_attr( $args['button_background_hover'] );
+    $text = esc_attr( $args['button_color'] );
+    $text_mouse = esc_attr( $args['button_color_hover'] );
+    $settings = (array) get_option( 'share-on-diaspora-settings' );
+    switch ($settings['button_size']) {
+        case '2': $bs = '28'; break;
+        case '3': $bs = '33'; break;
+        case '4': $bs = '48'; break;
+        default: $bs = '23';
+        };
+    $bt = $settings['button_text'];
+    echo "<input type='radio' name='colorprofile' onclick=\"updateColorProfile('" . $bg . "', '" . $bg_mouse . "', '" . $text . "', '" . $text_mouse . "');\"/> <div id='diaspora-button-box' style='background-color: #" . $bg . "; border-color: #" . $text . "; color: #" . $text . ";' onMouseOver=\"this.style.backgroundColor='#" . $bg_mouse ."'; this.style.color='#" . $text_mouse . "'; this.style.border='1px solid #" . $text_mouse . "';\"
+   onMouseOut=\"this.style.backgroundColor='#" . $bg ."'; this.style.color='#" . $text . "'; this.style.border='1px solid #" . $text . "';\"><font>" . $bt . "</font> <div id='diaspora-button-inner'><img src='" . plugin_dir_url(__FILE__) . "images/asterisk-" . ($bs-3) . ".png'></div></div>";
 }
 
 function section_one_callback() {
@@ -333,7 +404,9 @@ function my_checkboxes($args) {
 }
 
 function my_settings_validate( $input ) {
-    if ( $input && $input['section'] && $input['section'] == 'button' ) {
+    if ( $input && $input['section'] && $input['section'] == 'colorprofile' ) {
+        $output = $input;
+    } elseif ( $input && $input['section'] && $input['section'] == 'button' ) {
         $output = $this -> button_settings_validate($input);
     } elseif ( $input && $input['section'] && $input['section'] == 'image' ) {
         $output = $this -> image_settings_validate($input);
@@ -407,7 +480,17 @@ function podlist_settings_validate($input) {
     return $input;
 }
 
+// color profiles
 function share_on_diaspora_tab1() {
+    echo "<form action='options.php' method='post' name='button'>";
+    echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='colorprofile'>";
+    settings_fields( 'share_on_diaspora_options' );
+    do_settings_sections( 'share_on_diaspora_options-colorprofile' ); 
+    submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
+    echo "</form>";
+}
+
+function share_on_diaspora_tab2() {
     echo "<h3>".__( "Button Preview", 'share-on-diaspora' )."</h3>";
     echo $this -> generate_button(TRUE, '0');
     echo "<form action='options.php' method='post' name='button'>";
@@ -418,7 +501,7 @@ function share_on_diaspora_tab1() {
     echo "</form>";
 }
 
-function share_on_diaspora_tab2() {
+function share_on_diaspora_tab3() {
     echo "<h3>".__( "Custom Image Preview", 'share-on-diaspora' )."</h3>";
     echo $this -> show_button_image();
     echo "<form method='post' name='upload' enctype='multipart/form-data'>";
@@ -429,7 +512,7 @@ function share_on_diaspora_tab2() {
     echo "</form>";
 }
 
-function share_on_diaspora_tab3() {
+function share_on_diaspora_tab4() {
     echo "<h3>" . __('Podlist Preview', 'share-on-diaspora') . "</h3>";
     echo $this -> generate_podlist(); 
     echo "<br>";
@@ -495,20 +578,22 @@ function share_on_diaspora_options_page() {
     <div class="wrap">
         <?php
         screen_icon();
-        //form in tab 2 is updated manually, so settings errrors are not shown properly. Thus workaround.
-        if (isset($_GET['tab']) && $_GET['tab'] == '2') settings_errors('share-on-diaspora-settings');
+        //form in tab 3 is updated manually, so settings errrors are not shown properly. Thus workaround.
+        if (isset($_GET['tab']) && $_GET['tab'] == '3') settings_errors('share-on-diaspora-settings');
         ?>
         <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
         <p><?php printf( __('Need help? Please read %1$s plugin\'s FAQ page %2$s.', 'share-on-diaspora'), "<a href='http://wordpress.org/plugins/share-on-diaspora/faq'>", '</a>'); ?></p>
         <h2 class="nav-tab-wrapper">
-        <a href="?page=share_on_diaspora_options_page&tab=1" class="nav-tab <?php if ( $tab == '1' ) echo "nav-tab-active"; ?>"><?php echo __('Button options', 'share-on-diaspora'); ?></a>
-        <a href="?page=share_on_diaspora_options_page&tab=2" class="nav-tab <?php if ( $tab == '2' ) echo "nav-tab-active"; ?>"><?php echo __('Custom image', 'share-on-diaspora'); ?></a>
-        <a href="?page=share_on_diaspora_options_page&tab=3" class="nav-tab <?php if ( $tab == '3' ) echo "nav-tab-active"; ?>"><?php echo __('Pod list options', 'share-on-diaspora'); ?></a>
+        <a href="?page=share_on_diaspora_options_page&amp;tab=1" class="nav-tab <?php if ( $tab == '1' ) echo "nav-tab-active"; ?>"><?php echo __('Color profiles', 'share-on-diaspora'); ?></a>
+        <a href="?page=share_on_diaspora_options_page&amp;tab=2" class="nav-tab <?php if ( $tab == '2' ) echo "nav-tab-active"; ?>"><?php echo __('Button options', 'share-on-diaspora'); ?></a>
+        <a href="?page=share_on_diaspora_options_page&amp;tab=3" class="nav-tab <?php if ( $tab == '3' ) echo "nav-tab-active"; ?>"><?php echo __('Custom image', 'share-on-diaspora'); ?></a>
+        <a href="?page=share_on_diaspora_options_page&amp;tab=4" class="nav-tab <?php if ( $tab == '4' ) echo "nav-tab-active"; ?>"><?php echo __('Pod list options', 'share-on-diaspora'); ?></a>
         </h2>
         <?php switch ($tab)
             {
             case '2' : $this -> share_on_diaspora_tab2(); break;
             case '3' : $this -> share_on_diaspora_tab3(); break;
+            case '4' : $this -> share_on_diaspora_tab4(); break;
             default: $this -> share_on_diaspora_tab1();
             } ?>
 <hr>

@@ -8,3 +8,10 @@ function addCheckbox() {
     lastrow.parentNode.insertBefore(newpodtr,lastrow);
     document.getElementsByName("newpodname")[0].value = '';
     };
+
+function updateColorProfile(bg, bg_hover, text, text_hover) {
+    document.getElementsByName("share-on-diaspora-settings[button_background]")[0].value = bg;
+    document.getElementsByName("share-on-diaspora-settings[button_background_hover]")[0].value = bg_hover;
+    document.getElementsByName("share-on-diaspora-settings[button_color]")[0].value = text;
+    document.getElementsByName("share-on-diaspora-settings[button_color_hover]")[0].value = text_hover;
+    };
