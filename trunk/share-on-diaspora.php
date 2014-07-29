@@ -302,7 +302,7 @@ function image_upload_callback() {
 function share_on_diaspora_url_callback() {
     $settings = (array) get_option( 'share-on-diaspora-settings' );
     $url = $settings['image_file'];
-    echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' style='width:100%'/>";
+    echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' placeholder='" . __('Example:', 'share-on-diaspora') . " http://example.com/image1.png' style='width:100%'/>";
 }
 
 function share_on_diaspora_delete_callback() {
@@ -355,7 +355,7 @@ function my_settings_validate( $input ) {
 }
 
 function share_on_diaspora_addfield_callback() {
-    echo "<input type='text' name='newpodname' value=''/><input type='button' value='" . __('Add', 'share-on-diaspora') . "' onclick='addCheckbox();'>";
+    echo "<input type='text' name='newpodname' value='' placeholder='" . __('Example:', 'share-on-diaspora') . " mypod.com'/><input type='button' value='" . __('Add', 'share-on-diaspora') . "' onclick='addCheckbox();'>";
 }
 
 
