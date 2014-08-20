@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3133"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   width="772"
+   height="250"
+   sodipodi:docname="banner-772x250.png">
+  <metadata
+     id="metadata3139">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3137">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3931">
+      <stop
+         style="stop-color:#2d67bd;stop-opacity:1"
+         offset="0"
+         id="stop3933" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop3935" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3931"
+       id="linearGradient3937"
+       x1="418.97433"
+       y1="52.106712"
+       x2="394.40546"
+       y2="97.086258"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3931"
+       id="linearGradient3945"
+       x1="481.39984"
+       y1="70.040009"
+       x2="412.50595"
+       y2="109.83604"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3931"
+       id="linearGradient3953"
+       x1="338.93674"
+       y1="48.260872"
+       x2="371.53949"
+       y2="97.253464"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3931"
+       id="linearGradient3961"
+       x1="237.44014"
+       y1="50.016582"
+       x2="357.99542"
+       y2="107.87132"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3931"
+       id="linearGradient3969"
+       x1="166.543"
+       y1="105.98334"
+       x2="349.63495"
+       y2="125.0453"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="974"
+     id="namedview3135"
+     showgrid="false"
+     inkscape:zoom="1.495124"
+     inkscape:cx="250.93052"
+     inkscape:cy="224.22567"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3133" />
+  <path
+     style="fill:url(#linearGradient3969);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 163.02996,105.53037 37.78951,-13.042391 -2.34095,10.868661 c 0,0 21.66019,0.47416 46.15002,4.68189 28.92326,4.96947 29.61672,13.00042 61.03173,16.55381 18.34364,2.07487 27.12668,2.08585 48.49096,0.16721 -16.6474,6.24563 -33.82989,10.72109 -56.01542,10.03261 -24.0176,-0.74533 -27.82346,-7.08899 -55.34658,-10.53424 -25.08388,-3.13992 -48.15654,-3.51141 -48.15654,-3.51141 l -1.33768,10.70145 z"
+     id="path3143"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccsscssccc"
+     inkscape:export-filename="/home/vitalie/share-on-diaspora/assets/path3922.png"
+     inkscape:export-xdpi="179.95407"
+     inkscape:export-ydpi="179.95407" />
+  <path
+     style="fill:url(#linearGradient3961);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 233.92709,48.678903 18.89475,30.265048 4.8491,-9.865402 c 0,0 10.20384,8.583611 28.92736,13.042397 17.28941,4.117265 21.18166,1.074422 41.96977,8.52772 11.80693,4.233215 19.38256,9.601424 31.93715,19.898014 C 350.68306,95.92924 343.70503,89.876711 332.07948,82.789786 316.47543,73.277575 310.0823,74.112109 292.45067,68.075288 275.71076,62.343782 265.1954,54.36405 265.1954,54.36405 l 4.51467,-6.688408 z"
+     id="path3145"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccsscssccc"
+     inkscape:export-filename="/home/vitalie/share-on-diaspora/assets/path3922.png"
+     inkscape:export-xdpi="179.95407"
+     inkscape:export-ydpi="179.95407" />
+  <path
+     style="fill:url(#linearGradient3953);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 372.71157,98.841967 c -4.94005,-5.76964 -6.5868,-9.242728 -7.77527,-13.042397 -1.6911,-5.406591 -1.46469,-9.960168 -3.84584,-16.3866 -2.81989,-7.610508 -9.61459,-12.540767 -9.61459,-12.540767 l 3.3442,-2.508153 -16.3866,-7.52446 1.17047,18.393124 4.68189,-2.842574 c 0,0 6.85812,4.285605 9.53098,10.032613 2.37009,5.096004 3.15711,9.72464 6.35399,14.881709 2.9928,4.827853 5.23208,7.104836 12.54077,11.537505 z"
+     id="path3147"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csscccccssc"
+     inkscape:export-filename="/home/vitalie/share-on-diaspora/assets/path3922.png"
+     inkscape:export-xdpi="179.95407"
+     inkscape:export-ydpi="179.95407" />
+  <path
+     style="fill:url(#linearGradient3937);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 394.11447,99.009177 c 0.80324,-5.105177 1.84936,-6.888042 4.18026,-9.405574 3.62125,-3.911206 10.76994,-6.818308 15.21613,-13.585831 3.94344,-6.002288 4.72192,-14.078979 4.64007,-13.962052 l 3.34422,1.295879 -1.46309,-14.003855 -11.24489,8.402313 3.59502,1.755707 c 0,0 -0.85738,6.772162 -4.22206,13.084199 -2.6517,4.974507 -8.35322,7.673714 -11.70471,12.206346 -2.6497,3.583513 -2.85079,7.403161 -2.34095,14.212868 z"
+     id="path3149"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csscccccssc"
+     inkscape:export-filename="/home/vitalie/share-on-diaspora/assets/path3922.png"
+     inkscape:export-xdpi="179.95407"
+     inkscape:export-ydpi="179.95407" />
+  <path
+     style="fill:url(#linearGradient3945);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     d="m 410.33386,111.88436 c 5.2843,-6.5212 10.22983,-9.93002 16.55381,-12.875183 7.81328,-3.63875 11.43502,-4.30403 23.74386,-7.85888 12.43119,-3.590186 24.5799,-12.206346 24.5799,-12.206346 l 2.00652,3.344205 6.5212,-13.878448 -15.80136,-0.0836 2.42454,3.260599 c 0,0 -9.16633,7.125711 -20.39965,10.283428 -10.63245,2.988814 -17.41338,4.105337 -25.58316,9.447377 -6.94823,4.5433 -11.57244,11.040033 -14.04566,20.566853 z"
+     id="path3921"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csscccccssc"
+     inkscape:export-xdpi="179.95407"
+     inkscape:export-ydpi="179.95407"
+     inkscape:export-filename="/home/vitalie/share-on-diaspora/assets/path3922.png" />
+</svg>
