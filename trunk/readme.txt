@@ -18,14 +18,16 @@ accordance with the overall look and feel of their blogs.
 
 = i18n =
 There is an ongoing effort to translate the plugin into other languages.
-So far, the following translations are completed:
+So far, the following translations are available:
 
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
-* Japanese (partial so far)
-* French (just some words translated)
+* Japanese
+* French (incomplete)
+
+To change language, set the WPLANG variabale to your language code (e.g. pt_BR) in wp-config.php.
 
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
@@ -62,7 +64,8 @@ pods that you want to see in the dialog. After you are done, press 'Update'.
 = My pod is not in the list. How can I add it? =
 I would suggest that you let me know the pod URL, so that I can add it and 
 update everybody's list. Of course, you can do it yourself by adding a line 
-to `pod_list_all.txt' in your plugin's directory.
+to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
+settings (see previous question).
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"
