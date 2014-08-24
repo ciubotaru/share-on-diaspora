@@ -93,7 +93,7 @@ function generate_button($preview, $use_own_image) {
     $options_array = get_option('share-on-diaspora-settings');
     if ( $use_own_image ) {
         //use own image
-        $button_box = "<div id='diaspora-button-ownimage-div''><img id='diaspora-button-ownimage-img' src='" . $options_array['image_file'] . "'></div>";
+        $button_box = "<div id='diaspora-button-ownimage-div'><img id='diaspora-button-ownimage-img' src='" . $options_array['image_file'] . "'></div>";
     } else {
         //use standard image
         switch ($options_array['button_size']) {
