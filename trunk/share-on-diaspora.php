@@ -362,7 +362,7 @@ function share_on_diaspora_addfield_callback() {
 function button_settings_validate($input) {
     $button_defaults = $this -> button_defaults;
     if (!empty( $input['reset'] )) {
-        add_settings_error( 'share-on-diaspora-settings', 'reverted to defaults', __('All parameters reverted to their default values.', 'share-on-diaspora' ) );
+        add_settings_error( 'share-on-diaspora-settings', 'reverted to defaults', __('All parameters reverted to their default values.', 'share-on-diaspora' ), 'updated' );
         //pick all button-related settings from defaults (and leaving custom image and podlist stuff)
         $input = $button_defaults;
         unset($input['reset']);
@@ -453,7 +453,7 @@ function share_on_diaspora_options_page() {
         if (!empty($_POST['share-on-diaspora-settings']['delete'])) {
             // if "clear" was pressed, then clear image_file and ignore other options
             $image_settings['image_file'] = '';
-            add_settings_error( 'share-on-diaspora-settings', 'image deleted', __('Image URL cleared.', 'share-on-diaspora' ) );
+            add_settings_error( 'share-on-diaspora-settings', 'image deleted', __('Image URL cleared.', 'share-on-diaspora' ), 'updated' );
         } elseif (!empty($_FILES) && !empty($_FILES['file']) && ($_FILES['file']['error'] == '0')) {
             // if something was uploaded, handle it and ignore other options
             $uploadedfile = $_FILES['file'];
@@ -476,7 +476,7 @@ function share_on_diaspora_options_page() {
                 $result = wp_update_attachment_metadata( $attach_id, $attach_data );
             }
             $image_settings['image_file'] = $movefile['url'];
-            add_settings_error( 'share-on-diaspora-settings', 'image uploaded', __('Custom image file uploaded.', 'share-on-diaspora' ) );
+            add_settings_error( 'share-on-diaspora-settings', 'image uploaded', __('Custom image file uploaded.', 'share-on-diaspora' ), 'updated' );
         } elseif (!empty($_POST['share-on-diaspora-settings']['image_file'])) {
             //finally, if image URL was provided, use it
             $image_settings['image_file'] = $_POST['share-on-diaspora-settings']['image_file'];
