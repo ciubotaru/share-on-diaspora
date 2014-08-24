@@ -172,7 +172,7 @@ function show_button_image() {
     $options_array = get_option('share-on-diaspora-settings');
     if (empty($options_array['image_file'])) {
         //$options_array['image_file'] = '';
-        $output = "<p>[No image]</p>";
+        $output = '<p>' . __('[No image]', 'share-on-diaspora') . '</p>';
     } else {
         $output = "<p><img src='" . $options_array['image_file'] . "'></p>";
     }
@@ -387,7 +387,7 @@ function button_settings_validate($input) {
 
 function image_settings_validate($input) {
     if ($input['use_own_image'] == '1' && empty($input['image_file'])) {
-        add_settings_error( 'share-on-diaspora-settings', 'toggle_disabled', 'No image file specified. Falling back to standard button.', 'error' );
+        add_settings_error( 'share-on-diaspora-settings', 'toggle_disabled', __('No image file specified. Falling back to standard button.', 'share-on-diaspora'), 'error' );
         $input['use_own_image'] = '0';
     } elseif (empty($input['use_own_image'])) {
         $input['use_own_image'] = '0';
