@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Share on Diaspora package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Share on Diaspora 0.5.2\n"
+"Project-Id-Version: Share on Diaspora 0.5.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/share-on-diaspora\n"
-"POT-Creation-Date: 2014-05-26 14:54:26+00:00\n"
+"POT-Creation-Date: 2014-08-26 08:49:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "or introduce your pod URL"
 msgstr ""
 
-#: new_window.php:266
+#: new_window.php:266 share-on-diaspora.php:305 share-on-diaspora.php:358
 msgid "Example:"
 msgstr ""
 
@@ -74,6 +74,10 @@ msgstr ""
 
 #: share-on-diaspora.php:159
 msgid "Share on D*"
+msgstr ""
+
+#: share-on-diaspora.php:175
+msgid "[No image]"
 msgstr ""
 
 #: share-on-diaspora.php:213
@@ -207,6 +211,10 @@ msgstr ""
 
 #: share-on-diaspora.php:380 share-on-diaspora.php:404
 msgid "Value missing for %s. Reverting to default."
+msgstr ""
+
+#: share-on-diaspora.php:390
+msgid "No image file specified. Falling back to standard button."
 msgstr ""
 
 #: share-on-diaspora.php:401
