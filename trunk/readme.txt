@@ -20,11 +20,12 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
-* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
+* Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
+* Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
-* Japanese
+* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
 * French (incomplete)
 
 To change language, set the WPLANG variabale to your language code (e.g. pt_BR) in wp-config.php.
@@ -81,6 +82,13 @@ page, 'Custom Image' tab.
 page, 'Pod list options' tab.
 
 == Changelog ==
+= 0.5.5 =
+* i18n: Italian translation added.
+
+= 0.5.4 =
+* Updated list of active pods
+* i18n: completed Japanese translation, other minor updates
+
 = 0.5.3 =
 * New feature (admin can add custom pods from plugin settings panel)
 * i18n: minor updates in translation
