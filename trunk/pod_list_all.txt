@@ -12,6 +12,7 @@ socializer.cc
 nerdpol.ch
 social.mbuto.me
 diaspora-fr.org
+framasphere.org
 diasporabrazil.org
 sechat.org
 dspora.org
