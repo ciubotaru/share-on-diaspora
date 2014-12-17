@@ -25,6 +25,7 @@ So far, the following translations are available:
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
+* Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
 * French -- contributed by Stef20 from stef20.info/blog and Se7h.
 
