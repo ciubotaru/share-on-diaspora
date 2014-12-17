@@ -10,12 +10,14 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
-* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
+* Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
+* Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
-* Japanese
-* French (incomplete)
+* Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
+* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
+* French -- contributed by Stef20 from stef20.info/blog and Se7h
 
 To change language, set the WPLANG variabale to your language code (e.g. pt_BR) in wp-config.php.
 
@@ -74,6 +76,21 @@ settings (see previous question).
 
 # Changelog
 
+## 0.5.7
+* Updated list of active pods
+* i18n: Serbo-Croatian translation added
+
+## 0.5.6
+* Updated list of active pods
+* i18n: French translation added
+
+## 0.5.5
+* i18n: Italian translation added
+
+## 0.5.4
+* Updated list of active pods
+* i18n: completed Japanese translation, other minor updates
+
 ## 0.5.3
 * New feature (admin can add custom pods from plugin settings panel)
 * i18n: minor updates in translation
@@ -121,15 +138,9 @@ Japanese translation added.
 Version 0.3.3 introduces new ways to customize you share button. The default values for these options may not match your preferences, so please make sure to check the "Share on D*" settings page and tweak them to your liking.
 
 # ToDo
-* Add a screen shot of the settings page.
-* Add plugin version number to screenshot captions.
-* Add plugin description to 'readme.txt'. This will also result in tags being displayed on the plugin webpage.
-* Make a cover picture for the plugin webpage.
-* Reference the cover picture from Wordpress Plugin Directory in readme.md, so that it gets displayed on GitHub, too.
-* Complete the FAQ and the installation info.
 * Think about how to add a graphical color-picker to the settings page. JavaScript?
 * Think how to update preview automatically. JavaScript?
-* Find out how to upload and handle images (for custom buttons)
+* Add color profiles for custom buttons
 
 # Translations
 It is important to providing sharing UI in the same language as the rest o the website. Currently, all translation efforts are concentrated on [poeditor.com](poeditor.com). If you want to contribute a translation, or point out some errors in others' translations, check out [https://poeditor.com/projects/view?id=10673](https://poeditor.com/projects/view?id=10673).
