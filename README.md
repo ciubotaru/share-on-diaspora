@@ -10,16 +10,16 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
+* French -- contributed by Stef20 from stef20.info/blog and Se7h
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
-* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
-* French -- contributed by Stef20 from stef20.info/blog and Se7h
+* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
 
-To change language, set the WPLANG variabale to your language code (e.g. pt_BR) in wp-config.php.
+To change the language, set the $locale variable to your language code (e.g. $locale = 'pt_BR';) in wp-config.php.
 
 # Screenshots
 1. The "Share on D*" button under the default "Hello World"

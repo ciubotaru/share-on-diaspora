@@ -3,7 +3,7 @@ Contributors: Vitalie Ciubotaru
 Donate link: 
 Tags: diaspora, share, button
 Requires at least: 3.2.1
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 0.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,7 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
+* French -- contributed by Stef20 from stef20.info/blog and Se7h.
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
@@ -27,7 +28,6 @@ So far, the following translations are available:
 * Russian
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
-* French -- contributed by Stef20 from stef20.info/blog and Se7h.
 
 To change language, set the $locale variable to your language code (e.g. $locale = 'pt_BR';) in wp-config.php.
 
