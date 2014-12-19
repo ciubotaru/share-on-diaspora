@@ -11,6 +11,7 @@ pod.orkz.net
 socializer.cc
 nerdpol.ch
 diaspora-fr.org
+framasphere.org
 diasporabrazil.org
 social.mbuto.me
 dspora.org
@@ -73,6 +74,5 @@ pod.jpope.org
 diaspora.feedle.net
 social.cooleysekula.net
 nx-pod.de
-diapod.org
-social.trashserver.net
-pod.volt.io
+use-linux.de
+diasp.nl
