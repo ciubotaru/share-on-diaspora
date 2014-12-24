@@ -72,7 +72,7 @@ public $color_profiles = array(
         'button_color_hover' => '51A2C1',
         'button_background_hover' => 'ffffff'
         ),
-    'Fûdo' => array(
+    'F&ucirc;do' => array(
         'button_color' => '006633',
         'button_background' => 'A9C599',
         'button_color_hover' => 'fef4cc',
@@ -132,7 +132,7 @@ function generate_button($preview, $use_own_image) {
     $options_array = get_option('share-on-diaspora-settings');
     if ( $use_own_image ) {
         //use own image
-        $button_box = "<div id='diaspora-button-ownimage-div'><img id='diaspora-button-ownimage-img' src='" . $options_array['image_file'] . "'></div>";
+        $button_box = "<span id='diaspora-button-ownimage-div'><img id='diaspora-button-ownimage-img' src='" . $options_array['image_file'] . "' alt=''/></span>";
     } else {
         //use standard image
         switch ($options_array['button_size']) {
@@ -142,7 +142,7 @@ function generate_button($preview, $use_own_image) {
         default: $bs = '23';
         }
         $bt = !empty( $options_array['button_text'] ) ? $options_array['button_text'] : $button_defaults['button_text'];
-        $button_box = "<div id='diaspora-button-box'><font>" . $bt  . "</font> <div id='diaspora-button-inner'><img src='" . plugin_dir_url(__FILE__) . "images/asterisk-" . ($bs-3) . ".png'></div></div>";
+        $button_box = "<span id='diaspora-button-box'><font>" . $bt  . "</font> <span id='diaspora-button-inner'><img src='" . plugin_dir_url(__FILE__) . "images/asterisk-" . ($bs-3) . ".png' alt=''/></span></span>";
     }
     if ( $preview ) {
         //add fake link
@@ -162,7 +162,7 @@ function generate_button($preview, $use_own_image) {
         }
     }
 
-    $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
+    $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('".plugin_dir_url(__FILE__)."new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">
 " . $button_box . "</a></div>";
 
     return $button;
