@@ -8,299 +8,288 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-12-31 12:37+0100\n"
-"Last-Translator: Georg Krause <mail@georg-krause.net>\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de_DE\n"
-"X-Generator: Poedit 1.7.1\n"
-"X-Poedit-Bookmarks: -1,43,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
 #: new_window.php:232
 msgid "Sharing"
-msgstr "Teilen"
+msgstr ""
 
 #: new_window.php:238
 msgid "Choose your Diaspora* pod"
-msgstr "Wähle deinen Diaspora*-Pod"
+msgstr ""
 
 #: new_window.php:240 share-on-diaspora.php:134
 msgid "Select from the list"
-msgstr "Wähle aus der Liste"
+msgstr ""
 
 #: new_window.php:264
 msgid "or choose from history"
-msgstr "oder wähle aus dem Verlauf"
+msgstr ""
 
 #: new_window.php:266
 msgid "or introduce your pod URL"
-msgstr "oder füge deine Pod-URL ein"
+msgstr ""
 
 #: new_window.php:266 share-on-diaspora.php:305 share-on-diaspora.php:358
 msgid "Example:"
-msgstr "Beispiel:"
+msgstr ""
 
 #: new_window.php:274
 msgid "Share"
-msgstr "Teilen"
+msgstr ""
 
 #: new_window.php:275
 msgid "Remember my choice, don't ask again"
-msgstr "Auswahl merken, nicht wieder nachfragen"
+msgstr ""
 
 #: new_window.php:275
 msgid "Advanced options"
-msgstr "erweiterte Optionen\t"
+msgstr ""
 
 #: new_window.php:275
 msgid "Use Markdown syntax for link"
-msgstr "Benutze Markdown-Syntax für den Link"
+msgstr ""
 
 #: new_window.php:275
 msgid "Shorten URL (j.mp)"
-msgstr "kürze die URL (j.mp)"
+msgstr ""
 
 #: new_window.php:275
 msgid "Never remember my last 3 pods"
-msgstr "Speichere niemals die letzten 3 Pods"
+msgstr ""
 
 #: new_window.php:275
 msgid "Forget my last 3 pods"
-msgstr "Vergesse die letzten 3 Pods"
+msgstr ""
 
 #: share-on-diaspora.php:110 share-on-diaspora.php:115
 msgid "Page address here"
-msgstr "Adresse der Seite"
+msgstr ""
 
 #: share-on-diaspora.php:111 share-on-diaspora.php:116
 msgid "Page title here"
-msgstr "Titel der Seite"
+msgstr ""
 
 #: share-on-diaspora.php:159
 msgid "Share on D*"
-msgstr "Teile über D*"
+msgstr ""
 
 #: share-on-diaspora.php:175
 msgid "[No image]"
-msgstr "[Kein Bild]"
+msgstr ""
 
 #: share-on-diaspora.php:213
 msgid "Button properties"
-msgstr "Buttoneinstellungen"
+msgstr ""
 
 #: share-on-diaspora.php:214
 msgid "Background color"
-msgstr "Hintergrundfarbe"
+msgstr ""
 
 #: share-on-diaspora.php:219
 msgid "Background color on mouse-over"
-msgstr "Hintergrundfarbe bei mouse-over"
+msgstr ""
 
 #: share-on-diaspora.php:224
 msgid "Text and border color"
-msgstr "Schrift- und Rahmenfarbe"
+msgstr ""
 
 #: share-on-diaspora.php:229
 msgid "Text and border color on mouse-over"
-msgstr "Text- und Rahmenfarbe bei mouse-over"
+msgstr ""
 
 #: share-on-diaspora.php:234
 msgid "Rounded corners"
-msgstr "abgerundete Ecken"
+msgstr ""
 
 #: share-on-diaspora.php:237
 msgid "Rounded"
-msgstr "abgerundet"
+msgstr ""
 
 #: share-on-diaspora.php:237
 msgid "Square"
-msgstr "Quadrat"
+msgstr ""
 
 #: share-on-diaspora.php:240
 msgid "Button size"
-msgstr "Button-Größe"
+msgstr ""
 
 #: share-on-diaspora.php:243
 msgid "Small"
-msgstr "klein"
+msgstr ""
 
 #: share-on-diaspora.php:243
 msgid "Medium"
-msgstr "mittel"
+msgstr ""
 
 #: share-on-diaspora.php:243
 msgid "Large"
-msgstr "groß"
+msgstr ""
 
 #: share-on-diaspora.php:243
 msgid "Huge"
-msgstr "riesig"
+msgstr ""
 
 #: share-on-diaspora.php:246
 msgid "Text on the button"
-msgstr "Test auf dem Button"
+msgstr ""
 
 #: share-on-diaspora.php:251
 msgid "Restore defaults"
-msgstr "Standard wiederherstellen"
+msgstr ""
 
 #: share-on-diaspora.php:253
 msgid "Upload button image"
-msgstr "Lade Button-Grafik hoch"
+msgstr ""
 
 #: share-on-diaspora.php:254
 msgid "Upload new custom image"
-msgstr "Lade neues eigenes Bild hoch"
+msgstr ""
 
 #: share-on-diaspora.php:255
 msgid "OR provide image URL"
-msgstr "oder gib eine Bild-URL ein"
+msgstr ""
 
 #: share-on-diaspora.php:256
 msgid "Clear current image"
-msgstr "entferne aktuelles Bild"
+msgstr ""
 
 #: share-on-diaspora.php:257
 msgid "Use custom image"
-msgstr "benutze eigenes Bild"
+msgstr ""
 
 #: share-on-diaspora.php:259
 msgid "Pod properties"
-msgstr "Pod-Einstelluungen"
+msgstr ""
 
 #: share-on-diaspora.php:268
 msgid "Add a custom pod"
-msgstr "Füge einen eigenen Pod hinzu"
+msgstr ""
 
 #: share-on-diaspora.php:272
 msgid ""
-"Use the parameters below to change the look and feel of your share button. All "
-"colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to "
-"restore the default value."
+"Use the parameters below to change the look and feel of your share button. "
+"All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty "
+"to restore the default value."
 msgstr ""
-"Benutze die untenstehenden Parameter um das Aussehen und das Verhalten deines "
-"Teilen-Buttons zu verändern. Alle Farben sind sechsstellige Hexadezimal-zahlen "
-"wie %1$s oder %2$s. Lasse das Feld frei um den Standard-Wert wiederherzustellen."
 
 #: share-on-diaspora.php:291
 msgid "Defaults"
-msgstr "Standards"
+msgstr ""
 
 #: share-on-diaspora.php:295
 msgid "Select an image to upload and use as button."
-msgstr "Wähle ein Bild für den Upload aus und benutze es als Button."
+msgstr ""
 
 #: share-on-diaspora.php:299
 msgid "Filename"
-msgstr "Dateiname"
+msgstr ""
 
 #: share-on-diaspora.php:309
 msgid "Clear"
-msgstr "Leeren"
+msgstr ""
 
 #: share-on-diaspora.php:320
 msgid ""
-"Below is the list of Diaspora pods. Check the ones that you what to appear in "
-"the drop-down menu in the pod selection window."
+"Below is the list of Diaspora pods. Check the ones that you what to appear "
+"in the drop-down menu in the pod selection window."
 msgstr ""
-"Unten befindet sich die Liste der Diaspora-Pods. Wähle die, die im Drop-Down-"
-"Menü im Podauswahl-Fenster erscheinen sollen."
 
 #: share-on-diaspora.php:358
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr ""
 
 #: share-on-diaspora.php:365
 msgid "All parameters reverted to their default values."
-msgstr "Alle Parameter wurden auf den Standard zurückgesetzt."
+msgstr ""
 
 #: share-on-diaspora.php:376
 msgid "Invalid value for %s. Reverting to default."
-msgstr "Fehlerhafter Wert für %s. Der Standard wurde wiederhersgestellt."
+msgstr ""
 
 #: share-on-diaspora.php:380 share-on-diaspora.php:404
 msgid "Value missing for %s. Reverting to default."
-msgstr "Fehlender Wert für %s. Der Standard wurde wiederhergestellt."
+msgstr ""
 
 #: share-on-diaspora.php:390
 msgid "No image file specified. Falling back to standard button."
-msgstr "Es wurde keine Bild-Datei angegeben. Der Standard-Button wird genutzt."
+msgstr ""
 
 #: share-on-diaspora.php:401
 msgid "Plugin directory is not writable. Can not save css file."
 msgstr ""
-"Der Plugin-Ordner ist nicht beschreibbar. Die CSS-Datei kann nicht gespeichert "
-"werden."
 
 #: share-on-diaspora.php:411
 msgid "Button Preview"
-msgstr "Button-Vorschau"
+msgstr ""
 
-#: share-on-diaspora.php:417 share-on-diaspora.php:428 share-on-diaspora.php:440
+#: share-on-diaspora.php:417 share-on-diaspora.php:428
+#: share-on-diaspora.php:440
 msgid "Update"
-msgstr "aktualisieren"
+msgstr ""
 
 #: share-on-diaspora.php:422
 msgid "Custom Image Preview"
-msgstr "Eigene Bild-Vorschau"
+msgstr ""
 
 #: share-on-diaspora.php:433
 msgid "Podlist Preview"
-msgstr "Vorschau der Pod-Liste"
+msgstr ""
 
 #: share-on-diaspora.php:448
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Du hast keine ausreichenden Berechtigungen um diese Seite zu besuchen."
+msgstr ""
 
 #: share-on-diaspora.php:456
 msgid "Image URL cleared."
-msgstr "Bild-URL zurückgesetzt."
+msgstr ""
 
 #: share-on-diaspora.php:479
 msgid "Custom image file uploaded."
-msgstr "Eigene Bild-Datei hochgeladen."
+msgstr ""
 
 #: share-on-diaspora.php:501
 msgid "Share on Diaspora (ver. %s) Options"
-msgstr "Einstellungen für \"Share on Diaspora\" (ver. %s)"
+msgstr ""
 
 #: share-on-diaspora.php:502
 msgid "Need help? Please read %1$s plugin's FAQ page %2$s."
-msgstr "Du suchst Hilfe? Bitte lese %1$s die FAQ-Seite für Plugins %2$s."
+msgstr ""
 
 #: share-on-diaspora.php:504
 msgid "Button options"
-msgstr "Button-Optionen"
+msgstr ""
 
 #: share-on-diaspora.php:505
 msgid "Custom image"
-msgstr "Eigenes Bild"
+msgstr ""
 
 #: share-on-diaspora.php:506
 msgid "Pod list options"
-msgstr "Optionen für die Pod-Liste"
+msgstr ""
 
 #: share-on-diaspora.php:515
 msgid "Source code repository"
-msgstr "Quellcode-Repository"
+msgstr ""
 
 #: share-on-diaspora.php:516
 msgid "Donate BTC"
-msgstr "BTC spenden"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "Share on Diaspora"
-msgstr "Share on Diaspora"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
 msgstr ""
-"Dieses Plugin fügt einen \"Teile über D*\"-Button am Ende deiner Posts hinzu."
 
 #. Author of the plugin/theme
 msgid "Vitalie Ciubotaru"
-msgstr "Vitalie Ciubotaru"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://github.com/ciubotaru"
-msgstr "https://github.com/ciubotaru"
+msgstr ""
