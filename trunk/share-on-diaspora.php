@@ -388,7 +388,7 @@ function use_image_callback() {
 }
 
 function section_two_callback() {
-    echo __( 'Below is the list of Diaspora pods. Check the ones that you what to appear in the drop-down menu in the pod selection window.', 'share-on-diaspora' );
+    echo __( 'Below is the list of Diaspora pods. Check the ones that you want to appear in the drop-down menu in the pod selection window.', 'share-on-diaspora' );
 }
 
 function my_checkboxes($args) {
