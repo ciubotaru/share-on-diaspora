@@ -315,7 +315,7 @@ function my_admin_init() {
 }
 
 function section_colorprofile_callback() {
-    printf( __( 'You can choose a preset color profile for your button on this tab, or fine-tune it on the \'Button Options\' tab'), 'share-on-diaspora' );
+    echo __( 'You can choose a preset color profile for your button on this tab, or fine-tune it on the \'Button Options\' tab', 'share-on-diaspora' );
     echo "<input type='hidden' name='share-on-diaspora-settings[button_background]'/>";
     echo "<input type='hidden' name='share-on-diaspora-settings[button_background_hover]' />";
     echo "<input type='hidden' name='share-on-diaspora-settings[button_color]' />";
