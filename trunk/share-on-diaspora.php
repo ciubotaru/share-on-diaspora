@@ -94,6 +94,8 @@ public $color_profiles = array(
 
 public $plugin_version = array('version' => '0.5');
 
+public $podlist_update_url = 'http://the-federation.info/pods.json';
+
 function set_default() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
@@ -312,6 +314,7 @@ function my_admin_init() {
         add_settings_field( $i, $i, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $i));
     };
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
+    add_settings_field( 'update_podlist', __( 'Download the latest podlist', 'share-on-diaspora' ), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
 
 function section_colorprofile_callback() {
@@ -431,6 +434,9 @@ function share_on_diaspora_addfield_callback() {
     echo "<input type='text' name='newpodname' value='' placeholder='" . __('Example:', 'share-on-diaspora') . " mypod.com'/><input type='button' value='" . __('Add', 'share-on-diaspora') . "' onclick='addCheckbox();'>";
 }
 
+function share_on_diaspora_update_podlist_callback() {
+    echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Retrieve', 'share-on-diaspora') . "'>";
+}
 
 function button_settings_validate($input) {
     $button_defaults = $this -> button_defaults;
@@ -563,6 +569,11 @@ function share_on_diaspora_options_page() {
         } elseif (!empty($_POST['share-on-diaspora-settings']['image_file'])) {
             //finally, if image URL was provided, use it
             $image_settings['image_file'] = $_POST['share-on-diaspora-settings']['image_file'];
+        } elseif (!empty($_POST['share-on-diaspora-settings']['download'])) {
+            //admin wants to download the latest podlist
+            $json = file_get_contents($podlist_update_url);
+            $podlist_raw = json_decode($json, true);
+            $podlist_clean = $podlist_raw[pods];
         }
         // now let's handle the use_image toggle
         $image_settings['use_own_image'] = (!empty($_POST['share-on-diaspora-settings']['use_own_image'])) ? '1' : '0';
