@@ -95,7 +95,8 @@ public $color_profiles = array(
 
 public $plugin_version = array('version' => '0.5');
 
-public $podlist_update_url = 'http://the-federation.info/pods.json';
+//public $podlist_update_url = 'http://the-federation.info/pods.json';
+public $podlist_update_url = 'http://podupti.me/api.php?format=xml&key=4r45tg';
 
 function set_default() {
     $button_defaults = $this -> button_defaults;
@@ -316,7 +317,7 @@ function my_admin_init() {
         add_settings_field( $i, $i, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $i));
     };
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
-    add_settings_field( 'update_podlist', __( 'Download the latest podlist', 'share-on-diaspora' ), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
+    add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), $this -> podlist_update_url), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
 
 function section_colorprofile_callback() {
@@ -483,12 +484,22 @@ function podlist_settings_validate($input) {
         }
     if (!empty($input['download'])) {
         $json = file_get_contents($this -> podlist_update_url);
+        if (empty($json)) {
+            add_settings_error( 'share-on-diaspora-settings', 'download failed', __( 'Could not download the podlist.', 'share-on-diaspora' ) );
+            return array();
+        }
         $podlist_raw = json_decode($json, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            add_settings_error( 'share-on-diaspora-settings', 'not json', __( 'This is not json format. No idea what it is.', 'share-on-diaspora' ) );
+            return array();
+        }
         $podlist_clean = $podlist_raw['pods'];
         $output = array();
         foreach ( $podlist_clean as $pod ) {
-            if ($pod['network'] == "Diaspora") {
-                array_push($output, $pod['host']);
+            //if ($pod['network'] == "Diaspora") {
+            if ($pod['hidden'] == 'no') {
+               // array_push($output, $pod['host']);
+                array_push($output, $pod['domain']);
                 
             }
         }
