@@ -50,7 +50,8 @@ public $podlist_defaults = array(
         'diasp.eu' => '1',
         'diasp.de' => '1',
         'despora.de' => '1'
-    )
+    ),
+    'podlist-all' => array('joindiaspora.com', 'diasp.org', 'pod.geraspora.de', 'diasp.eu', 'diasp.de', 'despora.de')
 );
 
 public $color_profiles = array(
@@ -305,7 +306,8 @@ function my_admin_init() {
     add_settings_field( 'use_own_image', __( 'Use custom image', 'share-on-diaspora' ), array($this, 'use_image_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
 
     add_settings_section( 'section-podlist', __( 'Pod properties', 'share-on-diaspora' ), array($this, 'section_two_callback'), 'share_on_diaspora_options-podlist' );
-    $podlist = file(plugin_dir_path( __FILE__ ).'pod_list_all.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if (isset($options_array['podlist-all'])) $podlist = $options_array['podlist-all'];
+    else $podlist = file(plugin_dir_path( __FILE__ ).'pod_list_all.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     if (isset($options_array['podlist'])) {
         $podlist = array_merge($podlist, array_keys($options_array['podlist']));
         $podlist = array_unique($podlist);
@@ -479,7 +481,19 @@ function podlist_settings_validate($input) {
         {
         add_settings_error( 'share-on-diaspora-settings', 'not writable', __( 'Plugin directory is not writable. Can not save css file.', 'share-on-diaspora' ) );
         }
-    if (empty($input['podlist'])) {
+    if (!empty($input['download'])) {
+        $json = file_get_contents($this -> podlist_update_url);
+        $podlist_raw = json_decode($json, true);
+        $podlist_clean = $podlist_raw['pods'];
+        $output = array();
+        foreach ( $podlist_clean as $pod ) {
+            if ($pod['network'] == "Diaspora") {
+                array_push($output, $pod['host']);
+                
+            }
+        }
+        $input['podlist-all'] = $output;
+    } elseif (empty($input['podlist'])) {
         add_settings_error( 'share-on-diaspora-settings', 'empty-podlist', sprintf( __('Value missing for %s. Reverting to default.', 'share-on-diaspora' ), "'podlist'") );
         $input = array_merge($input, $this -> podlist_defaults);
     }
@@ -569,11 +583,6 @@ function share_on_diaspora_options_page() {
         } elseif (!empty($_POST['share-on-diaspora-settings']['image_file'])) {
             //finally, if image URL was provided, use it
             $image_settings['image_file'] = $_POST['share-on-diaspora-settings']['image_file'];
-        } elseif (!empty($_POST['share-on-diaspora-settings']['download'])) {
-            //admin wants to download the latest podlist
-            $json = file_get_contents($podlist_update_url);
-            $podlist_raw = json_decode($json, true);
-            $podlist_clean = $podlist_raw[pods];
         }
         // now let's handle the use_image toggle
         $image_settings['use_own_image'] = (!empty($_POST['share-on-diaspora-settings']['use_own_image'])) ? '1' : '0';
