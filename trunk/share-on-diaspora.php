@@ -12,7 +12,7 @@ License: GPL2
 /*  Copyright 2013 Vitalie Ciubotaru (email : vitalie@ciubotaru.tk)
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
@@ -50,8 +50,9 @@ public $podlist_defaults = array(
         'diasp.eu' => '1',
         'diasp.de' => '1',
         'despora.de' => '1'
-    ),
-    'podlist-all' => array('joindiaspora.com', 'diasp.org', 'pod.geraspora.de', 'diasp.eu', 'diasp.de', 'despora.de')
+    )
+//,
+//    'podlist-all' => array('joindiaspora.com', 'diasp.org', 'pod.geraspora.de', 'diasp.eu', 'diasp.de', 'despora.de')
 );
 
 public $color_profiles = array(
@@ -96,7 +97,7 @@ public $color_profiles = array(
 public $plugin_version = array('version' => '0.5');
 
 //public $podlist_update_url = 'http://the-federation.info/pods.json';
-public $podlist_update_url = 'http://podupti.me/api.php?format=xml&key=4r45tg';
+public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 function set_default() {
     $button_defaults = $this -> button_defaults;
@@ -177,11 +178,11 @@ function generate_podlist() {
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
     if (! $options_array) {
-        $temp = $this -> podlist_defaults;
-        $options_array = array('podlist' => $temp);
+        //$temp = $this -> podlist_defaults;
+        $options_array = array('podlist' => $this -> podlist_defaults);
     } elseif (empty($options_array['podlist'])) {
-        $temp = $this -> podlist_defaults;
-        $options_array['podlist'] = $temp;
+       // $temp = $this -> podlist_defaults;
+        $options_array['podlist'] = $this -> podlist_defaults;
     }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
@@ -389,7 +390,7 @@ function share_on_diaspora_delete_callback() {
 function use_image_callback() {
     $image_defaults = $this -> image_defaults;
     $options_array = get_option('share-on-diaspora-settings');
-    if (!isset($options_array['use_own_image'])) { $options_array['use_own_image'] = $image_defaults['use_own_image']; } 
+    if (!isset($options_array['use_own_image'])) { $options_array['use_own_image'] = $image_defaults['use_own_image']; }
     echo "<input type='checkbox' name='share-on-diaspora-settings[use_own_image]' value='checked'" . ( ($options_array['use_own_image'] == '1') ? 'checked' : '') . ">";
 }
 
@@ -400,8 +401,8 @@ function section_two_callback() {
 function my_checkboxes($args) {
     $options_array = get_option('share-on-diaspora-settings');
     if (! $options_array) {
-        $temp = $this -> podlist_defaults;
-        $options_array = array('podlist' => $temp);
+        //$temp = $this -> podlist_defaults;
+        $options_array = array('podlist' => $this -> podlist_defaults);
     }
     $podname = esc_attr( $args['podname'] );
     echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' ";
@@ -500,7 +501,7 @@ function podlist_settings_validate($input) {
             if ($pod['hidden'] == 'no') {
                // array_push($output, $pod['host']);
                 array_push($output, $pod['domain']);
-                
+
             }
         }
         $input['podlist-all'] = $output;
@@ -516,7 +517,7 @@ function share_on_diaspora_tab1() {
     echo "<form action='options.php' method='post' name='button'>";
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='colorprofile'>";
     settings_fields( 'share_on_diaspora_options' );
-    do_settings_sections( 'share_on_diaspora_options-colorprofile' ); 
+    do_settings_sections( 'share_on_diaspora_options-colorprofile' );
     submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
 }
@@ -527,7 +528,7 @@ function share_on_diaspora_tab2() {
     echo "<form action='options.php' method='post' name='button'>";
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='button'>";
     settings_fields( 'share_on_diaspora_options' );
-    do_settings_sections( 'share_on_diaspora_options-button' ); 
+    do_settings_sections( 'share_on_diaspora_options-button' );
     submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
 }
@@ -545,12 +546,12 @@ function share_on_diaspora_tab3() {
 
 function share_on_diaspora_tab4() {
     echo "<h3>" . __('Podlist Preview', 'share-on-diaspora') . "</h3>";
-    echo $this -> generate_podlist(); 
+    echo $this -> generate_podlist();
     echo "<br>";
     echo "<form action='options.php' method='POST'>";
     echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='podlist'>";
     settings_fields( 'share_on_diaspora_options' );
-    do_settings_sections( 'share_on_diaspora_options-podlist' ); 
+    do_settings_sections( 'share_on_diaspora_options-podlist' );
     submit_button(__( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false);
     echo "</form>";
 }
@@ -642,8 +643,8 @@ public function __construct() {
     add_action('plugins_loaded', array($this, 'i18n_init'));
     // Register style sheet.
     add_action( 'wp_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
-    add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_css') ); 
-    add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_js') ); 
+    add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
+    add_action( 'admin_enqueue_scripts', array($this, 'register_share_on_diaspora_js') );
     add_filter('the_content', array($this, 'diaspora_button_display') );
     add_action( 'admin_menu', array($this, 'share_on_diaspora_menu') );
     add_action( 'admin_init', array($this, 'my_admin_init') );
