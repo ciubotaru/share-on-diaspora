@@ -440,7 +440,7 @@ function share_on_diaspora_addfield_callback() {
 }
 
 function share_on_diaspora_update_podlist_callback() {
-    echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Retrieve', 'share-on-diaspora') . "'>";
+    echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Download', 'share-on-diaspora') . "'>";
 }
 
 function button_settings_validate($input) {
