@@ -42,18 +42,19 @@ public $image_defaults = array(
     'use_own_image' => '0'
     );
 
-public $podlist_defaults = array(
-    'podlist' => array(
-        'joindiaspora.com' => '1',
-        'diasp.org' => '1',
-        'pod.geraspora.de' => '1',
-        'diasp.eu' => '1',
-        'diasp.de' => '1',
-        'despora.de' => '1'
-    )
-//,
-//    'podlist-all' => array('joindiaspora.com', 'diasp.org', 'pod.geraspora.de', 'diasp.eu', 'diasp.de', 'despora.de')
-);
+function podlist_defaults() {
+    $podlist_all = file(plugin_dir_path( __FILE__ ).'pod_list_all.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $podlist_len = sizeof($podlist_all);
+    $podlist = array();
+    for ($i = 0; $i < 5; $i++) {
+        $random = rand(0, ($podlist_len-1));
+        $podlist[$podlist_all[$random]] = "1";
+        array_splice($podlist_all, $random, 1);
+        $podlist_len--;
+    }
+    return array("podlist" => $podlist);
+//    return array("podlist" => array("joindiaspora.com", "diaspo.org", "diasp.eu"));
+}
 
 public $color_profiles = array(
     'Vitalie' => array(
@@ -102,7 +103,7 @@ public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 function set_default() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
-    $podlist_defaults = $this -> podlist_defaults;
+    $podlist_defaults = $this -> podlist_defaults();
     $plugin_version = $this -> plugin_version;
     $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
     $options_array = get_option('share-on-diaspora-settings');
@@ -179,10 +180,10 @@ function generate_podlist() {
     $options_array = get_option('share-on-diaspora-settings');
     if (! $options_array) {
         //$temp = $this -> podlist_defaults;
-        $options_array = array('podlist' => $this -> podlist_defaults);
+        $options_array = $this -> podlist_defaults();
     } elseif (empty($options_array['podlist'])) {
        // $temp = $this -> podlist_defaults;
-        $options_array['podlist'] = $this -> podlist_defaults;
+        $options_array = $this -> podlist_defaults();
     }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
@@ -226,7 +227,7 @@ function show_button_image() {
 function my_admin_init() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
-    $podlist_defaults = $this -> podlist_defaults;
+    $podlist_defaults = $this -> podlist_defaults();
     $plugin_version = $this -> plugin_version;
     $color_profiles = $this -> color_profiles;
     $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
@@ -314,11 +315,11 @@ function my_admin_init() {
         $podlist = array_merge($podlist, array_keys($options_array['podlist']));
         $podlist = array_unique($podlist);
         }
-    foreach ($podlist as $i) {
-        add_settings_field( $i, $i, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $i));
+    foreach ($podlist as $key => $value) {
+        add_settings_field( $value, $value, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $value));
     };
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
-    add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), $this -> podlist_update_url), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
+    add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
 
 function section_colorprofile_callback() {
@@ -402,7 +403,7 @@ function my_checkboxes($args) {
     $options_array = get_option('share-on-diaspora-settings');
     if (! $options_array) {
         //$temp = $this -> podlist_defaults;
-        $options_array = array('podlist' => $this -> podlist_defaults);
+        $options_array = $this -> podlist_defaults();
     }
     $podname = esc_attr( $args['podname'] );
     echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' ";
@@ -486,12 +487,12 @@ function podlist_settings_validate($input) {
     if (!empty($input['download'])) {
         $json = file_get_contents($this -> podlist_update_url);
         if (empty($json)) {
-            add_settings_error( 'share-on-diaspora-settings', 'download failed', __( 'Could not download the podlist.', 'share-on-diaspora' ) );
+            add_settings_error( 'share-on-diaspora-settings', 'download failed', __( 'Could not update the podlist.', 'share-on-diaspora' ) );
             return array();
         }
         $podlist_raw = json_decode($json, true);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            add_settings_error( 'share-on-diaspora-settings', 'not json', __( 'This is not json format. No idea what it is.', 'share-on-diaspora' ) );
+            add_settings_error( 'share-on-diaspora-settings', 'not json', __( 'Could not update the podlist.', 'share-on-diaspora' ) );
             return array();
         }
         $podlist_clean = $podlist_raw['pods'];
@@ -507,7 +508,7 @@ function podlist_settings_validate($input) {
         $input['podlist-all'] = $output;
     } elseif (empty($input['podlist'])) {
         add_settings_error( 'share-on-diaspora-settings', 'empty-podlist', sprintf( __('Value missing for %s. Reverting to default.', 'share-on-diaspora' ), "'podlist'") );
-        $input = array_merge($input, $this -> podlist_defaults);
+        $input = array_merge($input, $this -> podlist_defaults());
     }
     return $input;
 }
