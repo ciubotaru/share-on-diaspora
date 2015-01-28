@@ -309,14 +309,9 @@ function my_admin_init() {
     add_settings_field( 'use_own_image', __( 'Use custom image', 'share-on-diaspora' ), array($this, 'use_image_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
 
     add_settings_section( 'section-podlist', __( 'Pod properties', 'share-on-diaspora' ), array($this, 'section_two_callback'), 'share_on_diaspora_options-podlist' );
-    if (isset($options_array['podlist-all'])) $podlist = $options_array['podlist-all'];
-    else $podlist = file(plugin_dir_path( __FILE__ ).'pod_list_all.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    if (isset($options_array['podlist'])) {
-        $podlist = array_merge($podlist, array_keys($options_array['podlist']));
-        $podlist = array_unique($podlist);
-        }
+    $podlist = $options_array['podlist'];
     foreach ($podlist as $key => $value) {
-        add_settings_field( $value, $value, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $value));
+        add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key));
     };
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
     add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
@@ -406,9 +401,9 @@ function my_checkboxes($args) {
         $options_array = $this -> podlist_defaults();
     }
     $podname = esc_attr( $args['podname'] );
-    echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' ";
-    echo !empty( $options_array['podlist'][$podname] ) ? "checked":"";
-    echo "/>";
+    echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' checked />";
+//    echo !empty( $options_array['podlist'][$podname] ) ? "checked":"";
+//    echo "/>";
 }
 
 function my_settings_validate( $input ) {
@@ -436,11 +431,18 @@ function my_settings_validate( $input ) {
 }
 
 function share_on_diaspora_addfield_callback() {
-    echo "<input type='text' name='newpodname' value='' placeholder='" . __('Example:', 'share-on-diaspora') . " mypod.com'/><input type='button' value='" . __('Add', 'share-on-diaspora') . "' onclick='addCheckbox();'>";
+    echo "<input type='text' name='newpodname' value='' placeholder='" . __('Example:', 'share-on-diaspora') . " mypod.com' list='datalist1' autocomplete='on'/><input type='button' value='" . __('Add', 'share-on-diaspora') . "' onclick='addCheckbox();'>";
+    echo "<datalist id='datalist1'>";
+    $options_array = get_option('share-on-diaspora-settings');
+    $podlist_all = $options_array['podlist-all'];
+    foreach ($podlist_all as $value) {
+        echo '<option  value="' . $value .'"></option>';
+    }
+    echo "</datalist>";
 }
 
 function share_on_diaspora_update_podlist_callback() {
-    echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Download', 'share-on-diaspora') . "'>";
+    echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Retrieve', 'share-on-diaspora') . "'>";
 }
 
 function button_settings_validate($input) {
