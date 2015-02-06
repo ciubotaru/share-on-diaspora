@@ -321,6 +321,24 @@ function use_image_callback() {
 
 function section_two_callback() {
     echo __( 'Below is the list of Diaspora pods. Check the ones that you want to appear in the drop-down menu in the pod selection window.', 'share-on-diaspora' );
+    echo "<br>";
+    $dpu_installed = get_plugins('/diaspora-podlist-updater');
+    if ( $dpu_installed ) {
+        //plugin installed. let's see if it's activated
+        $dpu_active = is_plugin_active('diaspora-podlist-updater/diaspora-podlist-updater.php');
+        if ( $dpu_active ) {
+            //active
+            echo sprintf( "%s plugin is installed and enabled. You don't need to manually update the list of active Diaspora* pods.", "<a href='http://wordpress.org/plugins/diaspora-podlist-updater'>Diaspora Podlist Updater</a>" );
+        }
+        else {
+            //installed, but not active
+            echo sprintf( __('%s plugin is installed, but not activated. You can activate it to automatically download and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+        }
+    }
+    else {
+        //not installed
+        echo sprintf( __('You can install %s plugin to automatically download and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+    }
 }
 
 function my_checkboxes($args) {
@@ -562,6 +580,5 @@ function share_on_diaspora_options_page() {
     </div>
     <?php
 }
-
 } //end class
 ?>
