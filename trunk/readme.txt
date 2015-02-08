@@ -1,10 +1,9 @@
 === Plugin Name ===
 Contributors: Vitalie Ciubotaru
-Donate link: 
 Tags: diaspora, share, button
 Requires at least: 3.2.1
 Tested up to: 4.1
-Stable tag: 0.5.7
+Stable tag: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,8 +28,6 @@ So far, the following translations are available:
 * Russian
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
-
-To change language, set the $locale variable to your language code (e.g. $locale = 'pt_BR';) in wp-config.php.
 
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
