@@ -12,7 +12,7 @@ This plugin adds a "Share on D*" button at the bottom of your posts.
 
 == Description ==
 This plugin adds a "Share on Diaspora" button at the bottom of your posts. Unlike other similar buttons, 
-this one is not tied to one single pod. Instead it allowes the users to select their favorite pod from the list, 
+this one is not tied to one single pod. Instead it allows the users to select their favorite pod from the list, 
 or type it directly. The button is highly customizable, allowing blog admins to set the color, size and shape in 
 accordance with the overall look and feel of their blogs.
 
