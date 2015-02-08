@@ -7,6 +7,14 @@ class ShareOnDiaspora {
         add_filter( 'the_content', array($this, 'diaspora_button_display') );
     }
 
+    function plugin_activation() {
+        add_option('share-on-diaspora-settings');
+    }
+
+    function plugin_deactivation() {
+        delete_option('share-on-diaspora-settings');
+    }
+
     function i18n_init() {
         load_plugin_textdomain( 'share-on-diaspora', false, SHARE_ON_DIASPORA_PLUGIN_DIR . '/i18n' );
     }

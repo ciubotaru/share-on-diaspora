@@ -254,14 +254,17 @@ $podlist = ShareOnDiaspora::$podlist_defaults['podlist'];
 */
 $options_array = get_option('share-on-diaspora-settings');
 $podlist = array_keys($options_array['podlist']);
-$podlist_all_array = get_option('dpu-options');
-if ($podlist_all_array) {
-        // there's a pod list in dpu-options
-	$podlist_all = $podlist_all_array;
+$podlist_all_array = get_option('dpu-podlist');
+if ($podlist_all_array && !empty( $podlist_all_array ) ) {
+    //DPU plugin active, podlist not empty
+    $podlist_all = $podlist_all_array;
+}
+elseif ( !empty( $options_array['podlist-all'] ) ) {
+    //DPU not active, but we can use $options_array['podlist-all']
+    $podlist_all = $options_array['podlist-all'];
 }
 else {
-	// dpu-options empty or missing
-	$podlist_all = array();//$podlist_all = $options_array['podlist-all']; //what if there's nothing?
+    $podlist_all = array('example.com');
 }
 $podlist_all_keys = array_keys($podlist_all);
 //error_log("Pod list is: " . print_r($podlist, true));

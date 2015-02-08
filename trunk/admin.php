@@ -3,7 +3,6 @@ class ShareOnDiaspora_Admin {
     public function __construct() {
         add_action( 'plugins_loaded', array('ShareOnDiaspora', 'i18n_init') );
         // Register style sheet.
-//        add_action( 'wp_enqueue_scripts', array('ShareOnDiaspora', 'register_share_on_diaspora_css') );
         add_action( 'admin_enqueue_scripts', array('ShareOnDiaspora', 'register_share_on_diaspora_css') );
         add_action( 'admin_enqueue_scripts', array('ShareOnDiaspora', 'register_share_on_diaspora_js') );
         add_filter( 'the_content', array('ShareOnDiaspora', 'diaspora_button_display') );
@@ -26,25 +25,7 @@ public $image_defaults = array(
     'use_own_image' => '0'
     );
 
-function podlist_defaults() {
-    $podlist_all = file( SHARE_ON_DIASPORA_PLUGIN_DIR .'pod_list_all.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    return array("podlist-all" => $podlist_all);
-//    return array("podlist" => array("joindiaspora.com", "diaspo.org", "diasp.eu"));
-}
-
-function podlist_random() {
-    $options_array = get_option('share-on-diaspora-settings');
-    $podlist_all = $options_array['podlist-all'];
-    $podlist_len = sizeof($podlist_all);
-    $podlist = array();
-    for ($i = 0; $i < 5; $i++) {
-        $random = rand(0, ($podlist_len-1));
-        $podlist[$podlist_all[$random]] = "1";
-        array_splice($podlist_all, $random, 1);
-        $podlist_len--;
-    }
-    return array( "podlist" => $podlist );   
-}
+public $podlist_defaults = array( 'podlist' => array( 'example.com' ) );
 
 public $color_profiles = array(
     'Vitalie' => array(
@@ -85,7 +66,7 @@ public $color_profiles = array(
         )
     );
 
-public $plugin_version = array('version' => '0.5');
+public $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
 
 //public $podlist_update_url = 'http://the-federation.info/pods.json';
 public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
@@ -93,10 +74,9 @@ public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 function set_default() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
-    $podlist_defaults = $this -> podlist_defaults();
-    $podlist_random = $this -> podlist_random();
+    $podlist_defaults = $this -> podlist_defaults;
     $plugin_version = $this -> plugin_version;
-    $defaults = $button_defaults + $image_defaults + $podlist_defaults + $podlist_random + $plugin_version;
+    $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
     $options_array = get_option('share-on-diaspora-settings');
     foreach ($defaults as $key => $value) {
         if ( empty($options_array[$key]) ) {
@@ -111,13 +91,8 @@ function generate_podlist() {
     $podlist_preview = "<select id='diaspora-button-podlist'>
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
-    if (! $options_array) {
-        //$temp = $this -> podlist_defaults;
-        $podlist = $this -> podlist_defaults();
-        $options_array = $this -> podlist_random();
-    } elseif (empty($options_array['podlist'])) {
-       // $temp = $this -> podlist_defaults;
-        $options_array = $this -> podlist_random();
+    if (empty($options_array['podlist'])) {
+        $options_array = ('example.com');
     }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
@@ -139,7 +114,7 @@ public function filter_plugin_actions($l, $file) {
     array_unshift($l, $settings_link);
     return $l;
 }
-*/
+**/
 
 function show_button_image() {
     $options_array = get_option('share-on-diaspora-settings');
@@ -155,7 +130,7 @@ function show_button_image() {
 function my_admin_init() {
     $button_defaults = $this -> button_defaults;
     $image_defaults = $this -> image_defaults;
-    $podlist_defaults = $this -> podlist_defaults();
+    $podlist_defaults = $this -> podlist_defaults;
     $plugin_version = $this -> plugin_version;
     $color_profiles = $this -> color_profiles;
     $defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
@@ -181,8 +156,6 @@ function my_admin_init() {
 
     $options_array = get_option('share-on-diaspora-settings');
 
-    //do we really need this line?
-    add_option('share-on-diaspora-settings');
     register_setting( 'share_on_diaspora_options', 'share-on-diaspora-settings', array($this, 'my_settings_validate') );
 
     add_settings_section( 'section-colorprofile', __( 'Choose a preset color profile', 'share-on-diaspora' ), array($this, 'section_colorprofile_callback'), 'share_on_diaspora_options-colorprofile' );
@@ -241,7 +214,16 @@ function my_admin_init() {
     foreach ($podlist as $key => $value) {
         add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key));
     };
-    $podlist_unchecked = array_diff($options_array['podlist-all'], array_keys($podlist));
+    $podlist_from_dpu = get_option('dpu-podlists');
+    if ( !empty( $podlist_from_dpu ) ) {
+        $podlist_unchecked = array_diff($podlist_from_dpu, array_keys($podlist));
+    }
+    elseif ( !empty( $options_array['podlist-all'] ) ) {
+        $podlist_unchecked = array_diff($options_array['podlist-all'], array_keys($podlist));
+    }
+    else {
+        $podlist_unchecked = array('example.com');
+    }
     add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist', $podlist_unchecked);
     add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
@@ -343,9 +325,6 @@ function section_two_callback() {
 
 function my_checkboxes($args) {
     $options_array = get_option('share-on-diaspora-settings');
-    if (! $options_array) {
-        $options_array = $this -> podlist_defaults();
-    }
     $podname = esc_attr( $args['podname'] );
     echo "<input type='checkbox' name='share-on-diaspora-settings[podlist][" . $podname . "]' value='1' checked />";
 }
@@ -369,8 +348,6 @@ function my_settings_validate( $input ) {
     //getting the saved options, or creating an empty array if fresh install
     $options_array = ( $result = get_option('share-on-diaspora-settings')) ? $result : array();
     $output = array_merge($options_array, $output);
-//    unset($output['0']);
-//    update_option('share-on-diaspora-settings', $output);
     return $output;
 }
 
@@ -453,7 +430,7 @@ function podlist_settings_validate($input) {
         $input['podlist-all'] = $output;
     } elseif (empty($input['podlist'])) {
         add_settings_error( 'share-on-diaspora-settings', 'empty-podlist', sprintf( __('Value missing for %s. Reverting to default.', 'share-on-diaspora' ), "'podlist'") );
-        $input = array_merge($input, $this -> podlist_random());
+        $input = array_merge( $input, array( 'podlist' => array('example.com' => '1') ) );
     }
     return $input;
 }
