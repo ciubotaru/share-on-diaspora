@@ -29,6 +29,8 @@ So far, the following translations are available:
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
 
+Please note, that some translations might be incomplete and lack latest changes.
+
 == Installation ==
 1. Unpack `share-on-diaspora.zip` and upload its contents to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -81,6 +83,12 @@ page, 'Custom Image' tab.
 page, 'Pod list options' tab.
 
 == Changelog ==
+= 0.6 =
+* Added color presets
+* Changed podlis update mechanism
+* Added support for an auxiliary plugin (Diaspora Podlist Updater)
+* Very likely added new bugs
+
 = 0.5.7 =
 * Updated list of active pods
 * i18n: Serbo-Croatian translation added
