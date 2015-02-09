@@ -264,7 +264,7 @@ elseif ( !empty( $options_array['podlist-all'] ) ) {
     $podlist_all = $options_array['podlist-all'];
 }
 else {
-    $podlist_all = array('example.com');
+    $podlist_all = array('example.com' => "1");
 }
 $podlist_all_keys = array_keys($podlist_all);
 //error_log("Pod list is: " . print_r($podlist, true));
@@ -276,7 +276,7 @@ print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 </select>
 <h3><?php _e('or choose from history', 'share-on-diaspora'); ?></h3>
 </section>
-<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="<?php _e('Example:', 'share-on-diaspora'); print " " . $podlist_all[array_rand($podlist_all_keys)]; ?>" type="text" list="datalist1" autocomplete="on"/>
+<section id=podinput><h3><?php _e('or introduce your pod URL', 'share-on-diaspora'); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="<?php echo(sprintf( __('Example: %s', 'share-on-diaspora'), $podlist_all[array_rand($podlist_all_keys)] )); ?>" type="text" list="datalist1" autocomplete="on"/>
 <datalist id="datalist1">
 <?php
 foreach ($podlist_all as $value)

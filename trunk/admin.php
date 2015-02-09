@@ -163,7 +163,7 @@ function my_admin_init() {
         add_settings_field( $profile_name, $profile_name, array($this, 'my_color_profile'), 'share_on_diaspora_options-colorprofile', 'section-colorprofile', $profile);
     };
 
-    add_settings_section( 'section-button', __( 'Button properties', 'share-on-diaspora' ), array($this, 'section_one_callback'), 'share_on_diaspora_options-button' );
+    add_settings_section( 'section-button', __( 'Button properties', 'share-on-diaspora' ), array($this, 'section_button_callback'), 'share_on_diaspora_options-button' );
     add_settings_field( 'button_background', __( 'Background color', 'share-on-diaspora' ), array($this, 'my_text_input'), 'share_on_diaspora_options-button', 'section-button', array(
         'name' => 'share-on-diaspora-settings[button_background]',
         'value' => (isset($options_array['button_background']) ? $options_array['button_background'] : $button_defaults['button_background'])
@@ -209,11 +209,8 @@ function my_admin_init() {
     add_settings_field( 'delete_image', __( 'Clear current image', 'share-on-diaspora' ), array($this, 'share_on_diaspora_delete_callback'), 'share_on_diaspora_options-upload', 'section-upload');
     add_settings_field( 'use_own_image', __( 'Use custom image', 'share-on-diaspora' ), array($this, 'use_image_callback'), 'share_on_diaspora_options-upload', 'section-upload' );
 
-    add_settings_section( 'section-podlist', __( 'Pod properties', 'share-on-diaspora' ), array($this, 'section_two_callback'), 'share_on_diaspora_options-podlist' );
+    add_settings_section( 'section-podlist', __( 'List of pods shown to user', 'share-on-diaspora' ), array($this, 'section_podlist_callback'), 'share_on_diaspora_options-podlist' );
     $podlist = $options_array['podlist'];
-    foreach ($podlist as $key => $value) {
-        add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key));
-    };
     $podlist_from_dpu = get_option('dpu-podlists');
     if ( !empty( $podlist_from_dpu ) ) {
         $podlist_unchecked = array_diff($podlist_from_dpu, array_keys($podlist));
@@ -224,7 +221,10 @@ function my_admin_init() {
     else {
         $podlist_unchecked = array('example.com');
     }
-    add_settings_field( 'add_pod', __( 'Add a custom pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist', $podlist_unchecked);
+    add_settings_field( 'add_pod', __( 'Add a pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist', $podlist_unchecked);
+    foreach ($podlist as $key => $value) {
+        add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key));
+    };
     add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
 
@@ -253,7 +253,7 @@ function my_color_profile( $args ) {
    onMouseOut=\"this.style.backgroundColor='#" . $bg ."'; this.style.color='#" . $text . "'; this.style.border='1px solid #" . $text . "';\"><font>" . $bt . "</font> <div id='diaspora-button-inner'><img src='" . plugin_dir_url(__FILE__) . "images/asterisk-" . ($bs-3) . ".png'></div></div>";
 }
 
-function section_one_callback() {
+function section_button_callback() {
     printf( __( 'Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value.', 'share-on-diaspora' ), '<code>000000</code>', '<code>ffffff</code>');
 }
 
@@ -287,7 +287,7 @@ function image_upload_callback() {
 function share_on_diaspora_url_callback() {
     $settings = (array) get_option( 'share-on-diaspora-settings' );
     $url = $settings['image_file'];
-    echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' placeholder='" . __('Example:', 'share-on-diaspora') . " http://example.com/image1.png' style='width:100%'/>";
+    echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' placeholder='" . sprintf( __('Example: %s', 'share-on-diaspora'), 'http://example.com/image1.png') . " style='width:100%'/>";
 }
 
 function share_on_diaspora_delete_callback() {
@@ -301,26 +301,8 @@ function use_image_callback() {
     echo "<input type='checkbox' name='share-on-diaspora-settings[use_own_image]' value='checked'" . ( ($options_array['use_own_image'] == '1') ? 'checked' : '') . ">";
 }
 
-function section_two_callback() {
-    echo __( 'Below is the list of Diaspora pods. Check the ones that you want to appear in the drop-down menu in the pod selection window.', 'share-on-diaspora' );
-    echo "<br>";
-    $dpu_installed = get_plugins('/diaspora-podlist-updater');
-    if ( $dpu_installed ) {
-        //plugin installed. let's see if it's activated
-        $dpu_active = is_plugin_active('diaspora-podlist-updater/diaspora-podlist-updater.php');
-        if ( $dpu_active ) {
-            //active
-            echo sprintf( "%s plugin is installed and enabled. You don't need to manually update the list of active Diaspora* pods.", "<a href='http://wordpress.org/plugins/diaspora-podlist-updater'>Diaspora Podlist Updater</a>" );
-        }
-        else {
-            //installed, but not active
-            echo sprintf( __('%s plugin is installed, but not activated. You can activate it to automatically download and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
-        }
-    }
-    else {
-        //not installed
-        echo sprintf( __('You can install %s plugin to automatically download and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
-    }
+function section_podlist_callback() {
+    echo sprintf( __( 'This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes.', 'share-on-diaspora' ), __( 'Update', 'share-on-diaspora' ) );
 }
 
 function my_checkboxes($args) {
@@ -358,10 +340,29 @@ function share_on_diaspora_addfield_callback($podlist_unchecked) {
         echo '<option  value="' . $value .'"></option>';
     }
     echo "</datalist>";
+	echo "<br />Use up/down keys to choose from the list of suggested pods.";
 }
 
 function share_on_diaspora_update_podlist_callback() {
     echo "<input type='submit' name='share-on-diaspora-settings[download]' value='" . __('Retrieve', 'share-on-diaspora') . "'>";
+	echo "<br />";
+    $dpu_installed = get_plugins('/diaspora-podlist-updater');
+    if ( $dpu_installed ) {
+        //plugin installed. let's see if it's activated
+        $dpu_active = is_plugin_active('diaspora-podlist-updater/diaspora-podlist-updater.php');
+        if ( $dpu_active ) {
+            //active
+            echo sprintf( __("%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods.", 'share-on-diaspora'), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+        }
+        else {
+            //installed, but not active
+            echo sprintf( __('%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+		}
+    }
+    else {
+        //not installed
+        echo sprintf( __('You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+    }
 }
 
 function button_settings_validate($input) {

@@ -1,6 +1,8 @@
 <?php
 class ShareOnDiaspora {
     public function __construct() {
+//        registrer_activation_hook( __FILE__, array( $this, 'share_on_diaspora_activation' ) );
+//        register_deactivation_hook( __FILE__, array( $this, 'share_on_diaspora_deactivation' ) );
         add_action( 'plugins_loaded', array($this, 'i18n_init') );
         // Register style sheet.
         add_action( 'wp_enqueue_scripts', array($this, 'register_share_on_diaspora_css') );
@@ -16,7 +18,8 @@ class ShareOnDiaspora {
     }
 
     function i18n_init() {
-        load_plugin_textdomain( 'share-on-diaspora', false, SHARE_ON_DIASPORA_PLUGIN_DIR . '/i18n' );
+        load_plugin_textdomain( 'share-on-diaspora', false, dirname(plugin_basename(__FILE__)) . '/i18n' );
+        error_log("i18n activated");
     }
 
     function register_share_on_diaspora_css() {
@@ -66,7 +69,7 @@ class ShareOnDiaspora {
             $url = "'".esc_url(get_permalink())."'";
             $title = "'".get_the_title()."'";
         }
-        $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL ."new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . "</a></div>";
+        $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . " ;var title = ". $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL ."new_window.php?id=" . $post -> ID . "&amp;url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . "</a></div>";
         return $button;
     }
 
