@@ -225,7 +225,7 @@ function my_admin_init() {
     foreach ($podlist as $key => $value) {
         add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key));
     };
-    add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
+    add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "' target='_blank'>Podupti.me</a>"), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist');
 }
 
 function section_colorprofile_callback() {
@@ -340,7 +340,7 @@ function share_on_diaspora_addfield_callback($podlist_unchecked) {
         echo '<option  value="' . $value .'"></option>';
     }
     echo "</datalist>";
-	echo "<br />Use up/down keys to choose from the list of suggested pods.";
+	echo "<br />" . __('Use up/down keys to choose from the list of suggested pods.', 'share-on-diaspora');
 }
 
 function share_on_diaspora_update_podlist_callback() {
@@ -352,16 +352,16 @@ function share_on_diaspora_update_podlist_callback() {
         $dpu_active = is_plugin_active('diaspora-podlist-updater/diaspora-podlist-updater.php');
         if ( $dpu_active ) {
             //active
-            echo sprintf( __("%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods.", 'share-on-diaspora'), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+            printf( __("%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods.", 'share-on-diaspora'), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
         }
         else {
             //installed, but not active
-            echo sprintf( __('%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+            printf( __('%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
 		}
     }
     else {
         //not installed
-        echo sprintf( __('You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
+        printf( __('You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
     }
 }
 
@@ -537,8 +537,8 @@ function share_on_diaspora_options_page() {
         //form in tab 3 is updated manually, so settings errrors are not shown properly. Thus workaround.
         if (isset($_GET['tab']) && $_GET['tab'] == '3') settings_errors('share-on-diaspora-settings');
         ?>
-        <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), $plugin_data_array['Version'] ); ?></h2>
-        <p><?php printf( __('Need help? Please read %1$s plugin\'s FAQ page %2$s.', 'share-on-diaspora'), "<a href='http://wordpress.org/plugins/share-on-diaspora/faq'>", '</a>'); ?></p>
+        <h2><?php $plugin_data_array = get_plugin_data(__FILE__); printf( __('Share on Diaspora (ver. %s) Options', 'share-on-diaspora' ), SHARE_ON_DIASPORA_VERSION ); ?></h2>
+        <p><?php printf( __('Need help? Please read %1$splugin\'s FAQ page%2$s.', 'share-on-diaspora'), "<a href='http://wordpress.org/plugins/share-on-diaspora/faq'>", '</a>'); ?></p>
         <h2 class="nav-tab-wrapper">
         <a href="?page=share_on_diaspora_options_page&amp;tab=1" class="nav-tab <?php if ( $tab == '1' ) echo "nav-tab-active"; ?>"><?php echo __('Color profiles', 'share-on-diaspora'); ?></a>
         <a href="?page=share_on_diaspora_options_page&amp;tab=2" class="nav-tab <?php if ( $tab == '2' ) echo "nav-tab-active"; ?>"><?php echo __('Button options', 'share-on-diaspora'); ?></a>

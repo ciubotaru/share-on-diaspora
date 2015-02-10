@@ -20,7 +20,7 @@ So far, the following translations are available:
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
 
-To change the language, set the $locale variable to your language code (e.g. $locale = 'pt_BR';) in wp-config.php.
+Please note, that some translations might be incomplete and lack latest changes.
 
 # Screenshots
 1. The "Share on D*" button under the default "Hello World"
@@ -76,6 +76,12 @@ to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
 settings (see previous question).
 
 # Changelog
+
+## 0.6
+* Added color presets
+* Changed podlis update mechanism
+* Added support for an auxiliary plugin (Diaspora Podlist Updater)
+* Very likely added new bugs
 
 ## 0.5.7
 * Updated list of active pods
@@ -141,7 +147,6 @@ Version 0.3.3 introduces new ways to customize you share button. The default val
 # ToDo
 * Think about how to add a graphical color-picker to the settings page. JavaScript?
 * Think how to update preview automatically. JavaScript?
-* Add color profiles for custom buttons
 
 # Translations
 It is important to providing sharing UI in the same language as the rest o the website. Currently, all translation efforts are concentrated on [poeditor.com](poeditor.com). If you want to contribute a translation, or point out some errors in others' translations, check out [https://poeditor.com/projects/view?id=10673](https://poeditor.com/projects/view?id=10673).
