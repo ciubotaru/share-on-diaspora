@@ -25,7 +25,7 @@ public $image_defaults = array(
     'use_own_image' => '0'
     );
 
-public $podlist_defaults = array( 'podlist' => array( 'example.com' ) );
+public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
 
 public $color_profiles = array(
     'Vitalie' => array(
@@ -92,7 +92,7 @@ function generate_podlist() {
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
     if (empty($options_array['podlist'])) {
-        $options_array = ('example.com');
+        $options_array = $this -> podlist_defaults;
     }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';

@@ -25,7 +25,7 @@ public $image_defaults = array(
     'use_own_image' => '0'
     );
 
-public $podlist_defaults = array( 'podlist' => array( 'example.com' ) );
+public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
 
 public $color_profiles = array(
     'Vitalie' => array(
@@ -92,7 +92,7 @@ function generate_podlist() {
 <option>- " . __('Select from the list', 'share-on-diaspora') . " -</option>";
     $options_array = get_option('share-on-diaspora-settings');
     if (empty($options_array['podlist'])) {
-        $options_array = ('example.com');
+        $options_array = $this -> podlist_defaults;
     }
     foreach ($options_array['podlist'] as $key => $value) {
         $podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
@@ -219,7 +219,7 @@ function my_admin_init() {
         $podlist_unchecked = array_diff($options_array['podlist-all'], array_keys($podlist));
     }
     else {
-        $podlist_unchecked = array('example.com');
+        $podlist_unchecked = array('example.com' => '1');
     }
     add_settings_field( 'add_pod', __( 'Add a pod', 'share-on-diaspora' ), array($this, 'share_on_diaspora_addfield_callback'), 'share_on_diaspora_options-podlist', 'section-podlist', $podlist_unchecked);
     foreach ($podlist as $key => $value) {
