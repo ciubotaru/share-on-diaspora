@@ -1,0 +1,334 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: share-on-diaspora\n"
+"Language: es\n"
+
+#: class.php:61
+msgid "Page address here"
+msgstr "Dirección de la página aquí"
+
+#: class.php:62
+msgid "Page title here"
+msgstr "Título de la página aqui"
+
+#: admin.php:107
+msgid "Share on D*"
+msgstr "Compartir en D*"
+
+#: admin.php:166
+msgid "Button properties"
+msgstr "Propiedades del botón"
+
+#: admin.php:167
+msgid "Background color"
+msgstr "Color de fondo"
+
+#: admin.php:172
+msgid "Background color on mouse-over"
+msgstr "Color de fondo con el ratón por encima"
+
+#: admin.php:177
+msgid "Text and border color"
+msgstr "Color del borde y texto"
+
+#: admin.php:182
+msgid "Text and border color on mouse-over"
+msgstr "Color del borde y texto con el ratón por encima"
+
+#: admin.php:187
+msgid "Rounded corners"
+msgstr "Esquinas redondeadas"
+
+#: admin.php:190
+msgid "Rounded"
+msgstr "Redondeado"
+
+#: admin.php:190
+msgid "Square"
+msgstr "Cuadrado"
+
+#: admin.php:193
+msgid "Button size"
+msgstr "Tamaño del botón"
+
+#: admin.php:196
+msgid "Small"
+msgstr "Pequeño"
+
+#: admin.php:196
+msgid "Medium"
+msgstr "Mediano"
+
+#: admin.php:196
+msgid "Large"
+msgstr "Grande"
+
+#: admin.php:196
+msgid "Huge"
+msgstr "Enorme"
+
+#: admin.php:199
+msgid "Text on the button"
+msgstr "Texto en el botón"
+
+#: admin.php:204
+msgid "Restore defaults"
+msgstr "Restaurar valores predeterminados"
+
+#: admin.php:257
+msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
+msgstr "Utilice los parámetros siguientes para cambiar el aspecto de su botón de compartir. Todos los colores son números hexadecimales de seis dígitos como %1$s ó %2$s. Dejar en blanco para restaurar el valor predeterminado."
+
+#: admin.php:382
+msgid "Invalid value for %s. Reverting to default."
+msgstr "Valor no válido para %s. Volviendo a los valores predeterminados."
+
+#: admin.php:371
+msgid "All parameters reverted to their default values."
+msgstr "Se han restaurado todos los parámetros a sus valores predeterminados."
+
+#: admin.php:407
+msgid "Plugin directory is not writable. Can not save css file."
+msgstr "El Directorio de Plugin no se puede escribir. No se puede guardar el archivo css."
+
+#: admin.php:450
+msgid "Button Preview"
+msgstr "Vista previa del Botón"
+
+#: admin.php:305 admin.php:445 admin.php:456 admin.php:467 admin.php:479
+msgid "Update"
+msgstr "Actualizar"
+
+#: admin.php:487
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Usted no tiene los permisos necesarios para acceder a esta página."
+
+#: admin.php:540
+msgid "Share on Diaspora (ver. %s) Options"
+msgstr "Opciones  de Compartir en Diaspora (ver. %s)"
+
+#: admin.php:544
+msgid "Button options"
+msgstr "Opciones de botón"
+
+#: admin.php:546
+msgid "Pod list options"
+msgstr "Lista de opciones del Pod"
+
+#. Plugin Name of the plugin/theme
+#: 
+msgid "Share on Diaspora"
+msgstr "Compartir en Diaspora"
+
+#. Description of the plugin/theme
+#: 
+msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
+msgstr "Este plugin agrega un botón \"Compartir en D*\" en la parte inferior de sus publicaciones."
+
+#. Author of the plugin/theme
+#: 
+msgid "Vitalie Ciubotaru"
+msgstr "Vitalie Ciubotaru"
+
+#. Author URI of the plugin/theme
+#: 
+msgid "https://github.com/ciubotaru"
+msgstr "https://github.com/ciubotaru"
+
+#: new_window.php:232
+msgid "Sharing"
+msgstr "Compartiendo"
+
+#: new_window.php:238
+msgid "Choose your Diaspora* pod"
+msgstr "Elige tu pod de Diaspora*"
+
+#: new_window.php:277
+msgid "or choose from history"
+msgstr "o elija del historial"
+
+#: new_window.php:279
+msgid "or introduce your pod URL"
+msgstr "o introduzca el URL de su pod"
+
+#: new_window.php:288
+msgid "Remember my choice, don't ask again"
+msgstr "Recordar mi elección, no volver a preguntar"
+
+#: new_window.php:288
+msgid "Advanced options"
+msgstr "Opciones avanzadas"
+
+#: new_window.php:288
+msgid "Use Markdown syntax for link"
+msgstr "Utilice la sintaxis de Markdown para el enlace"
+
+#: new_window.php:288
+msgid "Shorten URL (j.mp)"
+msgstr "Acortar URL (j.mp)"
+
+#: new_window.php:288
+msgid "Never remember my last 3 pods"
+msgstr "Nunca recordar mis últimos 3 pods"
+
+#: new_window.php:288
+msgid "Forget my last 3 pods"
+msgstr "Olvidar mis últimos 3 pods"
+
+#: admin.php:92 new_window.php:240
+msgid "Select from the list"
+msgstr "Seleccione de la lista"
+
+#: new_window.php:287
+msgid "Share"
+msgstr "Compartir"
+
+#: admin.php:206
+msgid "Upload button image"
+msgstr "Subir imagen de botón"
+
+#: admin.php:207
+msgid "Upload new custom image"
+msgstr "Subir nueva imagen de botón"
+
+#: admin.php:208
+msgid "OR provide image URL"
+msgstr "O introduzca URL de imagen"
+
+#: admin.php:209
+msgid "Clear current image"
+msgstr "Borrar imagen actual"
+
+#: admin.php:210
+msgid "Use custom image"
+msgstr "Usar imagen propia"
+
+#: admin.php:276
+msgid "Defaults"
+msgstr "Por defecto"
+
+#: admin.php:280
+msgid "Select an image to upload and use as button."
+msgstr "Seleccione una imagen para usar como botón"
+
+#: admin.php:284
+msgid "Filename"
+msgstr "Archivo"
+
+#: admin.php:294
+msgid "Clear"
+msgstr "Borrar"
+
+#: admin.php:386 admin.php:433
+msgid "Value missing for %s. Reverting to default."
+msgstr "Falta el valor de %s. Volviendo a predeterminado."
+
+#: admin.php:461
+msgid "Custom Image Preview"
+msgstr "Vista previa de imagen"
+
+#: admin.php:472
+msgid "Podlist Preview"
+msgstr "Vista previa de lista de pods"
+
+#: admin.php:495
+msgid "Image URL cleared."
+msgstr "Borrado URL de imagen"
+
+#: admin.php:518
+msgid "Custom image file uploaded."
+msgstr "Archivo de imagen subido."
+
+#: admin.php:545
+msgid "Custom image"
+msgstr "Imagen propia"
+
+#: admin.php:556
+msgid "Source code repository"
+msgstr "Repositorio de código fuente"
+
+#: admin.php:557
+msgid "Donate BTC"
+msgstr "Donar BTC"
+
+#: admin.php:337
+msgid "Add"
+msgstr "Agregar"
+
+#: admin.php:123
+msgid "[No image]"
+msgstr ""
+
+#: admin.php:396
+msgid "No image file specified. Falling back to standard button."
+msgstr ""
+
+#: admin.php:161
+msgid "Choose a preset color profile"
+msgstr ""
+
+#: admin.php:232
+msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
+msgstr ""
+
+#: admin.php:543
+msgid "Color profiles"
+msgstr ""
+
+#: admin.php:228
+msgid "Download the latest podlist from %s"
+msgstr ""
+
+#: admin.php:412 admin.php:418
+msgid "Could not update the podlist."
+msgstr ""
+
+#: admin.php:290 admin.php:337 new_window.php:279
+msgid "Example: %s"
+msgstr "Ejemplo: %s"
+
+#: admin.php:347
+msgid "Retrieve"
+msgstr "Descarga"
+
+#: admin.php:212
+msgid "List of pods shown to user"
+msgstr ""
+
+#: admin.php:224
+msgid "Add a pod"
+msgstr "Agregue un pod"
+
+#: admin.php:305
+msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
+msgstr ""
+
+#: admin.php:355
+msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:359
+msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:364
+msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:343
+msgid "Use up/down keys to choose from the list of suggested pods."
+msgstr ""
+
+#: admin.php:541
+msgid "Need help? Please read %1$splugin's FAQ page%2$s."
+msgstr "¿Necesita ayuda? Lea %1$sla página FAQ del plugin%2$s."
+
+#. Plugin URI of the plugin/theme
+#: 
+msgid "https://github.com/ciubotaru/share-on-diaspora"
+msgstr "https://github.com/ciubotaru/share-on-diaspora"
+

@@ -10,16 +10,17 @@ accordance with the overall look and feel of their blogs.
 There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
+* French -- contributed by Stef20 from stef20.info/blog and Se7h
+* German -- contributed by Georg Krause <mail@georg-krause.net>
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
 * Romanian
 * Russian
 * Serbo-Croatian -- contributed by Borisa Djuraskovic from Webhostinghub.com
-* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte 
-* French -- contributed by Stef20 from stef20.info/blog and Se7h
+* Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
 
-To change language, set the WPLANG variabale to your language code (e.g. pt_BR) in wp-config.php.
+Please note, that some translations might be incomplete and lack latest changes.
 
 # Screenshots
 1. The "Share on D*" button under the default "Hello World"
@@ -29,13 +30,15 @@ post in "Twenty Thirteen" theme.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-2.png?raw=true)
 3. Verify the text of your post, Aspects that will see it etc, and press the Post button.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-3.png?raw=true)
-4. To customize the look of you button, go to the Settings page, 'Button options' tab.
+4. To choose from several preset color profiles, go to the Settings page, 'Color Profiles' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-4.png?raw=true)
-5. To upload and use own image instead of the stock button, go to the Settings
-page, 'Custom Image' tab.
+5. To customize the look of you button, go to the Settings page, 'Button options' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-5.png?raw=true)
-6. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
+6. To upload and use own image instead of the stock button, go to the Settings
+page, 'Custom Image' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-6.png?raw=true)
+7. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
+![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-7.png?raw=true)
 
 # Installation
 1. Get the latest snapshot of master branch.
@@ -75,6 +78,12 @@ to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
 settings (see previous question).
 
 # Changelog
+
+## 0.6
+* Added color presets
+* Changed podlis update mechanism
+* Added support for an auxiliary plugin (Diaspora Podlist Updater)
+* Very likely added new bugs
 
 ## 0.5.7
 * Updated list of active pods
@@ -140,7 +149,6 @@ Version 0.3.3 introduces new ways to customize you share button. The default val
 # ToDo
 * Think about how to add a graphical color-picker to the settings page. JavaScript?
 * Think how to update preview automatically. JavaScript?
-* Add color profiles for custom buttons
 
 # Translations
 It is important to providing sharing UI in the same language as the rest o the website. Currently, all translation efforts are concentrated on [poeditor.com](poeditor.com). If you want to contribute a translation, or point out some errors in others' translations, check out [https://poeditor.com/projects/view?id=10673](https://poeditor.com/projects/view?id=10673).
