@@ -75,11 +75,13 @@ post in "Twenty Thirteen" theme.
 2. Choose a Diaspora pod from the list or type it in the text field.
 3. Verify the text of your post, Aspects that will see it etc, and press the
 Post button.
-4. To customize the look of you button, go to the Settings page, 'Button
+4. To choose from several preset color profiles, go to the Settings page,
+'Color Profiles' tab.
+5. To customize the look of you button, go to the Settings page, 'Button
 options' tab.
-5. To upload and use own image instead of the stock button, go to the Settings
+6. To upload and use own image instead of the stock button, go to the Settings
 page, 'Custom Image' tab.
-6. To choose the pods to be included in the drop-down list, go to the Settings
+7. To choose the pods to be included in the drop-down list, go to the Settings
 page, 'Pod list options' tab.
 
 == Changelog ==

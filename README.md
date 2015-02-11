@@ -30,13 +30,15 @@ post in "Twenty Thirteen" theme.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-2.png?raw=true)
 3. Verify the text of your post, Aspects that will see it etc, and press the Post button.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-3.png?raw=true)
-4. To customize the look of you button, go to the Settings page, 'Button options' tab.
+4. To choose from several preset color profiles, go to the Settings page, 'Color Profiles' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-4.png?raw=true)
-5. To upload and use own image instead of the stock button, go to the Settings
-page, 'Custom Image' tab.
+5. To customize the look of you button, go to the Settings page, 'Button options' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-5.png?raw=true)
-6. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
+6. To upload and use own image instead of the stock button, go to the Settings
+page, 'Custom Image' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-6.png?raw=true)
+7. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
+![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-7.png?raw=true)
 
 # Installation
 1. Get the latest snapshot of master branch.
