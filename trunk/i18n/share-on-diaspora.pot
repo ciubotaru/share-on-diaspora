@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Share on Diaspora package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Share on Diaspora 0.5.7\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/share-on-diaspora\n"
-"POT-Creation-Date: 2015-02-09 14:19:35+00:00\n"
+"Project-Id-Version: Share on Diaspora 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-diaspora\n"
+"POT-Creation-Date: 2015-02-11 10:13:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,6 +168,10 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#: admin.php:343
+msgid "Use up/down keys to choose from the list of suggested pods."
+msgstr ""
+
 #: admin.php:347
 msgid "Retrieve"
 msgstr ""
@@ -243,7 +247,7 @@ msgid "Share on Diaspora (ver. %s) Options"
 msgstr ""
 
 #: admin.php:541
-msgid "Need help? Please read %1$s plugin's FAQ page %2$s."
+msgid "Need help? Please read %1$splugin's FAQ page%2$s."
 msgstr ""
 
 #: admin.php:543
@@ -324,6 +328,10 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "Share on Diaspora"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ciubotaru/share-on-diaspora"
 msgstr ""
 
 #. Description of the plugin/theme
