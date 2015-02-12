@@ -211,7 +211,7 @@ function my_admin_init() {
 
     add_settings_section( 'section-podlist', __( 'List of pods shown to user', 'share-on-diaspora' ), array($this, 'section_podlist_callback'), 'share_on_diaspora_options-podlist' );
     $podlist = $options_array['podlist'];
-    $podlist_from_dpu = get_option('dpu-podlists');
+    $podlist_from_dpu = get_option('dpu-podlist');
     if ( !empty( $podlist_from_dpu ) ) {
         $podlist_unchecked = array_diff($podlist_from_dpu, array_keys($podlist));
     }
