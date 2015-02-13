@@ -35,8 +35,8 @@ register_deactivation_hook( __FILE__, array( 'ShareOnDiaspora', 'plugin_deactiva
 require_once( SHARE_ON_DIASPORA_PLUGIN_DIR . 'class.php' );
 if ( is_admin() ) {
 	require_once( SHARE_ON_DIASPORA_PLUGIN_DIR . 'admin.php' );
-        $shareondiaspora_admin = new ShareOnDiaspora_Admin;
-//	add_action( 'init', array( 'ShareOnDiaspora_Admin', '__construct' ) );
+		$shareondiaspora_admin = new ShareOnDiaspora_Admin;
+	//  add_action( 'init', array( 'ShareOnDiaspora_Admin', '__construct' ) );
 }
 
 $shareondiaspora = new ShareOnDiaspora;
