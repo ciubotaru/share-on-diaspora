@@ -30,7 +30,7 @@ define( 'SHARE_ON_DIASPORA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SHARE_ON_DIASPORA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 register_activation_hook( __FILE__, array( 'ShareOnDiaspora', 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( 'ShareOnDiaspora', 'plugin_deactivation' ) );
+register_uninstall_hook( __FILE__, array( 'ShareOnDiaspora', 'plugin_uninstall' ) );
 
 require_once( SHARE_ON_DIASPORA_PLUGIN_DIR . 'class.php' );
 if ( is_admin() ) {

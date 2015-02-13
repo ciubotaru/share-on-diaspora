@@ -13,7 +13,7 @@ class ShareOnDiaspora {
 		add_option( 'share-on-diaspora-settings' );
 	}
 
-	function plugin_deactivation() {
+	function plugin_uninstall() {
 		delete_option( 'share-on-diaspora-settings' );
 	}
 
