@@ -85,6 +85,13 @@ page, 'Custom Image' tab.
 page, 'Pod list options' tab.
 
 == Changelog ==
+= 0.6.2 =
+* Code formatting streamlined to reflect WP Coding Standards.
+
+= 0.6.1 =
+* Bug-fix: saved settings shouldn't be deleted on deactivation, only on 
+uninstall.
+
 = 0.6 =
 * Added color presets
 * Changed podlis update mechanism
