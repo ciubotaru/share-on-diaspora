@@ -25,19 +25,19 @@ msgstr "Propriétés du bouton"
 
 #: admin.php:167
 msgid "Background color"
-msgstr "Couleur du fond"
+msgstr "Couleur de fond"
 
 #: admin.php:172
 msgid "Background color on mouse-over"
-msgstr "Couleur du fond au passage de la souris"
+msgstr "Couleur de fond au passage de la souris"
 
 #: admin.php:177
 msgid "Text and border color"
-msgstr "Couleur du texte et bordure"
+msgstr "Couleur du texte et de la bordure"
 
 #: admin.php:182
 msgid "Text and border color on mouse-over"
-msgstr "Couleur du texte et bordure au passage de la souris"
+msgstr "Couleur du texte et de la bordure au passage de la souris"
 
 #: admin.php:187
 msgid "Rounded corners"
@@ -77,7 +77,7 @@ msgstr "Texte sur le bouton"
 
 #: admin.php:204
 msgid "Restore defaults"
-msgstr "Revenir aux défauts"
+msgstr "Revenir aux paramètres par défauts"
 
 #: admin.php:257
 msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
@@ -85,7 +85,7 @@ msgstr "Utilisez les paramètres ci-dessous pour changer l'apparence de votre bo
 
 #: admin.php:382
 msgid "Invalid value for %s. Reverting to default."
-msgstr "Valeur invalide pour %s. Retour au défaut."
+msgstr "Valeur invalide pour %s. Retour aux paranètres par défaut."
 
 #: admin.php:371
 msgid "All parameters reverted to their default values."
@@ -93,7 +93,7 @@ msgstr "Tout les paramètres sont revenus aux valeurs par défaut."
 
 #: admin.php:407
 msgid "Plugin directory is not writable. Can not save css file."
-msgstr "Le répertoire de Plugin n'est pas accessible en écriture. Vous ne pouvez pas enregistrer le fichier css."
+msgstr "Le répertoire du plugin n'est pas accessible en écriture. Vous ne pouvez pas enregistrer le fichier css."
 
 #: admin.php:450
 msgid "Button Preview"
@@ -105,7 +105,7 @@ msgstr "Mise à jour"
 
 #: admin.php:487
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas suffisamment de droit pour accéder cette page."
+msgstr "Vous n'avez pas les droits suffisamment pour accéder cette page."
 
 #: admin.php:540
 msgid "Share on Diaspora (ver. %s) Options"
@@ -113,7 +113,7 @@ msgstr "Partage sur Diapora (ver. %s) Options"
 
 #: admin.php:544
 msgid "Button options"
-msgstr "Bouton d'options"
+msgstr "Options du bouton"
 
 #: admin.php:546
 msgid "Pod list options"
@@ -189,11 +189,11 @@ msgstr "Partager"
 
 #: admin.php:206
 msgid "Upload button image"
-msgstr "Image du bouton d'upload"
+msgstr "Téléverser un image du bouton"
 
 #: admin.php:207
 msgid "Upload new custom image"
-msgstr "Uploader une nouvelle image personalisée"
+msgstr "Téléverser une nouvelle image personalisée"
 
 #: admin.php:208
 msgid "OR provide image URL"
@@ -209,11 +209,11 @@ msgstr "Utiliser une image personalisée"
 
 #: admin.php:276
 msgid "Defaults"
-msgstr "Défauts"
+msgstr "Paramètres par défaut"
 
 #: admin.php:280
 msgid "Select an image to upload and use as button."
-msgstr "Sélectionner une image pour l'uploader et l'utiliser comme bouton."
+msgstr "Sélectionner une image pour le téléverser et l'utiliser comme bouton."
 
 #: admin.php:284
 msgid "Filename"
@@ -225,7 +225,7 @@ msgstr "Effacer"
 
 #: admin.php:386 admin.php:433
 msgid "Value missing for %s. Reverting to default."
-msgstr "Valeur manquante pour %s. Retour au défaut."
+msgstr "Valeur manquante pour %s. Retour aux paramètres par défaut."
 
 #: admin.php:461
 msgid "Custom Image Preview"
@@ -241,7 +241,7 @@ msgstr "URL de l'image effacée."
 
 #: admin.php:518
 msgid "Custom image file uploaded."
-msgstr "Fichier de l'image personnalisée uploadé."
+msgstr "Image personnalisée téléversé."
 
 #: admin.php:545
 msgid "Custom image"
@@ -269,23 +269,23 @@ msgstr "Aucun fichier d'image spécifié. Retour au bouton standard."
 
 #: admin.php:161
 msgid "Choose a preset color profile"
-msgstr ""
+msgstr "Choisissez un profil de couleur prédéfinie"
 
 #: admin.php:232
 msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
-msgstr ""
+msgstr "Vous pouvez choisir un profil de couleur prédéfini pour votre bouton dans ce tableau ou le personaliser vous-même dans l'onglet 'Options du bouton'."
 
 #: admin.php:543
 msgid "Color profiles"
-msgstr ""
+msgstr "Profil de couleur"
 
 #: admin.php:228
 msgid "Download the latest podlist from %s"
-msgstr ""
+msgstr "Télécharger la dernière liste de pod depuis %s"
 
 #: admin.php:412 admin.php:418
 msgid "Could not update the podlist."
-msgstr ""
+msgstr "Ne peut pas mettre à jour la liste de pod."
 
 #: admin.php:290 admin.php:337 new_window.php:279
 msgid "Example: %s"
@@ -293,11 +293,11 @@ msgstr "Exemple : %s"
 
 #: admin.php:347
 msgid "Retrieve"
-msgstr ""
+msgstr "Récupérer"
 
 #: admin.php:212
 msgid "List of pods shown to user"
-msgstr ""
+msgstr "Liste des pods affichée à l'utilisateur"
 
 #: admin.php:224
 msgid "Add a pod"
@@ -305,27 +305,27 @@ msgstr "Ajouter un pod"
 
 #: admin.php:305
 msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
-msgstr ""
+msgstr "Voici la liste des pods Diaspora qui vont apparaître dans le menu déroulant de la Fenêtre de partage. Pour ajouter un pod, ajouter son nom dans dans la case ci+dessous. Pour en enlever un, dé-cocher le. Appuyez sur %s pour valider vos changements."
 
 #: admin.php:355
 msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
-msgstr ""
+msgstr "%s est installé et activé. Vous n'avez pas besoin de récupérer manuellement la liste des pods Disapora actifs."
 
 #: admin.php:359
 msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
-msgstr ""
+msgstr "%s est installé mais pas activé. Vous pouvez l'activer pour récupérer automatiquement la liste des pods Diaspora actifs."
 
 #: admin.php:364
 msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
-msgstr ""
+msgstr "Vous pouvez installer l'extension %s pour récupérer automatiquement la liste des pods Diaspora actifs."
 
 #: admin.php:343
 msgid "Use up/down keys to choose from the list of suggested pods."
-msgstr ""
+msgstr "Utiliser les touche haut/bas pour choisir un pod parmi ceux qui sont proposés."
 
 #: admin.php:541
 msgid "Need help? Please read %1$splugin's FAQ page%2$s."
-msgstr "Besoin d'aide ? S'il vous plaît lisez la FAQ %1$sà la page%2$s."
+msgstr "Besoin d'aide ? S'il vous plaît lisez la %1$sFAQ de l'extension%2$s."
 
 #. Plugin URI of the plugin/theme
 #: 
