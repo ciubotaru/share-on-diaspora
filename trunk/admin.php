@@ -328,7 +328,7 @@ public function filter_plugin_actions($l, $file) {
 		}
 		unset($output['section']);
 		//getting the saved options, or creating an empty array if fresh install
-		$options_array = ( $result = get_option( 'share-on-diaspora-settings' )) ? $result : array();
+		$options_array = get_option( 'share-on-diaspora-settings', array() );
 		$output = array_merge( $options_array, $output );
 		return $output;
 	}
