@@ -32,6 +32,68 @@ class ShareOnDiaspora {
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
 
+	public $button_defaults = array(
+	'button_color' => '3c72c2',
+	'button_background' => 'ecf2f6',
+	'button_color_hover' => '3c72c2',
+	'button_background_hover' => 'B8CCD9',
+	'button_size' => '1',
+	'button_rounded' => '5',
+	'button_text' => 'share this'
+	);
+
+	public $image_defaults = array(
+	'image_file' => '',
+	'use_own_image' => '0'
+	);
+
+	public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
+
+	public $color_profiles = array(
+	'Vitalie' => array(
+		'button_color' => '3b5998',
+		'button_background' => 'eceef5',
+		'button_color_hover' => '3b5998',
+		'button_background_hover' => 'ffffff'
+		),
+	'Ramoth' => array(
+		'button_color' => 'cccccc',
+		'button_background' => '222222',
+		'button_color_hover' => 'ffffff',
+		'button_background_hover' => '222222'
+		),
+	'Simons' => array(
+		'button_color' => '51A2C1',
+		'button_background' => 'ffffff',
+		'button_color_hover' => '51A2C1',
+		'button_background_hover' => 'ffffff'
+		),
+	'F&ucirc;do' => array(
+		'button_color' => '006633',
+		'button_background' => 'A9C599',
+		'button_color_hover' => 'fef4cc',
+		'button_background_hover' => '006633'
+		),
+	'Irene' => array(
+		'button_color' => '0d9b50',
+		'button_background' => 'edf9d2',
+		'button_color_hover' => 'dd3333',
+		'button_background_hover' => 'e4c0bb'
+		),
+	'Asso' => array(
+		'button_color' => 'FF9D45',
+		'button_background' => '333333',
+		'button_color_hover' => 'ff9d45',
+		'button_background_hover' => '222222'
+		)
+	);
+
+	public $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
+
+	//public $podlist_update_url = 'http://the-federation.info/pods.json';
+	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
+
+
 	function generate_button($preview, $use_own_image) {
 		/**
 		 * if preview == TRUE && $use_own_image == '0', prepare fake link and output standard button
@@ -69,7 +131,7 @@ class ShareOnDiaspora {
 			$url = "'".esc_url( get_permalink() )."'";
 			$title = "'".get_the_title()."'";
 		}
-		$button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL .'new_window.php?id=' . $post -> ID . "&amp;url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
+		$button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
 		return $button;
 	}
 
