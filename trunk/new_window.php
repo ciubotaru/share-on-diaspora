@@ -264,10 +264,10 @@ elseif ( ! empty( $options_array['podlist-all'] ) ) {
 	$podlist_all = $options_array['podlist-all'];
 }
 else {
-	$podlist_all = array('example.com' => '1');
+	$podlist_all = array('example.com');
 }
 $podlist_all_keys = array_keys( $podlist_all );
-//error_log("Pod list is: " . print_r($podlist, true));
+error_log("Pod list is: " . print_r($podlist_all, true));
 foreach ( $podlist as &$i ) {
 	print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 }
