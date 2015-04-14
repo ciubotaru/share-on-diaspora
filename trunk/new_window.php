@@ -267,7 +267,6 @@ else {
 	$podlist_all = array('example.com');
 }
 $podlist_all_keys = array_keys( $podlist_all );
-error_log("Pod list is: " . print_r($podlist_all, true));
 foreach ( $podlist as &$i ) {
 	print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 }

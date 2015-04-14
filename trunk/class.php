@@ -19,7 +19,6 @@ class ShareOnDiaspora {
 
 	function i18n_init() {
 		load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n' );
-		error_log( 'i18n activated' );
 	}
 
 	function register_share_on_diaspora_css() {
