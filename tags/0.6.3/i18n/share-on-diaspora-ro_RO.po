@@ -5,129 +5,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: share-on-diaspora\n"
-"Language: fr\n"
+"Language: ro\n"
 
 #: class.php:61
 msgid "Page address here"
-msgstr "Adresse de la page ici"
+msgstr "Adresa paginii aici"
 
 #: class.php:62
 msgid "Page title here"
-msgstr "Titre de la page ici"
+msgstr "Titlul paginii aici"
 
 #: admin.php:107
 msgid "Share on D*"
-msgstr "Partager sur D*"
+msgstr "Distribuie pe D*"
 
 #: admin.php:166
 msgid "Button properties"
-msgstr "Propriétés du bouton"
+msgstr "Preferinţe buton"
 
 #: admin.php:167
 msgid "Background color"
-msgstr "Couleur de fond"
+msgstr "Culoare fundal"
 
 #: admin.php:172
 msgid "Background color on mouse-over"
-msgstr "Couleur de fond au passage de la souris"
+msgstr "Culoare fundal (mouse-over)"
 
 #: admin.php:177
 msgid "Text and border color"
-msgstr "Couleur du texte et de la bordure"
+msgstr "Culoare text şi margine"
 
 #: admin.php:182
 msgid "Text and border color on mouse-over"
-msgstr "Couleur du texte et de la bordure au passage de la souris"
+msgstr "Culoare text şi margine (mouse-over)"
 
 #: admin.php:187
 msgid "Rounded corners"
-msgstr "Coins arrondis"
+msgstr "Colţuri rotunjite"
 
 #: admin.php:190
 msgid "Rounded"
-msgstr "Arrondi"
+msgstr "Rotunjite"
 
 #: admin.php:190
 msgid "Square"
-msgstr "Carré"
+msgstr "Pătrate"
 
 #: admin.php:193
 msgid "Button size"
-msgstr "Taille du bouton"
+msgstr "Marime buton"
 
 #: admin.php:196
 msgid "Small"
-msgstr "Petit"
+msgstr "Mic"
 
 #: admin.php:196
 msgid "Medium"
-msgstr "Moyen"
+msgstr "Mijlociu"
 
 #: admin.php:196
 msgid "Large"
-msgstr "Grand"
+msgstr "Mare"
 
 #: admin.php:196
 msgid "Huge"
-msgstr "Très grand"
+msgstr "Enorm"
 
 #: admin.php:199
 msgid "Text on the button"
-msgstr "Texte sur le bouton"
+msgstr "Text de pe buton"
 
 #: admin.php:204
 msgid "Restore defaults"
-msgstr "Revenir aux paramètres par défauts"
+msgstr "Restaurează valorile implicite"
 
 #: admin.php:257
 msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
-msgstr "Utilisez les paramètres ci-dessous pour changer l'apparence de votre bouton de partage. Toutes les couleurs sont en hexadécimales de 6 chiffres comme %1$s ou %2$s. Laissez vides pour remettre par défauts."
+msgstr "Foloseşte parametrii de mai jos pentru a schimba exteriorul butonului. Toate culorile sunt numere hexadecimale din 6 cifre, ca %1%s sau %2%s. Pentru valori implicite, lasă câmp necompletat."
 
 #: admin.php:382
 msgid "Invalid value for %s. Reverting to default."
-msgstr "Valeur invalide pour %s. Retour aux paranètres par défaut."
+msgstr "Valoare greşită a %s. Restaurez valoarea implicită."
 
 #: admin.php:371
 msgid "All parameters reverted to their default values."
-msgstr "Tout les paramètres sont revenus aux valeurs par défaut."
+msgstr "Toţi parametrii au fost resetaţi la valorile implicite"
 
 #: admin.php:407
 msgid "Plugin directory is not writable. Can not save css file."
-msgstr "Le répertoire du plugin n'est pas accessible en écriture. Vous ne pouvez pas enregistrer le fichier css."
+msgstr "Nu ai drepturi să scrii în directoriul plugin-ului. Nu pot să salvez fişierul css."
 
 #: admin.php:450
 msgid "Button Preview"
-msgstr "Bouton de prévisualisation"
+msgstr "Previzualizare buton"
 
 #: admin.php:305 admin.php:445 admin.php:456 admin.php:467 admin.php:479
 msgid "Update"
-msgstr "Mise à jour"
+msgstr "Actualizare"
 
 #: admin.php:487
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas les droits suffisamment pour accéder cette page."
+msgstr "Nu ai permisiuni suficiente pentru a accesa această pagină."
 
 #: admin.php:540
 msgid "Share on Diaspora (ver. %s) Options"
-msgstr "Partage sur Diapora (ver. %s) Options"
+msgstr "Share on Diaspora (ver. %s) Opţiuni"
 
 #: admin.php:544
 msgid "Button options"
-msgstr "Options du bouton"
+msgstr "Opţiuni buton"
 
 #: admin.php:546
 msgid "Pod list options"
-msgstr "Options de la liste des pods"
+msgstr "Opţiuni listă servere"
 
 #. Plugin Name of the plugin/theme
 #: 
 msgid "Share on Diaspora"
-msgstr "Partage sur Diaspora"
+msgstr "Distribuie pe Diaspora"
 
 #. Description of the plugin/theme
 #: 
 msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
-msgstr "Ce plugin ajoute un bouton \"Partage sur D*\" au bas de vos articles."
+msgstr "Acest plugin adaugă un buton \"Distribuie pe D*\" la sfârşitul articolelor tale."
 
 #. Author of the plugin/theme
 #: 
@@ -141,191 +141,192 @@ msgstr "https://github.com/ciubotaru"
 
 #: new_window.php:232
 msgid "Sharing"
-msgstr "Partage"
+msgstr "Distribui"
 
 #: new_window.php:238
 msgid "Choose your Diaspora* pod"
-msgstr "Choisis ton pod Diaspora*"
+msgstr "Alege serverul Diaspora* preferat"
 
 #: new_window.php:277
 msgid "or choose from history"
-msgstr "ou choisir a partir de l'historique"
+msgstr "sau alege din istorie"
 
 #: new_window.php:279
 msgid "or introduce your pod URL"
-msgstr "ou insérez l'URL de votre pod"
+msgstr "sau introduce URL-ul serverului"
 
 #: new_window.php:288
 msgid "Remember my choice, don't ask again"
-msgstr "Se souvenir de mon choix, ne pas demander à nouveau"
+msgstr "Ţine minte alegerea mea, nu mai întreba"
 
 #: new_window.php:288
 msgid "Advanced options"
-msgstr "Options avancées"
+msgstr "Opţiuni avansate"
 
 #: new_window.php:288
 msgid "Use Markdown syntax for link"
-msgstr "Utiliser la syntaxe Markdown pour le lien"
+msgstr "Foloseşte limbajul Markdown pentru link."
 
 #: new_window.php:288
 msgid "Shorten URL (j.mp)"
-msgstr "Raccourcir l'URL (j.mp)"
+msgstr "Prescurtează URL (j.mp)"
 
 #: new_window.php:288
 msgid "Never remember my last 3 pods"
-msgstr "Ne jamais se souvenir de mes 3 derniers pods"
+msgstr "Niciodată nu memoriza ultimele 3 servere"
 
 #: new_window.php:288
 msgid "Forget my last 3 pods"
-msgstr "Oublier mes 3 dernier pods"
+msgstr "Uită ultimele 3 servere"
 
 #: admin.php:92 new_window.php:240
 msgid "Select from the list"
-msgstr "Sélectionnez à partir de la liste"
+msgstr "Alege din listă"
 
 #: new_window.php:287
 msgid "Share"
-msgstr "Partager"
+msgstr "Distribuie"
 
 #: admin.php:206
 msgid "Upload button image"
-msgstr "Téléverser un image du bouton"
+msgstr "Încărcare imagine pentru buton"
 
 #: admin.php:207
 msgid "Upload new custom image"
-msgstr "Téléverser une nouvelle image personalisée"
+msgstr "Încarcă o imagine nouă pentru buton"
 
 #: admin.php:208
 msgid "OR provide image URL"
-msgstr "Ou entrez l'URL de l'image"
+msgstr "SAU introduce URL-ul imaginii"
 
 #: admin.php:209
 msgid "Clear current image"
-msgstr "Supprimer l'image actuelle"
+msgstr "Şterge imaginea curentă"
 
 #: admin.php:210
 msgid "Use custom image"
-msgstr "Utiliser une image personalisée"
+msgstr "Foloseşte imaginea personalizată"
 
 #: admin.php:276
 msgid "Defaults"
-msgstr "Paramètres par défaut"
+msgstr "Valori implicite"
 
 #: admin.php:280
 msgid "Select an image to upload and use as button."
-msgstr "Sélectionner une image pour le téléverser et l'utiliser comme bouton."
+msgstr "Alege imaginea pentru încărcare"
 
 #: admin.php:284
 msgid "Filename"
-msgstr "Nom du fichier"
+msgstr "Nume fişier"
 
 #: admin.php:294
 msgid "Clear"
-msgstr "Effacer"
+msgstr "Şterge"
 
 #: admin.php:386 admin.php:433
 msgid "Value missing for %s. Reverting to default."
-msgstr "Valeur manquante pour %s. Retour aux paramètres par défaut."
+msgstr "Lipseste valoare pentru %s. Restaurat valoarea implicita."
 
 #: admin.php:461
 msgid "Custom Image Preview"
-msgstr "Pré-visualisation de l'image personnalisée"
+msgstr "Previzualizare imagine"
 
 #: admin.php:472
 msgid "Podlist Preview"
-msgstr "Pré-visualisation de la liste des pods"
+msgstr "Previzualizare lista servere"
 
 #: admin.php:495
 msgid "Image URL cleared."
-msgstr "URL de l'image effacée."
+msgstr "URL al imaginii a fost şters."
 
 #: admin.php:518
 msgid "Custom image file uploaded."
-msgstr "Image personnalisée téléversé."
+msgstr "Fişierul cu imagine a fost încărcat."
 
 #: admin.php:545
 msgid "Custom image"
-msgstr "Image personalisée"
+msgstr "Imagine personalizată"
 
 #: admin.php:556
 msgid "Source code repository"
-msgstr "Dépôt du code source"
+msgstr "Repozitoriu cu codul sursă"
 
 #: admin.php:557
 msgid "Donate BTC"
-msgstr "Donation BTC"
+msgstr "Donează BTC"
 
 #: admin.php:337
 msgid "Add"
-msgstr "Ajouter"
+msgstr "Adaugă"
 
 #: admin.php:123
 msgid "[No image]"
-msgstr "[Pas d'image]"
+msgstr "[Imaginea lispeşte]"
 
 #: admin.php:396
 msgid "No image file specified. Falling back to standard button."
-msgstr "Aucun fichier d'image spécifié. Retour au bouton standard."
+msgstr "Nu este indicat fişierul cu imagine. Se va utiliza butonul standard."
 
 #: admin.php:161
 msgid "Choose a preset color profile"
-msgstr "Choisissez un profil de couleur prédéfinie"
+msgstr "Alege un profil de culori prestabilit"
 
 #: admin.php:232
+#, fuzzy
 msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
-msgstr "Vous pouvez choisir un profil de couleur prédéfini pour votre bouton dans ce tableau ou le personaliser vous-même dans l'onglet 'Options du bouton'."
+msgstr "Poţi să alegi un profil de culori prestabilit pentru butonul tău pe această filă, sau să ajustezi setările lui pe fila 'Opţiuni buton'"
 
 #: admin.php:543
 msgid "Color profiles"
-msgstr "Profil de couleur"
+msgstr "Profiluri de culori"
 
 #: admin.php:228
 msgid "Download the latest podlist from %s"
-msgstr "Télécharger la dernière liste de pod depuis %s"
+msgstr "Descarcă lista recentă de servere de la %s"
 
 #: admin.php:412 admin.php:418
 msgid "Could not update the podlist."
-msgstr "Ne peut pas mettre à jour la liste de pod."
+msgstr "Actualizarea listei de servere a eşuat."
 
 #: admin.php:290 admin.php:337 new_window.php:279
 msgid "Example: %s"
-msgstr "Exemple : %s"
+msgstr "Exemplu: %s"
 
 #: admin.php:347
 msgid "Retrieve"
-msgstr "Récupérer"
+msgstr "Descarcă"
 
 #: admin.php:212
 msgid "List of pods shown to user"
-msgstr "Liste des pods affichée à l'utilisateur"
+msgstr "Lista de servere afişate utilizatorului"
 
 #: admin.php:224
 msgid "Add a pod"
-msgstr "Ajouter un pod"
+msgstr "Adaugă un server"
 
 #: admin.php:305
 msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
-msgstr "Voici la liste des pods Diaspora qui vont apparaître dans le menu déroulant de la Fenêtre de partage. Pour ajouter un pod, ajouter son nom dans dans la case ci+dessous. Pour en enlever un, dé-cocher le. Appuyez sur %s pour valider vos changements."
+msgstr "Aceasta este lista de servere Diaspora* care apare în meniul derulant al ferestrei Distribuie. Pentru a adăuga un server, introdu numele lui în câmpul de mai jos. Pentru a şterge un server, debifează-l. Apasă %s pentru a salva modificările."
 
 #: admin.php:355
 msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
-msgstr "%s est installé et activé. Vous n'avez pas besoin de récupérer manuellement la liste des pods Disapora actifs."
+msgstr "Plugin-ul %s este instalat şi activat. Nu e nevoie să descarci manual lista de servere active Diaspora*."
 
 #: admin.php:359
 msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "%s est installé mais pas activé. Vous pouvez l'activer pour récupérer automatiquement la liste des pods Diaspora actifs."
+msgstr "Plugin-ul %s este instala, dar nu este activat. Îl poţi activa pentru a descarca şi a actualiza în mod automat lista de servere active Diaspora*."
 
 #: admin.php:364
 msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "Vous pouvez installer l'extension %s pour récupérer automatiquement la liste des pods Diaspora actifs."
+msgstr "Poţi să instalezi plugin-ul %s pentru a descărca şi a actualiza în mod automat lista de servere active Diaspora*."
 
 #: admin.php:343
 msgid "Use up/down keys to choose from the list of suggested pods."
-msgstr "Utiliser les touche haut/bas pour choisir un pod parmi ceux qui sont proposés."
+msgstr "Foloseşte tastele sus/jos pentru a alege din lista de servere sugerate."
 
 #: admin.php:541
 msgid "Need help? Please read %1$splugin's FAQ page%2$s."
-msgstr "Besoin d'aide ? S'il vous plaît lisez la %1$sFAQ de l'extension%2$s."
+msgstr "Ai nevoie de ajutor? Te rog, citeşte %1$spagina cu întrebări frecvente a plugin-ului%2$s."
 
 #. Plugin URI of the plugin/theme
 #: 

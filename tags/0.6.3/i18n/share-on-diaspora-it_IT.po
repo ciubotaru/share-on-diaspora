@@ -5,129 +5,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: share-on-diaspora\n"
-"Language: fr\n"
+"Language: it\n"
 
 #: class.php:61
 msgid "Page address here"
-msgstr "Adresse de la page ici"
+msgstr "Indirizzo della pagina qui"
 
 #: class.php:62
 msgid "Page title here"
-msgstr "Titre de la page ici"
+msgstr "Titolo della pagina qui"
 
 #: admin.php:107
 msgid "Share on D*"
-msgstr "Partager sur D*"
+msgstr "Share on D*"
 
 #: admin.php:166
 msgid "Button properties"
-msgstr "Propriétés du bouton"
+msgstr "Proprietà del bottone"
 
 #: admin.php:167
 msgid "Background color"
-msgstr "Couleur de fond"
+msgstr "Colore di sfondo"
 
 #: admin.php:172
 msgid "Background color on mouse-over"
-msgstr "Couleur de fond au passage de la souris"
+msgstr "Colore di sfondo quando il mouse è sopra"
 
 #: admin.php:177
 msgid "Text and border color"
-msgstr "Couleur du texte et de la bordure"
+msgstr "Colore del testo e dei bordi"
 
 #: admin.php:182
 msgid "Text and border color on mouse-over"
-msgstr "Couleur du texte et de la bordure au passage de la souris"
+msgstr "Colore del testo e dei bordi quando il mouse è sopra"
 
 #: admin.php:187
 msgid "Rounded corners"
-msgstr "Coins arrondis"
+msgstr "Angoli arrotondati"
 
 #: admin.php:190
 msgid "Rounded"
-msgstr "Arrondi"
+msgstr "Arrotondati"
 
 #: admin.php:190
 msgid "Square"
-msgstr "Carré"
+msgstr "Quadrati"
 
 #: admin.php:193
 msgid "Button size"
-msgstr "Taille du bouton"
+msgstr "Grandezza del bottone"
 
 #: admin.php:196
 msgid "Small"
-msgstr "Petit"
+msgstr "Piccolo"
 
 #: admin.php:196
 msgid "Medium"
-msgstr "Moyen"
+msgstr "Medio"
 
 #: admin.php:196
 msgid "Large"
-msgstr "Grand"
+msgstr "Largo"
 
 #: admin.php:196
 msgid "Huge"
-msgstr "Très grand"
+msgstr "Grosso"
 
 #: admin.php:199
 msgid "Text on the button"
-msgstr "Texte sur le bouton"
+msgstr "Testo sul bottone"
 
 #: admin.php:204
 msgid "Restore defaults"
-msgstr "Revenir aux paramètres par défauts"
+msgstr "Ripristina il default"
 
 #: admin.php:257
 msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
-msgstr "Utilisez les paramètres ci-dessous pour changer l'apparence de votre bouton de partage. Toutes les couleurs sont en hexadécimales de 6 chiffres comme %1$s ou %2$s. Laissez vides pour remettre par défauts."
+msgstr "Usa i parametri qui sotto per cambiare l'aspetto del tuo bottone di condivisione. Tutti i colori sono espressi con sei cifre esadecimali come %1$s o %2$s. Lasciare vuoti per ripristinare il valere di default."
 
 #: admin.php:382
 msgid "Invalid value for %s. Reverting to default."
-msgstr "Valeur invalide pour %s. Retour aux paranètres par défaut."
+msgstr "Volore non valido per %s. Ripristino il default."
 
 #: admin.php:371
 msgid "All parameters reverted to their default values."
-msgstr "Tout les paramètres sont revenus aux valeurs par défaut."
+msgstr "Tutti i parametri sono ripristinati ai loro valori di default."
 
 #: admin.php:407
 msgid "Plugin directory is not writable. Can not save css file."
-msgstr "Le répertoire du plugin n'est pas accessible en écriture. Vous ne pouvez pas enregistrer le fichier css."
+msgstr "La cartella del plugin non è scrivibile. Non posso salvare il file css."
 
 #: admin.php:450
 msgid "Button Preview"
-msgstr "Bouton de prévisualisation"
+msgstr "Anteprima del bottone"
 
 #: admin.php:305 admin.php:445 admin.php:456 admin.php:467 admin.php:479
 msgid "Update"
-msgstr "Mise à jour"
+msgstr "Aggiorna"
 
 #: admin.php:487
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas les droits suffisamment pour accéder cette page."
+msgstr "Non hai i permessi sufficienti per accedere a questa pagina"
 
 #: admin.php:540
 msgid "Share on Diaspora (ver. %s) Options"
-msgstr "Partage sur Diapora (ver. %s) Options"
+msgstr "Share on Diaspora (ver. %s) Opzioni"
 
 #: admin.php:544
 msgid "Button options"
-msgstr "Options du bouton"
+msgstr "Opzioni del bottone"
 
 #: admin.php:546
 msgid "Pod list options"
-msgstr "Options de la liste des pods"
+msgstr "Opzioni della lista dei Pod"
 
 #. Plugin Name of the plugin/theme
 #: 
 msgid "Share on Diaspora"
-msgstr "Partage sur Diaspora"
+msgstr "Condividi su Diaspora"
 
 #. Description of the plugin/theme
 #: 
 msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
-msgstr "Ce plugin ajoute un bouton \"Partage sur D*\" au bas de vos articles."
+msgstr "Questo plugin aggiunge il bottone \"Share on D*\" alla fine dei tuoi post."
 
 #. Author of the plugin/theme
 #: 
@@ -141,191 +141,191 @@ msgstr "https://github.com/ciubotaru"
 
 #: new_window.php:232
 msgid "Sharing"
-msgstr "Partage"
+msgstr "Condividi"
 
 #: new_window.php:238
 msgid "Choose your Diaspora* pod"
-msgstr "Choisis ton pod Diaspora*"
+msgstr "Scegli il tuo pod Diaspora*"
 
 #: new_window.php:277
 msgid "or choose from history"
-msgstr "ou choisir a partir de l'historique"
+msgstr "o scegli dalla cronologia qui sotto"
 
 #: new_window.php:279
 msgid "or introduce your pod URL"
-msgstr "ou insérez l'URL de votre pod"
+msgstr "oppure introduci l'URL del tuo pod"
 
 #: new_window.php:288
 msgid "Remember my choice, don't ask again"
-msgstr "Se souvenir de mon choix, ne pas demander à nouveau"
+msgstr "Ricorda la mia scelta, non chiedermelo più"
 
 #: new_window.php:288
 msgid "Advanced options"
-msgstr "Options avancées"
+msgstr "Opzioni avanzate"
 
 #: new_window.php:288
 msgid "Use Markdown syntax for link"
-msgstr "Utiliser la syntaxe Markdown pour le lien"
+msgstr "Usa la sintassi Markdown per i link"
 
 #: new_window.php:288
 msgid "Shorten URL (j.mp)"
-msgstr "Raccourcir l'URL (j.mp)"
+msgstr "URL brevi (j.mp)"
 
 #: new_window.php:288
 msgid "Never remember my last 3 pods"
-msgstr "Ne jamais se souvenir de mes 3 derniers pods"
+msgstr "Non ricordare mai gli ultimi miei 3 pod"
 
 #: new_window.php:288
 msgid "Forget my last 3 pods"
-msgstr "Oublier mes 3 dernier pods"
+msgstr "Dimentica i miei ultimi 3 pod"
 
 #: admin.php:92 new_window.php:240
 msgid "Select from the list"
-msgstr "Sélectionnez à partir de la liste"
+msgstr "Seleziona dalla lista"
 
 #: new_window.php:287
 msgid "Share"
-msgstr "Partager"
+msgstr "Condividi"
 
 #: admin.php:206
 msgid "Upload button image"
-msgstr "Téléverser un image du bouton"
+msgstr "Carica l'immagine del bottone"
 
 #: admin.php:207
 msgid "Upload new custom image"
-msgstr "Téléverser une nouvelle image personalisée"
+msgstr "Carica la nuova immagine personalizzata"
 
 #: admin.php:208
 msgid "OR provide image URL"
-msgstr "Ou entrez l'URL de l'image"
+msgstr "Oppure fornisci l'URL dell'immagine"
 
 #: admin.php:209
 msgid "Clear current image"
-msgstr "Supprimer l'image actuelle"
+msgstr "Cancella l'immagine corrente"
 
 #: admin.php:210
 msgid "Use custom image"
-msgstr "Utiliser une image personalisée"
+msgstr "Usa l'immagine personalizzata"
 
 #: admin.php:276
 msgid "Defaults"
-msgstr "Paramètres par défaut"
+msgstr "Default"
 
 #: admin.php:280
 msgid "Select an image to upload and use as button."
-msgstr "Sélectionner une image pour le téléverser et l'utiliser comme bouton."
+msgstr "Seleziona una immagine da caricare e usala come bottone"
 
 #: admin.php:284
 msgid "Filename"
-msgstr "Nom du fichier"
+msgstr "Nome del file"
 
 #: admin.php:294
 msgid "Clear"
-msgstr "Effacer"
+msgstr "Cancella"
 
 #: admin.php:386 admin.php:433
 msgid "Value missing for %s. Reverting to default."
-msgstr "Valeur manquante pour %s. Retour aux paramètres par défaut."
+msgstr "Valore mancante per %s. Ripristino il default"
 
 #: admin.php:461
 msgid "Custom Image Preview"
-msgstr "Pré-visualisation de l'image personnalisée"
+msgstr "Anteprima dell'immagine personalizzata"
 
 #: admin.php:472
 msgid "Podlist Preview"
-msgstr "Pré-visualisation de la liste des pods"
+msgstr "Anteprima del Podlist"
 
 #: admin.php:495
 msgid "Image URL cleared."
-msgstr "URL de l'image effacée."
+msgstr "URL dell'immagine cancellata"
 
 #: admin.php:518
 msgid "Custom image file uploaded."
-msgstr "Image personnalisée téléversé."
+msgstr "File dell'immagine personalizzata caricata."
 
 #: admin.php:545
 msgid "Custom image"
-msgstr "Image personalisée"
+msgstr "Immagine personalizzata"
 
 #: admin.php:556
 msgid "Source code repository"
-msgstr "Dépôt du code source"
+msgstr "Repository del codice sorgente"
 
 #: admin.php:557
 msgid "Donate BTC"
-msgstr "Donation BTC"
+msgstr "Dona BTC"
 
 #: admin.php:337
 msgid "Add"
-msgstr "Ajouter"
+msgstr "Aggiungi"
 
 #: admin.php:123
 msgid "[No image]"
-msgstr "[Pas d'image]"
+msgstr "[Nessuna immagine]"
 
 #: admin.php:396
 msgid "No image file specified. Falling back to standard button."
-msgstr "Aucun fichier d'image spécifié. Retour au bouton standard."
+msgstr "Non è specificato nessun file di una immagine. Ripristino il bottone standard."
 
 #: admin.php:161
 msgid "Choose a preset color profile"
-msgstr "Choisissez un profil de couleur prédéfinie"
+msgstr ""
 
 #: admin.php:232
 msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
-msgstr "Vous pouvez choisir un profil de couleur prédéfini pour votre bouton dans ce tableau ou le personaliser vous-même dans l'onglet 'Options du bouton'."
+msgstr ""
 
 #: admin.php:543
 msgid "Color profiles"
-msgstr "Profil de couleur"
+msgstr ""
 
 #: admin.php:228
 msgid "Download the latest podlist from %s"
-msgstr "Télécharger la dernière liste de pod depuis %s"
+msgstr ""
 
 #: admin.php:412 admin.php:418
 msgid "Could not update the podlist."
-msgstr "Ne peut pas mettre à jour la liste de pod."
+msgstr ""
 
 #: admin.php:290 admin.php:337 new_window.php:279
 msgid "Example: %s"
-msgstr "Exemple : %s"
+msgstr "Esempio: %s"
 
 #: admin.php:347
 msgid "Retrieve"
-msgstr "Récupérer"
+msgstr "Scarica"
 
 #: admin.php:212
 msgid "List of pods shown to user"
-msgstr "Liste des pods affichée à l'utilisateur"
+msgstr ""
 
 #: admin.php:224
 msgid "Add a pod"
-msgstr "Ajouter un pod"
+msgstr "Aggiungi un pod"
 
 #: admin.php:305
 msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
-msgstr "Voici la liste des pods Diaspora qui vont apparaître dans le menu déroulant de la Fenêtre de partage. Pour ajouter un pod, ajouter son nom dans dans la case ci+dessous. Pour en enlever un, dé-cocher le. Appuyez sur %s pour valider vos changements."
+msgstr ""
 
 #: admin.php:355
 msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
-msgstr "%s est installé et activé. Vous n'avez pas besoin de récupérer manuellement la liste des pods Disapora actifs."
+msgstr ""
 
 #: admin.php:359
 msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "%s est installé mais pas activé. Vous pouvez l'activer pour récupérer automatiquement la liste des pods Diaspora actifs."
+msgstr ""
 
 #: admin.php:364
 msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "Vous pouvez installer l'extension %s pour récupérer automatiquement la liste des pods Diaspora actifs."
+msgstr ""
 
 #: admin.php:343
 msgid "Use up/down keys to choose from the list of suggested pods."
-msgstr "Utiliser les touche haut/bas pour choisir un pod parmi ceux qui sont proposés."
+msgstr ""
 
 #: admin.php:541
 msgid "Need help? Please read %1$splugin's FAQ page%2$s."
-msgstr "Besoin d'aide ? S'il vous plaît lisez la %1$sFAQ de l'extension%2$s."
+msgstr "Hai bisogno di aiuto? Leggi %1$sla pagina FAQ del plugin%2$s."
 
 #. Plugin URI of the plugin/theme
 #: 

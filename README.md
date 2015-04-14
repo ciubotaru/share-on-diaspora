@@ -1,5 +1,7 @@
 A WordPress plugin that adds a "Share on D*" button at the bottom of your posts.
 
+Diaspora to Wordpress plugin in [WP Plugin Directory](https://wordpress.org/plugins/share-on-diaspora/)
+
 # Description
 This plugin adds a "Share on Diaspora" button at the bottom of your posts. Unlike other similar buttons,
 this one is not tied to one single pod. Instead it allows the users to select their favorite pod from the list,
@@ -78,6 +80,15 @@ to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
 settings (see previous question).
 
 # Changelog
+## 0.6.3
+* Bug-fix: the default placeholder in pod selection window did not display properly.
+
+## 0.6.2
+* Code formatting streamlined to reflect WP Coding Standards.
+
+## 0.6.1
+* Bug-fix: saved settings shouldn't be deleted on deactivation, only on 
+uninstall.
 
 ## 0.6
 * Added color presets
