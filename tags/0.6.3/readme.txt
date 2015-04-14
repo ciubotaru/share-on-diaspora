@@ -86,8 +86,7 @@ page, 'Pod list options' tab.
 
 == Changelog ==
 = 0.6.3 =
-* Bug-fix: the default placeholder in pod selection window did not display 
-properly.
+* Bug-fix: the default placeholder in pod selection window did not display properly
 
 = 0.6.2 =
 * Code formatting streamlined to reflect WP Coding Standards.

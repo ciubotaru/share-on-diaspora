@@ -80,6 +80,9 @@ to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
 settings (see previous question).
 
 # Changelog
+## 0.6.3
+* Bug-fix: the default placeholder in pod selection window did not display properly.
+
 ## 0.6.2
 * Code formatting streamlined to reflect WP Coding Standards.
 
