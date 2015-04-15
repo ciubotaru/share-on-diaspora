@@ -92,7 +92,7 @@ uninstall.
 
 ## 0.6
 * Added color presets
-* Changed podlis update mechanism
+* Changed podlist update mechanism
 * Added support for an auxiliary plugin (Diaspora Podlist Updater)
 * Very likely added new bugs
 
