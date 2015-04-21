@@ -70,14 +70,21 @@ image or insert the URL of an existing image (e.g. from your Media gallery).
 After you are done, press 'Update'.
 
 ## I want to change the list of displayed pods. Is it possible?
-Yes. In the plugin settings panel, go to 'Pod list options' tab and check those
-pods that you want to see in the dialog. After you are done, press 'Update'.
+Yes. You can do this on the 'Pod list options' tab in the settings panel. To 
+get (or update) the list of all active pods, press the 'Retrieve' button. To 
+add a pod from the list, select it with up/down keys in the 'Add a pod' textbox 
+and press 'Add'. To add a custom pod, type it in the textbox and press 'Add'. 
+After you've added all pods that you want to see in the dialog, press 'Update'.
 
-## My pod is not in the list. How can I add it?
-I would suggest that you let me know the pod URL, so that I can add it and 
-update everybody's list. Of course, you can do it yourself by adding a line 
-to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
-settings (see previous question).
+## Can I get the latest list of active pods?
+Yes. You can manually retrieve a fresh list of active pods on the 'Pod list 
+options' tab of the settings panel. Press the 'Retrive' button to download the 
+list, then press 'Update' to save changes. Now the list of active pods is 
+available in the 'Add a pod' textbox. Use up/down keys to navigate the list.
+
+Alternatively, you can install an auxiliary plugin called 
+[Diaspora Podlist Updater](https://wordpress.org/plugins/diaspora-podlist-updater/) 
+that automatically retrieves a fresh list of active pods.
 
 # Changelog
 ## 0.6.3
