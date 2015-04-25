@@ -469,7 +469,6 @@ public function filter_plugin_actions($l, $file) {
 	?>
 		<div class="wrap">
         <?php
-		screen_icon();
 		//form in tab 3 is updated manually, so settings errrors are not shown properly. Thus workaround.
 		if ( isset($_GET['tab']) && $_GET['tab'] == '3' ) { settings_errors( 'share-on-diaspora-settings' ); }
 		?>
