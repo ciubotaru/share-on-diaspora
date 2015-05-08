@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Share to Diaspora*</title>
+<title<?php _e( 'Share on Diaspora', 'share-on-diaspora' ); ?></title>
 <style>
 body{font-family:Helvetica, Helvetica, Arial, sans-serif;font-size:15px;max-height:100%;margin:0;padding:0 0 2em; background: #1b4053; color: #fff}
 a{color:#88FFFF;text-decoration:none;-webkit-transition:opacity .1s ease;-moz-transition:opacity .1s ease;-o-transition:opacity .1s ease;transition:opacity .1s ease;cursor:pointer}
