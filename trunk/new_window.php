@@ -32,9 +32,10 @@ section#podlist a:hover{border:1px solid #888;color:#000}
 #podurl{width:200px;font-size:15px;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:.1s border-color ease;-o-transition:.1s border-color ease;transition:.1s border-color ease;margin:0;padding:3px 6px}
 #podurl:focus{border:1px solid #bbcad0}
 #podurlsm{margin:6px 0 0;padding:4px 10px}
+#sharetitle{width:100%;text-align:center;}
 :focus{outline:none}
 input.error,input#podurl.error{border:1px solid #a00}
-span.check{display:inline-block;background:#f5f5f5;amargin:10px 6px 3px;border:1px solid #eee;padding-left:3px}
+span.check{display:inline-block;background:#f5f5f5;margin:10px 6px 3px;border:1px solid #eee;padding-left:3px}
 span.check label{display:inline-block;font-size:14px;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;padding:5px 6px 4px 0}
 div.bot_opt{position:fixed;bottom:0;height:1.6em;border-top:1px solid #eee;left:0;right:0;width:auto;background:#82A6B6}div.bot_opt label{display:inline-block;width:auto;left:0;right:0;position:absolute;padding-left:1.6em;top:0;bottom:0;height:auto;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease;margin:0}.advanced{padding:10px 0 0 20px}#contopt{apadding-top:6px;line-height:1.2em}#contopt input[type=checkbox]{margin-left:0}a.openao,.opttit{font-size:13px}section#podlist a.hidepod,.hideopt{display:none}span.check input:checked + label,div.bot_opt :checked + label{color:#060}
 </style>
@@ -258,13 +259,8 @@ function redirect() {
             location.href = a;
             return true
         } else {
-            if (document.getElementsByTagName("body")[0].innerText) {
-                document.getElementById("sharetitle").innerText = title;
-                document.getElementById("shareurl").innerText = url
-            } else {
-                document.getElementById("sharetitle").textContent = title;
-                document.getElementById("shareurl").textContent = url
-            }
+            document.getElementById("sharetitle").value = title;
+            document.getElementById("shareurl").innerHTML = url;
             crealinks();
             return false
         }
@@ -295,7 +291,7 @@ window.onload = function() {
 <header>
 <h2><?php _e( 'Sharing', 'share-on-diaspora' ); ?></h2>
 <div id=sharedet>
-    <div id=sharetitle></div>
+    <div><textarea id=sharetitle></textarea></div>
     <div id=shareurl></div>
 </div>
 </header>
