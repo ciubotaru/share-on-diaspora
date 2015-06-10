@@ -29,10 +29,11 @@ section#podlist{border-right:1px solid #ccc;min-width:200px}
 section#podlist a{display:block;border:1px solid #eee;text-decoration:none;color:#444;-webkit-transition:border .2s ease, color .2s ease;-moz-transition:border .2s ease, color .2s ease;-o-transition:border .2s ease, color .2s ease;transition:border .2s ease, color .2s ease;margin:0 0 6px;padding:3px 6px}
 section#podlist a.lastpod{color:#fff;border-color:#bbcad0}
 section#podlist a:hover{border:1px solid #888;color:#000}
-#podurl{width:200px;font-size:15px;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:.1s border-color ease;-o-transition:.1s border-color ease;transition:.1s border-color ease;margin:0;padding:3px 6px}
-#podurl:focus{border:1px solid #bbcad0}
+#podurl{width:200px;font-size:15px;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:1s border-color ease;-o-transition:.1s border-color ease;transition:1s border-color ease;margin:0;padding:3px 6px;background: #82A6B6;color:white;} 
 #podurlsm{margin:6px 0 0;padding:4px 10px}
-#sharetitle{width:100%;text-align:center;}
+#sharetitle{display:block;width:100%;height:1.2em;text-align:center;border:1px solid silver;-webkit-transition:.1s border-color ease;-moz-transition:1s border-color ease;-o-transition:.1s border-color ease;transition:1s border-color ease;background: #82A6B6;color:white;resize: none;}
+#sharepodlist{background:#82A6B6;width:268px;padding:5px;font-size:16px;line-height:1;border:0;border-radius:0;height:34px;transition:1s border-color ease;color:#fff}
+#podurl:focus, #sharetitle:focus, #sharepodlist:focus{border:1px solid #ff0000}
 :focus{outline:none}
 input.error,input#podurl.error{border:1px solid #a00}
 span.check{display:inline-block;background:#f5f5f5;margin:10px 6px 3px;border:1px solid #eee;padding-left:3px}
