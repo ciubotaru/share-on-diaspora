@@ -96,6 +96,7 @@ function forget(a) {
 }
 
 function share(a) {
+    title = document.getElementById("sharetitle").value;
     if (a !== "") {
         extras(a);
         var b = "http://" + a + "/bookmarklet?url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title);
