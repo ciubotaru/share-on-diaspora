@@ -298,22 +298,9 @@ window.onload = function() {
 </div>
 </header>
 <section id=podlist><h3><?php _e( 'Choose your Diaspora* pod', 'share-on-diaspora' ); ?></h3>
-<select style="background: #82A6B6; width: 268px; padding: 5px; font-size: 16px; line-height: 1; border: 0; border-radius: 0; height: 34px; -webkit-appearance: none; color: #fff"  onchange="share(this.options[this.selectedIndex].value)">
+<select id=sharepodlist onchange="share(this.options[this.selectedIndex].value)">
 <option>- <?php _e( 'Select from the list', 'share-on-diaspora' ); ?> -</option>
 <?php
-/**
-if (file_exists( './pod_list_show.php') )
-	{
-	require_once './pod_list_show.php';
-	}
-else
-	{
-	require_once './pod_list_all.php';
-	}
-*/
-/**
-$podlist = ShareOnDiaspora::$podlist_defaults['podlist'];
-*/
 $options_array = get_option( 'share-on-diaspora-settings' );
 $podlist = array_keys( $options_array['podlist'] );
 $podlist_all_array = get_option( 'dpu-podlist' );
@@ -336,7 +323,7 @@ foreach ( $podlist as &$i ) {
 </select>
 <h3><?php _e( 'or choose from history', 'share-on-diaspora' ); ?></h3>
 </section>
-<section id=podinput><h3><?php _e( 'or introduce your pod URL', 'share-on-diaspora' ); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input style="background: #82A6B6; color: white;" id=podurl placeholder="<?php echo(sprintf( __( 'Example: %s', 'share-on-diaspora' ), $podlist_all[array_rand( $podlist_all_keys )] )); ?>" type="text" list="datalist1" autocomplete="on"/>
+<section id=podinput><h3><?php _e( 'or introduce your pod URL', 'share-on-diaspora' ); ?></h3><form onsubmit="var url = document.getElementById('podurl').value; url = url.replace(/.*?:\/\//g, ''); share(url); return false"><input id=podurl placeholder="<?php echo(sprintf( __( 'Example: %s', 'share-on-diaspora' ), $podlist_all[array_rand( $podlist_all_keys )] )); ?>" type="text" list="datalist1" autocomplete="on"/>
 <datalist id="datalist1">
 <?php
 foreach ( $podlist_all as $value ) {
