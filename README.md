@@ -13,7 +13,7 @@ There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
 * French -- contributed by Stef20 from stef20.info/blog and Se7h
-* German -- contributed by Georg Krause <mail@georg-krause.net>
+* German -- contributed by Georg Krause <mail@georg-krause.net> and JanRei
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
@@ -70,16 +70,28 @@ image or insert the URL of an existing image (e.g. from your Media gallery).
 After you are done, press 'Update'.
 
 ## I want to change the list of displayed pods. Is it possible?
-Yes. In the plugin settings panel, go to 'Pod list options' tab and check those
-pods that you want to see in the dialog. After you are done, press 'Update'.
+Yes. You can do this on the 'Pod list options' tab in the settings panel. To 
+get (or update) the list of all active pods, press the 'Retrieve' button. To 
+add a pod from the list, select it with up/down keys in the 'Add a pod' textbox 
+and press 'Add'. To add a custom pod, type it in the textbox and press 'Add'. 
+After you've added all pods that you want to see in the dialog, press 'Update'.
 
-## My pod is not in the list. How can I add it?
-I would suggest that you let me know the pod URL, so that I can add it and 
-update everybody's list. Of course, you can do it yourself by adding a line 
-to `pod_list_all.txt' in your plugin's directory and enabling it in the plugin
-settings (see previous question).
+## Can I get the latest list of active pods?
+Yes. You can manually retrieve a fresh list of active pods on the 'Pod list 
+options' tab of the settings panel. Press the 'Retrive' button to download the 
+list, then press 'Update' to save changes. Now the list of active pods is 
+available in the 'Add a pod' textbox. Use up/down keys to navigate the list.
+
+Alternatively, you can install an auxiliary plugin called 
+[Diaspora Podlist Updater](https://wordpress.org/plugins/diaspora-podlist-updater/) 
+that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.6.4
+* Bug-fix: warning messages about non-compliance with strict standards.
+* i18n: German translation updated.
+* Minor improvements (updated FAQ and compatibility info, removed deprecated calls etc.)
+
 ## 0.6.3
 * Bug-fix: the default placeholder in pod selection window did not display properly.
 
@@ -92,7 +104,7 @@ uninstall.
 
 ## 0.6
 * Added color presets
-* Changed podlis update mechanism
+* Changed podlist update mechanism
 * Added support for an auxiliary plugin (Diaspora Podlist Updater)
 * Very likely added new bugs
 

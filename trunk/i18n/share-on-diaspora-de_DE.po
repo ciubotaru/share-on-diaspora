@@ -29,7 +29,7 @@ msgstr "Hintergrundfarbe"
 
 #: admin.php:172
 msgid "Background color on mouse-over"
-msgstr "Hintergrundfarbe bei mouse-over"
+msgstr "Hintergrundfarbe bei Mouseover"
 
 #: admin.php:177
 msgid "Text and border color"
@@ -37,11 +37,11 @@ msgstr "Schrift- und Rahmenfarbe"
 
 #: admin.php:182
 msgid "Text and border color on mouse-over"
-msgstr "Text- und Rahmenfarbe bei mouse-over"
+msgstr "Text- und Rahmenfarbe bei Mouseover"
 
 #: admin.php:187
 msgid "Rounded corners"
-msgstr "abgerundete Ecken"
+msgstr "Abgerundete Ecken"
 
 #: admin.php:190
 msgid "Rounded"
@@ -49,7 +49,7 @@ msgstr "abgerundet"
 
 #: admin.php:190
 msgid "Square"
-msgstr "Quadrat"
+msgstr "rechteckig"
 
 #: admin.php:193
 msgid "Button size"
@@ -81,7 +81,7 @@ msgstr "Standard wiederherstellen"
 
 #: admin.php:257
 msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
-msgstr "Benutze die untenstehenden Parameter um das Aussehen und das Verhalten deines Teilen-Buttons zu verändern. Alle Farben sind sechsstellige Hexadezimal-zahlen wie %1$s oder %2$s. Lasse das Feld frei um den Standard-Wert wiederherzustellen."
+msgstr "Benutze die untenstehenden Parameter, um das Aussehen und das Verhalten deines Teilen-Buttons zu verändern. Alle Farben sind sechsstellige Hexadezimalzahlen wie %1$s oder %2$s. Lasse das Feld frei, um den Standard-Wert wiederherzustellen."
 
 #: admin.php:382
 msgid "Invalid value for %s. Reverting to default."
@@ -101,11 +101,11 @@ msgstr "Button-Vorschau"
 
 #: admin.php:305 admin.php:445 admin.php:456 admin.php:467 admin.php:479
 msgid "Update"
-msgstr "aktualisieren"
+msgstr "Aktualisieren"
 
 #: admin.php:487
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Du hast keine ausreichenden Berechtigungen um diese Seite zu besuchen."
+msgstr "Du hast keine ausreichenden Berechtigungen, um diese Seite zu besuchen."
 
 #: admin.php:540
 msgid "Share on Diaspora (ver. %s) Options"
@@ -161,7 +161,7 @@ msgstr "Auswahl merken, nicht wieder nachfragen"
 
 #: new_window.php:288
 msgid "Advanced options"
-msgstr "erweiterte Optionen\t"
+msgstr "Erweiterte Optionen"
 
 #: new_window.php:288
 msgid "Use Markdown syntax for link"
@@ -169,7 +169,7 @@ msgstr "Benutze Markdown-Syntax für den Link"
 
 #: new_window.php:288
 msgid "Shorten URL (j.mp)"
-msgstr "kürze die URL (j.mp)"
+msgstr "Kürze die URL (j.mp)"
 
 #: new_window.php:288
 msgid "Never remember my last 3 pods"
@@ -177,7 +177,7 @@ msgstr "Speichere niemals die letzten 3 Pods"
 
 #: new_window.php:288
 msgid "Forget my last 3 pods"
-msgstr "Vergesse die letzten 3 Pods"
+msgstr "Vergiss die letzten 3 Pods"
 
 #: admin.php:92 new_window.php:240
 msgid "Select from the list"
@@ -189,7 +189,7 @@ msgstr "Teilen"
 
 #: admin.php:206
 msgid "Upload button image"
-msgstr "Lade Button-Grafik hoch"
+msgstr "Lade Bild für Button hoch"
 
 #: admin.php:207
 msgid "Upload new custom image"
@@ -197,15 +197,15 @@ msgstr "Lade neues eigenes Bild hoch"
 
 #: admin.php:208
 msgid "OR provide image URL"
-msgstr "oder gib eine Bild-URL ein"
+msgstr "ODER gib eine Bild-URL ein"
 
 #: admin.php:209
 msgid "Clear current image"
-msgstr "entferne aktuelles Bild"
+msgstr "Entferne aktuelles Bild"
 
 #: admin.php:210
 msgid "Use custom image"
-msgstr "benutze eigenes Bild"
+msgstr "Benutze eigenes Bild"
 
 #: admin.php:276
 msgid "Defaults"
@@ -213,7 +213,7 @@ msgstr "Standards"
 
 #: admin.php:280
 msgid "Select an image to upload and use as button."
-msgstr "Wähle ein Bild für den Upload aus und benutze es als Button."
+msgstr "Wähle ein Bild zum Hochladen aus und benutze es als Button."
 
 #: admin.php:284
 msgid "Filename"
@@ -269,23 +269,23 @@ msgstr "Es wurde keine Bild-Datei angegeben. Der Standard-Button wird genutzt."
 
 #: admin.php:161
 msgid "Choose a preset color profile"
-msgstr ""
+msgstr "Wähle eines der vorgegebenen Farbprofile"
 
 #: admin.php:232
 msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
-msgstr ""
+msgstr "Du kannst auf dieser Registerkarte ein vorgegebenes Farbprofil auswählen oder auf der Registerkarte \"Button-Optionen\" das Aussehen genau festlegen."
 
 #: admin.php:543
 msgid "Color profiles"
-msgstr ""
+msgstr "Farbprofile"
 
 #: admin.php:228
 msgid "Download the latest podlist from %s"
-msgstr ""
+msgstr "Lade die aktuelle Podliste von %s herunter"
 
 #: admin.php:412 admin.php:418
 msgid "Could not update the podlist."
-msgstr ""
+msgstr "Die Podliste konnte nicht aktualisiert werden."
 
 #: admin.php:290 admin.php:337 new_window.php:279
 msgid "Example: %s"
@@ -297,7 +297,7 @@ msgstr "Herunterladen"
 
 #: admin.php:212
 msgid "List of pods shown to user"
-msgstr ""
+msgstr "Liste der angezeigten Pods"
 
 #: admin.php:224
 msgid "Add a pod"
@@ -305,27 +305,27 @@ msgstr "Füge einen Pod hinzu"
 
 #: admin.php:305
 msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
-msgstr ""
+msgstr "Dies ist die Liste der Diaspora*-Pods, die im Auswahlmenü des Teilen-Fensters angezeigt wird. Um einen Pod hinzuzufügen, gib seinen Namen in das nachfolgende Textfeld ein. Um einen Pod zu entfernen, entferne den dazugehörigen Haken. Klicke auf %s, um die Änderungen zu übernehmen."
 
 #: admin.php:355
 msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
-msgstr ""
+msgstr "Plugin %s ist installiert und aktiviert. Du musst die Liste der aktiven Diaspora*-Pods nicht manuell herunterladen."
 
 #: admin.php:359
 msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
-msgstr ""
+msgstr "Plugin %s ist installiert, aber nicht aktiviert. Du kannst es aktivieren, um die Liste der aktiven Diaspora*-Pods automatisch herunterzuladen und zu aktualisieren."
 
 #: admin.php:364
 msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
-msgstr ""
+msgstr "Du kannst das Plugin %s installieren, um die Liste der aktiven Diaspora*-Pods automatisch herunterzuladen und zu aktualisieren."
 
 #: admin.php:343
 msgid "Use up/down keys to choose from the list of suggested pods."
-msgstr ""
+msgstr "Benutze die Pfeiltasten nach oben/unten, um aus der Liste der vorgeschlagenen Pods auszuwählen."
 
 #: admin.php:541
 msgid "Need help? Please read %1$splugin's FAQ page%2$s."
-msgstr "Du suchst Hilfe? Bitte lese %1$sdie FAQ-Seite für Plugins%2$s."
+msgstr "Du suchst Hilfe? Bitte lies die %1$sFAQ-Seite für das Plugin%2$s."
 
 #. Plugin URI of the plugin/theme
 #: 
