@@ -20,7 +20,7 @@ There is an ongoing effort to translate the plugin into other languages.
 So far, the following translations are available:
 
 * French -- contributed by Stef20 from stef20.info/blog and Se7h
-* German -- contributed by Georg Krause <mail@georg-krause.net>
+* German -- contributed by Georg Krause <mail@georg-krause.net> and JanRei
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
@@ -95,6 +95,7 @@ page, 'Pod list options' tab.
 == Changelog ==
 = 0.6.4 =
 * Bug-fix: warning messages about non-compliance with strict standards.
+* i18n: German translation updated.
 * Minor improvements (updated FAQ and compatibility info, removed deprecated calls etc.)
 
 = 0.6.3 =
