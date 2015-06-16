@@ -9,24 +9,24 @@ class ShareOnDiaspora {
 		add_filter( 'the_content', array($this, 'diaspora_button_display') );
 	}
 
-	function plugin_activation() {
+	public static function plugin_activation() {
 		add_option( 'share-on-diaspora-settings' );
 	}
 
-	function plugin_uninstall() {
+	public static function plugin_uninstall() {
 		delete_option( 'share-on-diaspora-settings' );
 	}
 
-	function i18n_init() {
+	public static function i18n_init() {
 		load_plugin_textdomain( 'share-on-diaspora', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n' );
 	}
 
-	function register_share_on_diaspora_css() {
+	public static function register_share_on_diaspora_css() {
 		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora-css.php' );
 		wp_enqueue_style( 'share-on-diaspora' );
 	}
 
-	function register_share_on_diaspora_js() {
+	public static function register_share_on_diaspora_js() {
 		wp_register_script( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora.js' );
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
