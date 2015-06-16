@@ -1,5 +1,5 @@
 <?php
-class ShareOnDiaspora_Admin {
+class ShareOnDiaspora_Admin extends ShareOnDiaspora {
 	public function __construct() {
 		add_action( 'plugins_loaded', array('ShareOnDiaspora', 'i18n_init') );
 		// Register style sheet.
@@ -9,67 +9,6 @@ class ShareOnDiaspora_Admin {
 		add_action( 'admin_menu', array($this, 'share_on_diaspora_menu') );
 		add_action( 'admin_init', array($this, 'my_admin_init') );
 	}
-
-	public $button_defaults = array(
-	'button_color' => '3c72c2',
-	'button_background' => 'ecf2f6',
-	'button_color_hover' => '3c72c2',
-	'button_background_hover' => 'B8CCD9',
-	'button_size' => '1',
-	'button_rounded' => '5',
-	'button_text' => 'share this'
-	);
-
-	public $image_defaults = array(
-	'image_file' => '',
-	'use_own_image' => '0'
-	);
-
-	public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
-
-	public $color_profiles = array(
-	'Vitalie' => array(
-		'button_color' => '3b5998',
-		'button_background' => 'eceef5',
-		'button_color_hover' => '3b5998',
-		'button_background_hover' => 'ffffff'
-		),
-	'Ramoth' => array(
-		'button_color' => 'cccccc',
-		'button_background' => '222222',
-		'button_color_hover' => 'ffffff',
-		'button_background_hover' => '222222'
-		),
-	'Simons' => array(
-		'button_color' => '51A2C1',
-		'button_background' => 'ffffff',
-		'button_color_hover' => '51A2C1',
-		'button_background_hover' => 'ffffff'
-		),
-	'F&ucirc;do' => array(
-		'button_color' => '006633',
-		'button_background' => 'A9C599',
-		'button_color_hover' => 'fef4cc',
-		'button_background_hover' => '006633'
-		),
-	'Irene' => array(
-		'button_color' => '0d9b50',
-		'button_background' => 'edf9d2',
-		'button_color_hover' => 'dd3333',
-		'button_background_hover' => 'e4c0bb'
-		),
-	'Asso' => array(
-		'button_color' => 'FF9D45',
-		'button_background' => '333333',
-		'button_color_hover' => 'ff9d45',
-		'button_background_hover' => '222222'
-		)
-	);
-
-	public $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
-
-	//public $podlist_update_url = 'http://the-federation.info/pods.json';
-	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 	function set_default() {
 		$button_defaults = $this -> button_defaults;
@@ -100,8 +39,6 @@ class ShareOnDiaspora_Admin {
 		$podlist_preview .= '</select>';
 		return $podlist_preview;
 	}
-
-
 
 	function share_on_diaspora_menu() {
 		add_options_page( 'Share on D* Options', __( 'Share on D*', 'share-on-diaspora' ), 'manage_options', 'share_on_diaspora_options_page', array($this, 'share_on_diaspora_options_page') );
@@ -328,7 +265,7 @@ public function filter_plugin_actions($l, $file) {
 		}
 		unset($output['section']);
 		//getting the saved options, or creating an empty array if fresh install
-		$options_array = ( $result = get_option( 'share-on-diaspora-settings' )) ? $result : array();
+		$options_array = get_option( 'share-on-diaspora-settings', array() );
 		$output = array_merge( $options_array, $output );
 		return $output;
 	}
@@ -532,7 +469,6 @@ public function filter_plugin_actions($l, $file) {
 	?>
 		<div class="wrap">
         <?php
-		screen_icon();
 		//form in tab 3 is updated manually, so settings errrors are not shown properly. Thus workaround.
 		if ( isset($_GET['tab']) && $_GET['tab'] == '3' ) { settings_errors( 'share-on-diaspora-settings' ); }
 		?>

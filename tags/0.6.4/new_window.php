@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Share to Diaspora*</title>
+<title<?php _e( 'Share on Diaspora', 'share-on-diaspora' ); ?></title>
 <style>
 body{font-family:Helvetica, Helvetica, Arial, sans-serif;font-size:15px;max-height:100%;margin:0;padding:0 0 2em; background: #1b4053; color: #fff}
 a{color:#88FFFF;text-decoration:none;-webkit-transition:opacity .1s ease;-moz-transition:opacity .1s ease;-o-transition:opacity .1s ease;transition:opacity .1s ease;cursor:pointer}
@@ -227,8 +227,8 @@ function crealinks()
             c.innerText=b}else{c.textContent=b}for(i=0;i<a.length;i++){if(a[i].title===b){a[i].className="dpod hidepod"}}document.getElementById("podlist").insertBefore(c,document.getElementById("first"))}}}}updlinks();document.getElementById("openao").onclick=function(){document.getElementById("contopt").className="showopt";document.getElementById("openao").style.display="none"};document.getElementById("delete").onclick=function(){forget()};document.getElementById("markdown").onchange=function(){if(document.getElementById("markdown").checked){title="["+title+"]("+url+")";url=" "}else{title=oldtit;url=oldurl}updlinks()};document.getElementById("shorten").onchange=function(){if(document.getElementById("shorten").checked){var a=new XMLHttpRequest;a.open("GET","http://api.bitly.com/v3/shorten?login=bartimeo&apiKey=R_5fe8386a052e3f3d6ece604eab0c59db&format=txt&domain=j.mp&longUrl="+url);a.onreadystatechange=function(){if(a.readyState==4){if(a.status==200){console.log(a.responseText);shurl=decodeURIComponent(encodeURIComponent(a.responseText).replace("%0A",""));if(document.getElementById("markdown").checked){title="["+oldtitle+"]("+shurl+")";url=" "}else{url=shurl}updlinks()}else{console.log("Problem?",a)}}};a.send()}else{if(document.getElementById("markdown").checked){title="["+oldtitle+"]("+oldurl+")";url=" "}else{title=oldtit;url=oldurl}updlinks()}}}function redirect(){if(title===""&&url===""){document.getElementsByTagName("body")[0].innerHTML="";location.href="about"}else{if(localStorage["remember"]&&localStorage["remember"]==="true"&&localStorage["lastPod"]&&redir!=="false"){document.getElementsByTagName('body')[0].innerHTML="Sharing <b>"+title+"</b> ("+url+") to "+localStorage["lastPod"];var a="http://"+localStorage["lastPod"]+"/bookmarklet?url="+encodeURIComponent(url)+"&title="+encodeURIComponent(title);if(notes!==""){a+="&notes="+encodeURIComponent(notes)}a+="&jump=doclose";location.href=a;return true}else{if(document.getElementsByTagName("body")[0].innerText){document.getElementById("sharetitle").innerText=title;document.getElementById("shareurl").innerText=url}else{document.getElementById("sharetitle").textContent=title;document.getElementById("shareurl").textContent=url}crealinks();return false}}}function par(a){var b="[\\?&]"+a+"=([^&]*)";var c=new RegExp(b);var d=window.location.href;var e=c.exec(d);if(e==null)return"";else return e[1]}var title=decodeURIComponent(par("title"));var url=decodeURIComponent(par("url"));var notes=decodeURIComponent(par("notes"));var redir=decodeURIComponent(par("redirect"));var oldtit=title;var oldurl=url;var oldnot=notes;window.onload=function(){redirect()}
 </script>
 </head>
-<header>
 <body>
+<header>
 <h2><?php _e( 'Sharing', 'share-on-diaspora' ); ?></h2>
 <div id=sharedet>
     <div id=sharetitle></div>
@@ -264,10 +264,9 @@ elseif ( ! empty( $options_array['podlist-all'] ) ) {
 	$podlist_all = $options_array['podlist-all'];
 }
 else {
-	$podlist_all = array('example.com' => '1');
+	$podlist_all = array('example.com');
 }
 $podlist_all_keys = array_keys( $podlist_all );
-//error_log("Pod list is: " . print_r($podlist, true));
 foreach ( $podlist as &$i ) {
 	print '<option  value="' . $i .'" class=dpod title="'.$i.'">'.$i.'</option>';
 }
@@ -279,7 +278,7 @@ foreach ( $podlist as &$i ) {
 <datalist id="datalist1">
 <?php
 foreach ( $podlist_all as $value ) {
-	print '<option  value="' . $value .'"></option>';
+	print '<option>' . $value . '</option>';
 }
 ?>
 </datalist><br><input type=submit id=podurlsm value="<?php _e( 'Share', 'share-on-diaspora' ); ?>"></form><hr>

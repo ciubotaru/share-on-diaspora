@@ -3,7 +3,7 @@ Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
 Tested up to: 4.2.2
-Stable tag: 0.6.3
+Stable tag: 0.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,10 @@ page, 'Custom Image' tab.
 page, 'Pod list options' tab.
 
 == Changelog ==
+= 0.6.4 =
+* Bug-fix: warning messages about non-compliance with strict standards.
+* Minor improvements (updated FAQ and compatibility info, removed deprecated calls etc.)
+
 = 0.6.3 =
 * Bug-fix: the default placeholder in pod selection window did not display 
 properly.

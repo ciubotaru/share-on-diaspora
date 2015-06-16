@@ -87,6 +87,10 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.6.4
+* Bug-fix: warning messages about non-compliance with strict standards.
+* Minor improvements (updated FAQ and compatibility info, removed deprecated calls etc.)
+
 ## 0.6.3
 * Bug-fix: the default placeholder in pod selection window did not display properly.
 
