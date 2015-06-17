@@ -93,7 +93,7 @@ class ShareOnDiaspora {
 	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 
-	function generate_button($preview, $use_own_image) {
+	function generate_button($preview, $use_own_image, $is_feed) {
 		/**
 		 * if preview == TRUE && $use_own_image == '0', prepare fake link and output standard button
 		 * if preview == FALSE && $use_own_image == '0', prepare real link and output standard button
@@ -130,14 +130,17 @@ class ShareOnDiaspora {
 			$url = "'".esc_url( get_permalink() )."'";
 			$title = "'".get_the_title()."'";
 		}
-		$button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
+		// javascript not allowed in rss feed files
+		if ( $is_feed ) $button = "<a href='" . SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url=" . rawurlencode($url) ."&amp;title=" . rawurlencode($title) . "' target='_blank'>" . $button_box . "</a>";
+		else $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
 		return $button;
 	}
 
 	function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
-			$button_box = $this -> generate_button( false, $options_array['use_own_image'] );
+			if ( is_feed() ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
+			else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
 			return $content . $button_box;
 		} else { return $content; }
 	}
