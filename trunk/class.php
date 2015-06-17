@@ -22,12 +22,12 @@ class ShareOnDiaspora {
 	}
 
 	public static function register_share_on_diaspora_css() {
-		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora-css.php' );
+		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . 'share-on-diaspora-css.php' );
 		wp_enqueue_style( 'share-on-diaspora' );
 	}
 
 	public static function register_share_on_diaspora_js() {
-		wp_register_script( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora.js' );
+		wp_register_script( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . 'share-on-diaspora.js' );
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
 
