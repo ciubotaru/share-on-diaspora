@@ -163,6 +163,14 @@ public function filter_plugin_actions($l, $file) {
 			add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key) );
 		};
 		add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "' target='_blank'>Podupti.me</a>" ), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist' );
+
+		add_settings_section( 'section-misc', __( 'Miscellaneous settings', 'share-on-diaspora' ), array($this, 'section_misc_callback'), 'share_on_diaspora_options-misc' );
+		add_settings_field( 'show_in_feeds', __( 'Display button in RSS feeds', 'share-on-diaspora' ), array($this, 'show_feed_checkbox'), 'share_on_diaspora_options-misc', 'section-misc', array(
+			'name' => 'share-on-diaspora-settings[show_in_feeds]',
+			'value' => (isset($options_array['show_in_feeds']) ? $options_array['show_in_feeds'] : '1')
+			)
+		);
+
 	}
 
 	function section_colorprofile_callback() {
@@ -257,6 +265,8 @@ public function filter_plugin_actions($l, $file) {
 			$output = $this -> image_settings_validate( $input );
 		} elseif ( $input && $input['section'] && $input['section'] == 'podlist' ) {
 			$output = $this -> podlist_settings_validate( $input );
+		} elseif ( $input && $input['section'] && $input['section'] == 'misc' ) {
+			$output = $this -> misc_settings_validate( $input );
 		} elseif ( $input && $input['section'] && $input['section'] == 'set_default' ) {
 			unset($input['section']);
 			return $input;
@@ -300,6 +310,16 @@ public function filter_plugin_actions($l, $file) {
 			//not installed
 			printf( __( 'You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods.', 'share-on-diaspora' ), '<a href="http://wordpress.org/plugins/diaspora-podlist-updater">Diaspora Podlist Updater</a>' );
 		}
+	}
+
+	function section_misc_callback() {
+		echo __( 'Below are the options that do not fit into other categories.', 'share-on-diaspora' );
+	}
+
+	function show_feed_checkbox() {
+		$options_array = get_option( 'share-on-diaspora-settings' );
+		if ( ! isset($options_array['show_in_feeds']) ) { $options_array['show_in_feeds'] = 'enabled'; }
+		echo "<input type='checkbox' name='share-on-diaspora-settings[show_in_feeds]' value='checked' " . ( ($options_array['show_in_feeds'] == '0') ? '' : 'checked') . '>';
 	}
 
 	function button_settings_validate($input) {
@@ -369,6 +389,12 @@ public function filter_plugin_actions($l, $file) {
 		return $input;
 	}
 
+	function misc_settings_validate($input) {
+		if ( $input['show_in_feeds'] == 'checked') $input['show_in_feeds'] = '1';
+                else $input['show_in_feeds'] = '0';
+                return $input;
+	}
+
 	// color profiles
 	function share_on_diaspora_tab1() {
 		echo "<form action='options.php' method='post' name='button'>";
@@ -409,6 +435,15 @@ public function filter_plugin_actions($l, $file) {
 		echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='podlist'>";
 		settings_fields( 'share_on_diaspora_options' );
 		do_settings_sections( 'share_on_diaspora_options-podlist' );
+		submit_button( __( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false );
+		echo '</form>';
+	}
+
+	function share_on_diaspora_tab5() {
+		echo "<form action='options.php' method='POST'>";
+		echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='misc'>";
+		settings_fields( 'share_on_diaspora_options' );
+		do_settings_sections( 'share_on_diaspora_options-misc' );
 		submit_button( __( 'Update', 'share-on-diaspora' ), 'primary',  'submit-form', false );
 		echo '</form>';
 	}
@@ -476,11 +511,13 @@ public function filter_plugin_actions($l, $file) {
         <a href="?page=share_on_diaspora_options_page&amp;tab=2" class="nav-tab <?php if ( $tab == '2' ) { echo 'nav-tab-active'; } ?>"><?php echo __( 'Button options', 'share-on-diaspora' ); ?></a>
         <a href="?page=share_on_diaspora_options_page&amp;tab=3" class="nav-tab <?php if ( $tab == '3' ) { echo 'nav-tab-active'; } ?>"><?php echo __( 'Custom image', 'share-on-diaspora' ); ?></a>
         <a href="?page=share_on_diaspora_options_page&amp;tab=4" class="nav-tab <?php if ( $tab == '4' ) { echo 'nav-tab-active'; } ?>"><?php echo __( 'Pod list options', 'share-on-diaspora' ); ?></a>
+        <a href="?page=share_on_diaspora_options_page&amp;tab=5" class="nav-tab <?php if ( $tab == '5' ) { echo 'nav-tab-active'; } ?>"><?php echo __( 'Misc', 'share-on-diaspora' ); ?></a>
         </h2>
         <?php switch ( $tab ) {
 			case '2' : $this -> share_on_diaspora_tab2(); break;
 			case '3' : $this -> share_on_diaspora_tab3(); break;
 			case '4' : $this -> share_on_diaspora_tab4(); break;
+			case '5' : $this -> share_on_diaspora_tab5(); break;
 			default: $this -> share_on_diaspora_tab1();
 } ?>
 	<hr>
