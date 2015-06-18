@@ -119,20 +119,20 @@ class ShareOnDiaspora {
 		}
 		if ( $preview || is_admin() ) {
 			//add fake link
-			$url = "'[".__( 'Page address here', 'share-on-diaspora' )."]'";
-			$title = "'[".__( 'Page title here', 'share-on-diaspora' )."]'";
+			$url = "[".__( 'Page address here', 'share-on-diaspora' )."]";
+			$title = "[".__( 'Page title here', 'share-on-diaspora' )."]";
 		} elseif ( is_single() ) {
 			//add real link from DOM
-			$url = 'window.location.href';
-			$title = 'document.title';
+			$url = esc_url( get_permalink() );
+			$title = single_post_title('', false);
 		} else {
 			//add real link from WP
-			$url = "'".esc_url( get_permalink() )."'";
-			$title = "'".get_the_title()."'";
+			$url = esc_url( get_permalink() );
+			$title = get_the_title();
 		}
 		// javascript not allowed in rss feed files
 		if ( $is_feed ) $button = "<a href='" . SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url=" . rawurlencode($url) ."&amp;title=" . rawurlencode($title) . "' target='_blank'>" . $button_box . "</a>";
-		else $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
+		else $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = '". $url . "' ;var title = '". $title . "';   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
 		return $button;
 	}
 
