@@ -139,8 +139,10 @@ class ShareOnDiaspora {
 	function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
-			if ( is_feed() ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
-			else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
+			if ( is_feed() ) {
+				if ( $options_array['show_in_feeds'] == '1' ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
+				else return $content;
+			} else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
 			return $content . $button_box;
 		} else { return $content; }
 	}
