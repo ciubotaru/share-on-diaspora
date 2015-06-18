@@ -224,7 +224,7 @@ public function filter_plugin_actions($l, $file) {
 	function share_on_diaspora_url_callback() {
 		$settings = (array) get_option( 'share-on-diaspora-settings' );
 		$url = $settings['image_file'];
-		echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' placeholder='" . sprintf( __( 'Example: %s', 'share-on-diaspora' ), 'http://example.com/image1.png' ) . " style='width:100%'/>";
+		echo "<input type='text' name='share-on-diaspora-settings[image_file]' value='$url' placeholder='" . sprintf( __( 'Example: %s', 'share-on-diaspora' ), 'http://example.com/image1.png' ) . "' style='width:100%'/>";
 	}
 
 	function share_on_diaspora_delete_callback() {
@@ -235,7 +235,7 @@ public function filter_plugin_actions($l, $file) {
 		$image_defaults = $this -> image_defaults;
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		if ( ! isset($options_array['use_own_image']) ) { $options_array['use_own_image'] = $image_defaults['use_own_image']; }
-		echo "<input type='checkbox' name='share-on-diaspora-settings[use_own_image]' value='checked'" . ( ($options_array['use_own_image'] == '1') ? 'checked' : '') . '>';
+		echo "<input type='checkbox' name='share-on-diaspora-settings[use_own_image]' value='checked' " . ( ($options_array['use_own_image'] == '1') ? 'checked' : '') . '>';
 	}
 
 	function section_podlist_callback() {
