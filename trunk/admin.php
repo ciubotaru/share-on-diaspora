@@ -339,9 +339,6 @@ public function filter_plugin_actions($l, $file) {
 	}
 
 	function podlist_settings_validate($input) {
-		if ( ! is_writable( plugin_dir_path( __FILE__ ) ) ) {
-			add_settings_error( 'share-on-diaspora-settings', 'not writable', __( 'Plugin directory is not writable. Can not save css file.', 'share-on-diaspora' ) );
-		}
 		if ( ! empty($input['download']) ) {
 			$json = file_get_contents( $this -> podlist_update_url );
 			if ( empty($json) ) {
