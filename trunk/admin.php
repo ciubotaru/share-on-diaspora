@@ -390,7 +390,7 @@ public function filter_plugin_actions($l, $file) {
 	}
 
 	function misc_settings_validate($input) {
-		if ( $input['show_in_feeds'] == 'checked') $input['show_in_feeds'] = '1';
+		if ( array_key_exists('show_in_feeds', $input ) && $input['show_in_feeds'] == 'checked') $input['show_in_feeds'] = '1';
                 else $input['show_in_feeds'] = '0';
                 return $input;
 	}
