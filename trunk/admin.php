@@ -318,8 +318,8 @@ public function filter_plugin_actions($l, $file) {
 
 	function show_feed_checkbox() {
 		$options_array = get_option( 'share-on-diaspora-settings' );
-		if ( ! isset($options_array['show_in_feeds']) ) { $options_array['show_in_feeds'] = 'enabled'; }
-		echo "<input type='checkbox' name='share-on-diaspora-settings[show_in_feeds]' value='checked' " . ( ($options_array['show_in_feeds'] == '0') ? '' : 'checked') . '>';
+		// the box is checked, unless 'show_in_feeds' exists and is explicitly set to '0' (i.e. not display)
+		echo "<input type='checkbox' name='share-on-diaspora-settings[show_in_feeds]' value='checked' " . ( ( isset($options_array['show_in_feeds']) && $options_array['show_in_feeds'] == '0') ? '' : 'checked') . '>';
 	}
 
 	function button_settings_validate($input) {
@@ -390,9 +390,12 @@ public function filter_plugin_actions($l, $file) {
 	}
 
 	function misc_settings_validate($input) {
-		if ( array_key_exists('show_in_feeds', $input ) && $input['show_in_feeds'] == 'checked') $input['show_in_feeds'] = '1';
-                else $input['show_in_feeds'] = '0';
-                return $input;
+		// if the box was checked, set 'show_in_feeds' to '1' (i.e. display button in feeds)
+		// NB: unchecked boxes are not submitted, so we can replace the condition with if ( isset(input['show_in_feeds'] ) ...
+		if ( array_key_exists('show_in_feeds', $input ) && $input['show_in_feeds'] == 'checked' ) $input['show_in_feeds'] = '1';
+		// otherwise explicitly set it to '0' (i.e. not display)
+		else $input['show_in_feeds'] = '0';
+		return $input;
 	}
 
 	// color profiles

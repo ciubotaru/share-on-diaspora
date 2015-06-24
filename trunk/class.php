@@ -140,6 +140,7 @@ class ShareOnDiaspora {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
 			if ( is_feed() ) {
+				// if 'show_in_feeds' is EITHER set to 1 (i.e. display button in feeds) OR not set at all (default to enabled), then add button to post content
 				if ( !array_key_exists( 'show_in_feeds', $options_array ) || $options_array['show_in_feeds'] == '1' ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
 				else return $content;
 			} else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
