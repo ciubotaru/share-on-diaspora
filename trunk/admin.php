@@ -410,7 +410,8 @@ public function filter_plugin_actions($l, $file) {
 
 	function share_on_diaspora_tab2() {
 		echo '<h3>'.__( 'Button Preview', 'share-on-diaspora' ).'</h3>';
-		echo ShareOnDiaspora::generate_button( true, '0' );
+		// show the button as preview (no title or url), not own image, not rss
+		echo ShareOnDiaspora::generate_button( true, false, false );
 		echo "<form action='options.php' method='post' name='button'>";
 		echo "<input type='hidden' name='share-on-diaspora-settings[section]' value='button'>";
 		settings_fields( 'share_on_diaspora_options' );
