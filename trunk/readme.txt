@@ -79,7 +79,7 @@ that automatically retrieves a fresh list of active pods.
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"
-post in "Twenty Thirteen" theme.
+post in "Twenty Fifteen" theme.
 2. Choose a Diaspora pod from the list or type it in the text field.
 3. Verify the text of your post, Aspects that will see it etc, and press the
 Post button.
@@ -91,6 +91,8 @@ options' tab.
 page, 'Custom Image' tab.
 7. To choose the pods to be included in the drop-down list, go to the Settings
 page, 'Pod list options' tab.
+8. To show/hide the button in RSS feeds, go to the Settings page, 'Misc' tab.
+
 
 == Changelog ==
 = 0.6.4 =

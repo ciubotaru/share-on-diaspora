@@ -26,7 +26,7 @@ Please note, that some translations might be incomplete and lack latest changes.
 
 # Screenshots
 1. The "Share on D*" button under the default "Hello World"
-post in "Twenty Thirteen" theme.
+post in "Twenty Fifteen" theme.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-1.png?raw=true)
 2. Choose a Diaspora pod from the list or type it in the text field.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-2.png?raw=true)
@@ -41,6 +41,8 @@ page, 'Custom Image' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-6.png?raw=true)
 7. To choose the pods to be included in the drop-down list, go to the Settings page, 'Pod list options' tab.
 ![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-7.png?raw=true)
+8. To show/hide the button in RSS feeds, go to the Settings page, 'Misc' tab.
+![](https://github.com/ciubotaru/share-on-diaspora/blob/master/assets/screenshot-8.png?raw=true)
 
 # Installation
 1. Get the latest snapshot of master branch.
