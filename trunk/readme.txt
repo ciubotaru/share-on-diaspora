@@ -95,6 +95,11 @@ page, 'Pod list options' tab.
 
 
 == Changelog ==
+= 0.7 =
+* Bug-fix: sharing functionality in RSS feeds.
+* Button in RSS feeds is made optional
+* Post title is editable now
+
 = 0.6.4 =
 * Bug-fix: warning messages about non-compliance with strict standards.
 * i18n: German translation updated.

@@ -89,6 +89,11 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.7
+* Bug-fix: sharing functionality in RSS feeds.
+* Button in RSS feeds is made optional
+* Post title is editable now
+
 ## 0.6.4
 * Bug-fix: warning messages about non-compliance with strict standards.
 * i18n: German translation updated.
