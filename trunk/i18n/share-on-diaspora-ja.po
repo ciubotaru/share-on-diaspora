@@ -1,335 +1,361 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: share-on-diaspora\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-diaspora\n"
+"POT-Creation-Date: 2015-06-29 07:07:16+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vitalie Ciubotaru <vitalie@ciubotaru.tk>\n"
+"Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: share-on-diaspora\n"
-"Language: ja\n"
 
-#: class.php:61
-msgid "Page address here"
-msgstr "ページのURLはこちら"
+#: admin.php:31
+#: new_window.php:302
+msgid "Select from the list"
+msgstr "リストからお選び下さい"
 
-#: class.php:62
-msgid "Page title here"
-msgstr "ページのタイトルはこちら"
-
-#: admin.php:107
+#: admin.php:44
 msgid "Share on D*"
 msgstr "D*で共有"
 
-#: admin.php:166
+#: admin.php:60
+msgid "[No image]"
+msgstr "[画像がありません]"
+
+#: admin.php:98
+msgid "Choose a preset color profile"
+msgstr "あらかじめ設定されたカラープロファイル選択"
+
+#: admin.php:103
 msgid "Button properties"
 msgstr "ボタンのプロパティ"
 
-#: admin.php:167
+#: admin.php:104
 msgid "Background color"
 msgstr "背景色"
 
-#: admin.php:172
+#: admin.php:109
 msgid "Background color on mouse-over"
 msgstr "マウスオーバー時の背景色"
 
-#: admin.php:177
+#: admin.php:114
 msgid "Text and border color"
 msgstr "文字とボーダー色"
 
-#: admin.php:182
+#: admin.php:119
 msgid "Text and border color on mouse-over"
 msgstr "マウスオーバー時の文字とボーダー色"
 
-#: admin.php:187
+#: admin.php:124
 msgid "Rounded corners"
 msgstr "角丸"
 
-#: admin.php:190
+#: admin.php:127
 msgid "Rounded"
 msgstr "丸い"
 
-#: admin.php:190
+#: admin.php:127
 msgid "Square"
 msgstr "四角い"
 
-#: admin.php:193
+#: admin.php:130
 msgid "Button size"
 msgstr "ボタンの大きさ"
 
-#: admin.php:196
+#: admin.php:133
 msgid "Small"
 msgstr "小"
 
-#: admin.php:196
+#: admin.php:133
 msgid "Medium"
 msgstr "中"
 
-#: admin.php:196
+#: admin.php:133
 msgid "Large"
 msgstr "大"
 
-#: admin.php:196
+#: admin.php:133
 msgid "Huge"
 msgstr "広大"
 
-#: admin.php:199
+#: admin.php:136
 msgid "Text on the button"
 msgstr "ボタン上のテキスト"
 
-#: admin.php:204
+#: admin.php:141
 msgid "Restore defaults"
 msgstr "既定値に戻す"
 
-#: admin.php:257
+#: admin.php:143
+msgid "Upload button image"
+msgstr "ボタンの画像アップロード"
+
+#: admin.php:144
+msgid "Upload new custom image"
+msgstr "新しい画像をアップロード"
+
+#: admin.php:145
+msgid "OR provide image URL"
+msgstr "または、画像のURLを入力"
+
+#: admin.php:146
+msgid "Clear current image"
+msgstr "現在画像をクリアする"
+
+#: admin.php:147
+msgid "Use custom image"
+msgstr "カスタム画像を使用"
+
+#: admin.php:149
+msgid "List of pods shown to user"
+msgstr "ユーザーに表示するpodの一覧"
+
+#: admin.php:161
+msgid "Add a pod"
+msgstr "podを加える"
+
+#: admin.php:165
+msgid "Download the latest podlist from %s"
+msgstr "最新のpod一覧を%sからダウンロード"
+
+#: admin.php:167
+msgid "Miscellaneous settings"
+msgstr "その他の設定	その他の設定 	その他の設定 	その他の設定 "
+
+#: admin.php:168
+msgid "Display button in RSS feeds"
+msgstr "RSS配信にボタンを表示する"
+
+#: admin.php:177
+msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
+msgstr "あらかじめ設定されたカラープロファイルから選択が出来る。または、「ボタン設定」のタブでボタンの微調整が出来る。"
+
+#: admin.php:202
 msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
 msgstr "下記のパラメターを指定してソシアルボタンの見た感じを変更できる。色コードは十六進形式（例えば、%1$sまたは%2$s）。デフォルトに戻すには、空白のままにして下さい。"
 
-#: admin.php:382
-msgid "Invalid value for %s. Reverting to default."
-msgstr "%sの値が不正である。既定値に戻した。"
+#: admin.php:221
+msgid "Defaults"
+msgstr "初期設定"
 
-#: admin.php:371
-msgid "All parameters reverted to their default values."
-msgstr "すべての設定を既定値に戻した。"
+#: admin.php:225
+msgid "Select an image to upload and use as button."
+msgstr "ボタンとして使うするには、アップロードする画像を選択して下さい。"
 
+#: admin.php:229
+msgid "Filename"
+msgstr "ファイル名"
+
+#: admin.php:235
+#: admin.php:284
+#: new_window.php:326
+msgid "Example: %s"
+msgstr "例：%s"
+
+#: admin.php:239
+msgid "Clear"
+msgstr "クリア"
+
+#: admin.php:250
+msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
+msgstr "下記はユーザーに表示するpodの一覧。podを追加するには、下のフィールドにpod名を入力して下さい。podを削除するには、そのチェックを外して下さい。%sをクリックして変更内容を適用する。"
+
+#: admin.php:250
 #: admin.php:407
-msgid "Plugin directory is not writable. Can not save css file."
-msgstr "プラグインディレクトリが書き込み可能でない。cssファイルの保存が出来ない。"
-
-#: admin.php:450
-msgid "Button Preview"
-msgstr "ボタンプレビュー"
-
-#: admin.php:305 admin.php:445 admin.php:456 admin.php:467 admin.php:479
+#: admin.php:419
+#: admin.php:430
+#: admin.php:442
+#: admin.php:451
 msgid "Update"
 msgstr "更新"
 
-#: admin.php:487
+#: admin.php:284
+msgid "Add"
+msgstr "追加"
+
+#: admin.php:290
+msgid "Use up/down keys to choose from the list of suggested pods."
+msgstr "podの一覧からを選択するには、上下ボタンを使用する。"
+
+#: admin.php:294
+msgid "Retrieve"
+msgstr "ダウンロード"
+
+#: admin.php:302
+msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
+msgstr "%sというプラグインはインストールされ、有効化されている。動作しているpodの一覧を手動でダウンロード・更新は不要。"
+
+#: admin.php:306
+msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
+msgstr "%sというプラグインはインストールされているが、有効化されていない。動作しているpodの一覧を自動的にダウンロード・更新するには、プラグインを有効化して下さい。"
+
+#: admin.php:311
+msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
+msgstr "%sというプラグインを設置すると、動作しているpodの一覧は自動的にダウンロード・更新される。"
+
+#: admin.php:316
+msgid "Below are the options that do not fit into other categories."
+msgstr "下記は他の分類に入らない設定である。"
+
+#: admin.php:328
+msgid "All parameters reverted to their default values."
+msgstr "すべての設定を既定値に戻した。"
+
+#: admin.php:339
+msgid "Invalid value for %s. Reverting to default."
+msgstr "%sの値が不正である。既定値に戻した。"
+
+#: admin.php:343
+#: admin.php:386
+msgid "Value missing for %s. Reverting to default."
+msgstr "%sの値が空である。既定値に戻した。"
+
+#: admin.php:353
+msgid "No image file specified. Falling back to standard button."
+msgstr "画像のファイル名が指定されない。標準ボタンに戻った。"
+
+#: admin.php:365
+#: admin.php:371
+msgid "Could not update the podlist."
+msgstr "pod一覧の更新が失敗した"
+
+#: admin.php:412
+msgid "Button Preview"
+msgstr "ボタンプレビュー"
+
+#: admin.php:424
+msgid "Custom Image Preview"
+msgstr "個人画像プレビュー"
+
+#: admin.php:435
+msgid "Podlist Preview"
+msgstr "pod一覧のプレビュー"
+
+#: admin.php:459
 msgid "You do not have sufficient permissions to access this page."
 msgstr "あなたにはこのページへのアクセスために十分な許可がない。"
 
-#: admin.php:540
+#: admin.php:467
+msgid "Image URL cleared."
+msgstr "画像URLが片付けられた"
+
+#: admin.php:490
+msgid "Custom image file uploaded."
+msgstr "個人画像 ファイルがアップロードされた"
+
+#: admin.php:511
 msgid "Share on Diaspora (ver. %s) Options"
 msgstr "Share on Diaspora (ver. %s) オプション"
 
-#: admin.php:544
+#: admin.php:512
+msgid "Need help? Please read %1$splugin's FAQ page%2$s."
+msgstr "手段については、%1$sプラグインのFAQ%2$sをご覧下さい。"
+
+#: admin.php:514
+msgid "Color profiles"
+msgstr "カラープロファイル"
+
+#: admin.php:515
 msgid "Button options"
 msgstr "ボタン設定"
 
-#: admin.php:546
+#: admin.php:516
+msgid "Custom image"
+msgstr "個人画像"
+
+#: admin.php:517
 msgid "Pod list options"
 msgstr "pod一覧の設定"
 
+#: admin.php:518
+msgid "Misc"
+msgstr "その他"
+
+#: admin.php:528
+msgid "Source code repository"
+msgstr "ソースリポジトリ"
+
+#: admin.php:529
+msgid "Donate BTC"
+msgstr "BTCを寄付する"
+
+#: class.php:122
+msgid "Page address here"
+msgstr "ページのURLはこちら"
+
+#: class.php:123
+msgid "Page title here"
+msgstr "ページのタイトルはこちら"
+
+#. #-#-#-#-#  share-on-diaspora.pot (Share on Diaspora 0.7)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: 
+#: new_window.php:15
 msgid "Share on Diaspora"
 msgstr "Diasporaでシェア"
 
+#: new_window.php:294
+msgid "Sharing"
+msgstr "シェア"
+
+#: new_window.php:300
+msgid "Choose your Diaspora* pod"
+msgstr "Diaspora* podを選択ください"
+
+#: new_window.php:324
+msgid "or choose from history"
+msgstr "または、履歴から選択ください"
+
+#: new_window.php:326
+msgid "or introduce your pod URL"
+msgstr "または、podのURLを入力ください"
+
+#: new_window.php:333
+msgid "Share"
+msgstr "シェア"
+
+#: new_window.php:334
+msgid "Remember my choice, don't ask again"
+msgstr "選択した選択肢を保存し、二度に聞かない"
+
+#: new_window.php:334
+msgid "Advanced options"
+msgstr "高度なオプション"
+
+#: new_window.php:334
+msgid "Use Markdown syntax for link"
+msgstr "URLにはMarkdown言語を使用する。"
+
+#: new_window.php:334
+msgid "Shorten URL (j.mp)"
+msgstr "URL短縮（j.mp）"
+
+#: new_window.php:334
+msgid "Never remember my last 3 pods"
+msgstr "最新３つのpodを保存しない"
+
+#: new_window.php:334
+msgid "Forget my last 3 pods"
+msgstr "最新３つのpodを削除する"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ciubotaru/share-on-diaspora"
+msgstr "https://github.com/ciubotaru/share-on-diaspora"
+
 #. Description of the plugin/theme
-#: 
 msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
 msgstr "このプラグインは、記事下に「Diasporaでシェア 」というソシアルボタンを設置する。"
 
 #. Author of the plugin/theme
-#: 
 msgid "Vitalie Ciubotaru"
 msgstr "Vitalie Ciubotaru"
 
 #. Author URI of the plugin/theme
-#: 
 msgid "https://github.com/ciubotaru"
 msgstr "https://github.com/ciubotaru"
 
-#: new_window.php:232
-msgid "Sharing"
-msgstr "シェア"
-
-#: new_window.php:238
-msgid "Choose your Diaspora* pod"
-msgstr "Diaspora* podを選択ください"
-
-#: new_window.php:277
-msgid "or choose from history"
-msgstr "または、履歴から選択ください"
-
-#: new_window.php:279
-msgid "or introduce your pod URL"
-msgstr "または、podのURLを入力ください"
-
-#: new_window.php:288
-msgid "Remember my choice, don't ask again"
-msgstr "選択した選択肢を保存し、二度に聞かない"
-
-#: new_window.php:288
-msgid "Advanced options"
-msgstr "高度なオプション"
-
-#: new_window.php:288
-msgid "Use Markdown syntax for link"
-msgstr "URLにはMarkdown言語を使用する。"
-
-#: new_window.php:288
-msgid "Shorten URL (j.mp)"
-msgstr "URL短縮（j.mp）"
-
-#: new_window.php:288
-msgid "Never remember my last 3 pods"
-msgstr "最新３つのpodを保存しない"
-
-#: new_window.php:288
-msgid "Forget my last 3 pods"
-msgstr "最新３つのpodを削除する"
-
-#: admin.php:92 new_window.php:240
-msgid "Select from the list"
-msgstr "リストからお選び下さい"
-
-#: new_window.php:287
-msgid "Share"
-msgstr "シェア"
-
-#: admin.php:206
-msgid "Upload button image"
-msgstr "ボタンの画像アップロード"
-
-#: admin.php:207
-msgid "Upload new custom image"
-msgstr "新しい画像をアップロード"
-
-#: admin.php:208
-msgid "OR provide image URL"
-msgstr "または、画像のURLを入力"
-
-#: admin.php:209
-msgid "Clear current image"
-msgstr "現在画像をクリアする"
-
-#: admin.php:210
-msgid "Use custom image"
-msgstr "カスタム画像を使用"
-
-#: admin.php:276
-msgid "Defaults"
-msgstr "初期設定"
-
-#: admin.php:280
-msgid "Select an image to upload and use as button."
-msgstr "ボタンとして使うするには、アップロードする画像を選択して下さい。"
-
-#: admin.php:284
-msgid "Filename"
-msgstr "ファイル名"
-
-#: admin.php:294
-msgid "Clear"
-msgstr "クリア"
-
-#: admin.php:386 admin.php:433
-msgid "Value missing for %s. Reverting to default."
-msgstr "%sの値が空である。既定値に戻した。"
-
-#: admin.php:461
-msgid "Custom Image Preview"
-msgstr "個人画像プレビュー"
-
-#: admin.php:472
-msgid "Podlist Preview"
-msgstr "pod一覧のプレビュー"
-
-#: admin.php:495
-msgid "Image URL cleared."
-msgstr "画像URLが片付けられた"
-
-#: admin.php:518
-msgid "Custom image file uploaded."
-msgstr "個人画像 ファイルがアップロードされた"
-
-#: admin.php:545
-msgid "Custom image"
-msgstr "個人画像"
-
-#: admin.php:556
-msgid "Source code repository"
-msgstr "ソースリポジトリ"
-
-#: admin.php:557
-msgid "Donate BTC"
-msgstr "BTCを寄付する"
-
-#: admin.php:337
-msgid "Add"
-msgstr "追加"
-
-#: admin.php:123
-msgid "[No image]"
-msgstr "[画像がありません]"
-
-#: admin.php:396
-msgid "No image file specified. Falling back to standard button."
-msgstr "画像のファイル名が指定されない。標準ボタンに戻った。"
-
-#: admin.php:161
-msgid "Choose a preset color profile"
-msgstr "あらかじめ設定されたカラープロファイル選択"
-
-#: admin.php:232
-#, fuzzy
-msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
-msgstr "あらかじめ設定されたカラープロファイルから選択が出来る。または、「ボタン設定」のタブでボタンの微調整が出来る。"
-
-#: admin.php:543
-msgid "Color profiles"
-msgstr "カラープロファイル"
-
-#: admin.php:228
-msgid "Download the latest podlist from %s"
-msgstr "最新のpod一覧を%sからダウンロード"
-
-#: admin.php:412 admin.php:418
-msgid "Could not update the podlist."
-msgstr "pod一覧の更新が失敗した"
-
-#: admin.php:290 admin.php:337 new_window.php:279
-msgid "Example: %s"
-msgstr "例：%s"
-
-#: admin.php:347
-msgid "Retrieve"
-msgstr "ダウンロード"
-
-#: admin.php:212
-msgid "List of pods shown to user"
-msgstr "ユーザーに表示するpodの一覧"
-
-#: admin.php:224
-msgid "Add a pod"
-msgstr "podを加える"
-
-#: admin.php:305
-msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
-msgstr "下記はユーザーに表示するpodの一覧。podを追加するには、下のフィールドにpod名を入力して下さい。podを削除するには、そのチェックを外して下さい。%sをクリックして変更内容を適用する。"
-
-#: admin.php:355
-msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
-msgstr "%sというプラグインはインストールされ、有効化されている。動作しているpodの一覧を手動でダウンロード・更新は不要。"
-
-#: admin.php:359
-msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "%sというプラグインはインストールされているが、有効化されていない。動作しているpodの一覧を自動的にダウンロード・更新するには、プラグインを有効化して下さい。"
-
-#: admin.php:364
-msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
-msgstr "%sというプラグインを設置すると、動作しているpodの一覧は自動的にダウンロード・更新される。"
-
-#: admin.php:343
-msgid "Use up/down keys to choose from the list of suggested pods."
-msgstr "podの一覧からを選択するには、上下ボタンを使用する。"
-
-#: admin.php:541
-msgid "Need help? Please read %1$splugin's FAQ page%2$s."
-msgstr "手段については、%1$sプラグインのFAQ%2$sをご覧下さい。"
-
-#. Plugin URI of the plugin/theme
-#: 
-msgid "https://github.com/ciubotaru/share-on-diaspora"
-msgstr "https://github.com/ciubotaru/share-on-diaspora"
-
+#~ msgid "Plugin directory is not writable. Can not save css file."
+#~ msgstr ""
+#~ "プラグインディレクトリが書き込み可能でない。cssファイルの保存が出来ない。"

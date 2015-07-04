@@ -22,12 +22,12 @@ class ShareOnDiaspora {
 	}
 
 	public static function register_share_on_diaspora_css() {
-		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora-css.php' );
+		wp_register_style( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . 'share-on-diaspora-css.php' );
 		wp_enqueue_style( 'share-on-diaspora' );
 	}
 
 	public static function register_share_on_diaspora_js() {
-		wp_register_script( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . '/share-on-diaspora.js' );
+		wp_register_script( 'share-on-diaspora', SHARE_ON_DIASPORA_PLUGIN_URL . 'share-on-diaspora.js' );
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
 
@@ -93,7 +93,7 @@ class ShareOnDiaspora {
 	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 
-	function generate_button($preview, $use_own_image) {
+	function generate_button($preview, $use_own_image, $is_feed) {
 		/**
 		 * if preview == TRUE && $use_own_image == '0', prepare fake link and output standard button
 		 * if preview == FALSE && $use_own_image == '0', prepare real link and output standard button
@@ -119,25 +119,31 @@ class ShareOnDiaspora {
 		}
 		if ( $preview || is_admin() ) {
 			//add fake link
-			$url = "'[".__( 'Page address here', 'share-on-diaspora' )."]'";
-			$title = "'[".__( 'Page title here', 'share-on-diaspora' )."]'";
+			$url = "[".__( 'Page address here', 'share-on-diaspora' )."]";
+			$title = "[".__( 'Page title here', 'share-on-diaspora' )."]";
 		} elseif ( is_single() ) {
 			//add real link from DOM
-			$url = 'window.location.href';
-			$title = 'document.title';
+			$url = esc_url( get_permalink() );
+			$title = single_post_title('', false);
 		} else {
 			//add real link from WP
-			$url = "'".esc_url( get_permalink() )."'";
-			$title = "'".get_the_title()."'";
+			$url = esc_url( get_permalink() );
+			$title = get_the_title();
 		}
-		$button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = ". $url . ' ;var title = '. $title . ";   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
+		// javascript not allowed in rss feed files
+		if ( $is_feed ) $button = "<a href='" . SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url=" . rawurlencode($url) ."&amp;title=" . rawurlencode($title) . "' target='_blank'>" . $button_box . "</a>";
+		else $button = "<div title='Diaspora*' id='diaspora-button-container'><a href=\"javascript:(function(){var url = '". $url . "' ;var title = '". $title . "';   window.open('". SHARE_ON_DIASPORA_PLUGIN_URL . "new_window.php?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title),'post','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=400')})()\">" . $button_box . '</a></div>';
 		return $button;
 	}
 
 	function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
-			$button_box = $this -> generate_button( false, $options_array['use_own_image'] );
+			if ( is_feed() ) {
+				// if 'show_in_feeds' is EITHER set to 1 (i.e. display button in feeds) OR not set at all (default to enabled), then add button to post content
+				if ( !array_key_exists( 'show_in_feeds', $options_array ) || $options_array['show_in_feeds'] == '1' ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
+				else return $content;
+			} else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
 			return $content . $button_box;
 		} else { return $content; }
 	}

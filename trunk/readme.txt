@@ -3,7 +3,7 @@ Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
 Tested up to: 4.2.2
-Stable tag: 0.6.4
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,7 +79,7 @@ that automatically retrieves a fresh list of active pods.
 
 == Screenshots ==
 1. The "Share on D*" button under the default "Hello World"
-post in "Twenty Thirteen" theme.
+post in "Twenty Fifteen" theme.
 2. Choose a Diaspora pod from the list or type it in the text field.
 3. Verify the text of your post, Aspects that will see it etc, and press the
 Post button.
@@ -91,8 +91,15 @@ options' tab.
 page, 'Custom Image' tab.
 7. To choose the pods to be included in the drop-down list, go to the Settings
 page, 'Pod list options' tab.
+8. To show/hide the button in RSS feeds, go to the Settings page, 'Misc' tab.
+
 
 == Changelog ==
+= 0.7 =
+* Bug-fix: sharing functionality in RSS feeds.
+* Button in RSS feeds is made optional
+* Post title is editable now
+
 = 0.6.4 =
 * Bug-fix: warning messages about non-compliance with strict standards.
 * i18n: German translation updated.
