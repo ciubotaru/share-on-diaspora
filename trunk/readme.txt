@@ -21,6 +21,7 @@ So far, the following translations are available:
 
 * French -- contributed by Stef20 from stef20.info/blog and Se7h
 * German -- contributed by Georg Krause <mail@georg-krause.net> and JanRei
+* Indonesian -- cotribuited by https://www.chameleonjohn.com
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
