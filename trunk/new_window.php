@@ -42,6 +42,16 @@ div.bot_opt{position:fixed;bottom:0;height:1.6em;border-top:1px solid #eee;left:
 </style>
 
 <script type="text/javascript">
+// Use to prevent XSS
+// Code from http://shebang.brandonmintern.com/foolproof-html-escaping-in-javascript/
+// Use the browser's built-in functionality to quickly and safely escape
+// the string
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+
 function extras(a) {
     var b = document.getElementById("remember").checked;
     var c = document.getElementById("markdown").checked;
@@ -252,7 +262,7 @@ function redirect() {
         location.href = "about"
     } else {
         if (localStorage["remember"] && localStorage["remember"] === "true" && localStorage["lastPod"] && redir !== "false") {
-            document.getElementsByTagName('body')[0].innerHTML = "Sharing <b>" + title + "</b> (" + url + ") to " + localStorage["lastPod"];
+            document.getElementsByTagName('body')[0].innerHTML = "Sharing <b>" + escapeHtml(title) + "</b> (" + escapeHtml(url) + ") to " + escapeHtml(localStorage["lastPod"]);
             var a = "http://" + localStorage["lastPod"] + "/bookmarklet?url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title);
             if (notes !== "") {
                 a += "&notes=" + encodeURIComponent(notes)
@@ -262,7 +272,7 @@ function redirect() {
             return true
         } else {
             document.getElementById("sharetitle").value = title;
-            document.getElementById("shareurl").innerHTML = url;
+            document.getElementById("shareurl").innerHTML = escapeHtml(url);
             crealinks();
             return false
         }
