@@ -101,6 +101,9 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.7.1
+* Bug-fix: a reflected XSS in share url parameters (patch provided by Framartin@GitHub).
+
 ## 0.7
 * Bug-fix: sharing functionality in RSS feeds.
 * Button in RSS feeds is made optional

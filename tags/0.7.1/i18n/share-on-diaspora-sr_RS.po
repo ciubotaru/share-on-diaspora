@@ -1,0 +1,362 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: share-on-diaspora\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/share-on-diaspora\n"
+"POT-Creation-Date: 2015-06-29 07:07:16+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vitalie Ciubotaru <vitalie@ciubotaru.tk>\n"
+"Language-Team: \n"
+"Language: sh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: admin.php:31
+#: new_window.php:302
+msgid "Select from the list"
+msgstr "Odaberite sa liste"
+
+#: admin.php:44
+msgid "Share on D*"
+msgstr "Podeli na D*"
+
+#: admin.php:60
+msgid "[No image]"
+msgstr "[Nema slike]"
+
+#: admin.php:98
+msgid "Choose a preset color profile"
+msgstr ""
+
+#: admin.php:103
+msgid "Button properties"
+msgstr "Osobine tastera"
+
+#: admin.php:104
+msgid "Background color"
+msgstr "Boja pozadine"
+
+#: admin.php:109
+msgid "Background color on mouse-over"
+msgstr "Boja pozadine kad kursor pređe preko"
+
+#: admin.php:114
+msgid "Text and border color"
+msgstr "Boja teksta i ivica"
+
+#: admin.php:119
+msgid "Text and border color on mouse-over"
+msgstr "Boja teksta i ivica kad kursor pređe preko"
+
+#: admin.php:124
+msgid "Rounded corners"
+msgstr "Zaobljene ivice"
+
+#: admin.php:127
+msgid "Rounded"
+msgstr "Zaobljen"
+
+#: admin.php:127
+msgid "Square"
+msgstr "Četvrtast"
+
+#: admin.php:130
+msgid "Button size"
+msgstr "Veličina tastera"
+
+#: admin.php:133
+msgid "Small"
+msgstr "Mali"
+
+#: admin.php:133
+msgid "Medium"
+msgstr "Srednji"
+
+#: admin.php:133
+msgid "Large"
+msgstr "Veliki"
+
+#: admin.php:133
+msgid "Huge"
+msgstr "Ogroman"
+
+#: admin.php:136
+msgid "Text on the button"
+msgstr "Tekst na tasteru"
+
+#: admin.php:141
+msgid "Restore defaults"
+msgstr "Vrati na podrazumevane vrednosti"
+
+#: admin.php:143
+msgid "Upload button image"
+msgstr "Slika tastera za otpremanje"
+
+#: admin.php:144
+msgid "Upload new custom image"
+msgstr "Otpremi novu prilagođenu sliku"
+
+#: admin.php:145
+msgid "OR provide image URL"
+msgstr "ILI unesite URL slike"
+
+#: admin.php:146
+msgid "Clear current image"
+msgstr "Obriši trenutnu sliku"
+
+#: admin.php:147
+msgid "Use custom image"
+msgstr "Upotrebi prilagođenu sliku"
+
+#: admin.php:149
+msgid "List of pods shown to user"
+msgstr ""
+
+#: admin.php:161
+msgid "Add a pod"
+msgstr "Dodaj pod"
+
+#: admin.php:165
+msgid "Download the latest podlist from %s"
+msgstr ""
+
+#: admin.php:167
+msgid "Miscellaneous settings"
+msgstr ""
+
+#: admin.php:168
+msgid "Display button in RSS feeds"
+msgstr ""
+
+#: admin.php:177
+msgid "You can choose a preset color profile for your button on this tab, or fine-tune it on the 'Button Options' tab"
+msgstr ""
+
+#: admin.php:202
+msgid "Use the parameters below to change the look and feel of your share button. All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty to restore the default value."
+msgstr "Koristite sledeće parametre da biste promenili izgled i funkcije tastera za deljenje. Sve boje su šestocifreni heksadecimalni brojevi, kao što su %1$s ili %2$s. Ostavite prazno da biste vratili podrazumevanu vrednost."
+
+#: admin.php:221
+msgid "Defaults"
+msgstr "Podrazumevane vrednosti"
+
+#: admin.php:225
+msgid "Select an image to upload and use as button."
+msgstr "Odaberite sliku za otpremanje i koristite je kao taster."
+
+#: admin.php:229
+msgid "Filename"
+msgstr "Naziv datoteke"
+
+#: admin.php:235
+#: admin.php:284
+#: new_window.php:326
+msgid "Example: %s"
+msgstr "Primer: %s"
+
+#: admin.php:239
+msgid "Clear"
+msgstr "Obriši"
+
+#: admin.php:250
+msgid "This is the list of Diaspora* pods that appear in the drop-down menu of the Share dialog window. To add a pod, type its name in the box below. To remove a pod, uncheck it. Press %s to apply changes."
+msgstr ""
+
+#: admin.php:250
+#: admin.php:407
+#: admin.php:419
+#: admin.php:430
+#: admin.php:442
+#: admin.php:451
+msgid "Update"
+msgstr "Ažuriraj"
+
+#: admin.php:284
+msgid "Add"
+msgstr "Dodaj"
+
+#: admin.php:290
+msgid "Use up/down keys to choose from the list of suggested pods."
+msgstr ""
+
+#: admin.php:294
+msgid "Retrieve"
+msgstr ""
+
+#: admin.php:302
+msgid "%s plugin is installed and enabled. You don't need to manually retrieve the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:306
+msgid "%s plugin is installed, but not activated. You can activate it to automatically retrieve and update the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:311
+msgid "You can install %s plugin to automatically retrieve and update the list of active Diaspora* pods."
+msgstr ""
+
+#: admin.php:316
+msgid "Below are the options that do not fit into other categories."
+msgstr ""
+
+#: admin.php:328
+msgid "All parameters reverted to their default values."
+msgstr "Svi parametri vraćeni na svoje podrazumevane vrednosti."
+
+#: admin.php:339
+msgid "Invalid value for %s. Reverting to default."
+msgstr "Nevažeća vrednost za %s. Vraćanje na podrazumevane. "
+
+#: admin.php:343
+#: admin.php:386
+msgid "Value missing for %s. Reverting to default."
+msgstr "Nedostaje vrednost za %s. Vraćanje na podrazumevane vrednosti."
+
+#: admin.php:353
+msgid "No image file specified. Falling back to standard button."
+msgstr "Nije određena slika datoteke. Vraćanje na standardni taster."
+
+#: admin.php:365
+#: admin.php:371
+msgid "Could not update the podlist."
+msgstr ""
+
+#: admin.php:412
+msgid "Button Preview"
+msgstr "Pregled tastera"
+
+#: admin.php:424
+msgid "Custom Image Preview"
+msgstr "Pregled prilagođene slike"
+
+#: admin.php:435
+msgid "Podlist Preview"
+msgstr "Pod-lista pregled"
+
+#: admin.php:459
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nemate odgovarajuće dozvole za pristup ovoj stranici."
+
+#: admin.php:467
+msgid "Image URL cleared."
+msgstr "URL slike obrisan"
+
+#: admin.php:490
+msgid "Custom image file uploaded."
+msgstr "Prilagođena slika datoteke otpremljena."
+
+#: admin.php:511
+msgid "Share on Diaspora (ver. %s) Options"
+msgstr "Podeli na Diaspora (ver. %s) Opcije"
+
+#: admin.php:512
+msgid "Need help? Please read %1$splugin's FAQ page%2$s."
+msgstr "Treba vam pomoć? Pročitajte %1$sčesto postavljana pitanja za plugin%2$s."
+
+#: admin.php:514
+msgid "Color profiles"
+msgstr ""
+
+#: admin.php:515
+msgid "Button options"
+msgstr "Opcije tastera"
+
+#: admin.php:516
+msgid "Custom image"
+msgstr "Prilagođena slika"
+
+#: admin.php:517
+msgid "Pod list options"
+msgstr "Opcija pod liste "
+
+#: admin.php:518
+msgid "Misc"
+msgstr ""
+
+#: admin.php:528
+msgid "Source code repository"
+msgstr "Spremište izvornog koda"
+
+#: admin.php:529
+msgid "Donate BTC"
+msgstr "Donirajte za BTC"
+
+#: class.php:122
+msgid "Page address here"
+msgstr "Adresa stranice ovde"
+
+#: class.php:123
+msgid "Page title here"
+msgstr "Naslov stranice ovde"
+
+#. #-#-#-#-#  share-on-diaspora.pot (Share on Diaspora 0.7)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: new_window.php:15
+msgid "Share on Diaspora"
+msgstr "Podeli na Diaspora mreži"
+
+#: new_window.php:294
+msgid "Sharing"
+msgstr "Deljenje"
+
+#: new_window.php:300
+msgid "Choose your Diaspora* pod"
+msgstr "Izaberite svoj Diaspora* pod"
+
+#: new_window.php:324
+msgid "or choose from history"
+msgstr "ili izaberite iz istorije"
+
+#: new_window.php:326
+msgid "or introduce your pod URL"
+msgstr "ili unesite svoj URL pod-a"
+
+#: new_window.php:333
+msgid "Share"
+msgstr "Deli"
+
+#: new_window.php:334
+msgid "Remember my choice, don't ask again"
+msgstr "Zapamti moj izbor i ne pitaj me ponovo"
+
+#: new_window.php:334
+msgid "Advanced options"
+msgstr "Napredne opcije"
+
+#: new_window.php:334
+msgid "Use Markdown syntax for link"
+msgstr "Upotrebi Markdown sintaksu za link"
+
+#: new_window.php:334
+msgid "Shorten URL (j.mp)"
+msgstr "Skrati URL (j.mp)"
+
+#: new_window.php:334
+msgid "Never remember my last 3 pods"
+msgstr "Nikad nemoj da pamtiš moja 3 poslednja pod-a"
+
+#: new_window.php:334
+msgid "Forget my last 3 pods"
+msgstr "Zaboravi moja poslednja 3 pod-a"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ciubotaru/share-on-diaspora"
+msgstr "https://github.com/ciubotaru/share-on-diaspora"
+
+#. Description of the plugin/theme
+msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
+msgstr "Ovaj plugin dodaje taster \"Podeli na D*\" na kraj vaših postova."
+
+#. Author of the plugin/theme
+msgid "Vitalie Ciubotaru"
+msgstr "Vitalie Ciubotaru"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/ciubotaru"
+msgstr "https://github.com/ciubotaru"
+
+#~ msgid "Plugin directory is not writable. Can not save css file."
+#~ msgstr ""
+#~ "Direktorijum plugin-a nije raspoloživ za pisanje. CSS datoteka ne može se "
+#~ "sačuvati."

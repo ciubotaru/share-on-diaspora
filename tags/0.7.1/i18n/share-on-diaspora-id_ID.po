@@ -1,0 +1,293 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Project-Id-Version: share-on-diaspora\n"
+"Language: de\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+msgid ""
+"%s plugin is installed and enabled. You don't need to manually retrieve the "
+"list of active Diaspora* pods."
+msgstr ""
+"%s plugin terinstal dan diaktifkan. Anda tidak perlu secara manual mengambil "
+"daftar aktif Diaspora * polong."
+
+msgid ""
+"%s plugin is installed, but not activated. You can activate it to "
+"automatically retrieve and update the list of active Diaspora* pods."
+msgstr ""
+"% S plugin terinstal, tetapi tidak diaktifkan. Anda dapat mengaktifkannya "
+"untuk secara otomatis mengambil dan memperbarui daftar aktif Diaspora * "
+"polong."
+
+msgid "Add"
+msgstr "Menambahkan"
+
+msgid "Add a pod"
+msgstr "Menambahkan pod"
+
+msgid "Advanced options"
+msgstr "Pilihan lanjutan"
+
+msgid "All parameters reverted to their default values."
+msgstr "Semua parameter dikembalikan ke nilai standar."
+
+msgid "Background color"
+msgstr "Warna latar belakang"
+
+msgid "Background color on mouse-over"
+msgstr "warna latar belakang pada mouse-over"
+
+msgid "Below are the options that do not fit into other categories."
+msgstr "Di bawah ini adalah pilihan yang tidak cocok dengan kategori lainnya."
+
+msgid "Button Preview"
+msgstr "tombol Preview"
+
+msgid "Button options"
+msgstr "Pilihan tombol"
+
+msgid "Button properties"
+msgstr "sifat tombol"
+
+msgid "Button size"
+msgstr "Ukuran kancing"
+
+msgid "Choose a preset color profile"
+msgstr "Pilih profil warna preset"
+
+msgid "Choose your Diaspora* pod"
+msgstr "Pilih Diaspora Anda * pod"
+
+msgid "Clear"
+msgstr "Bersih"
+
+msgid "Clear current image"
+msgstr "gambar ini jelas"
+
+msgid "Color profiles"
+msgstr "profil warna"
+
+msgid "Could not update the podlist."
+msgstr "tidak bisa update podlist tersebut."
+
+msgid "Custom Image Preview"
+msgstr "Kustom Gambar Preview"
+
+msgid "Custom image"
+msgstr "gambar kustom"
+
+msgid "Custom image file uploaded."
+msgstr "file gambar kustom upload."
+
+msgid "Defaults"
+msgstr "default"
+
+msgid "Display button in RSS feeds"
+msgstr "tombol layar di RSS feed"
+
+msgid "Donate BTC"
+msgstr "Donasi BTC"
+
+msgid "Download the latest podlist from %s"
+msgstr "Download podlist terbaru dari %s"
+
+msgid "Example: %s"
+msgstr "Contoh: %s"
+
+msgid "Filename"
+msgstr "Nama file"
+
+msgid "Forget my last 3 pods"
+msgstr "Lupakan saya 3 polong lalu"
+
+msgid "Huge"
+msgstr "besar"
+
+msgid "Image URL cleared."
+msgstr "URL gambar dibersihkan."
+
+msgid "Invalid value for %s. Reverting to default."
+msgstr "Nilai tidak valid untuk %s . Mengembalikan ke default."
+
+msgid "Large"
+msgstr "Besar"
+
+msgid "List of pods shown to user"
+msgstr "Daftar polong ditampilkan kepada pengguna"
+
+msgid "Medium"
+msgstr "Medium"
+
+msgid "Misc"
+msgstr "Lain-lain"
+
+msgid "Miscellaneous settings"
+msgstr "pengaturan Miscellaneous"
+
+msgid "Need help? Please read %1$splugin's FAQ page%2$s."
+msgstr "Butuh bantuan? Silakan baca %1$s FAQ halaman plugin %2$s ."
+
+msgid "Never remember my last 3 pods"
+msgstr "Tidak pernah ingat saya 3 polong lalu"
+
+msgid "No image file specified. Falling back to standard button."
+msgstr ""
+"Tidak ada file gambar yang ditentukan. Jatuh kembali ke tombol standar."
+
+msgid "OR provide image URL"
+msgstr "OR menyediakan URL gambar"
+
+msgid "Page address here"
+msgstr "alamat halaman disini"
+
+msgid "Page title here"
+msgstr "judul halaman disini"
+
+msgid "Pod list options"
+msgstr "Pod Opsi daftar"
+
+msgid "Podlist Preview"
+msgstr "Podlist Preview"
+
+msgid "Remember my choice, don't ask again"
+msgstr "Ingat pilihan saya, jangan tanya lagi"
+
+msgid "Restore defaults"
+msgstr "Kembalikan default"
+
+msgid "Retrieve"
+msgstr "mendapatkan kembali"
+
+msgid "Rounded"
+msgstr "Bulat"
+
+msgid "Rounded corners"
+msgstr "sudut dibulatkan"
+
+msgid "Select an image to upload and use as button."
+msgstr "Pilih gambar untuk meng-upload dan menggunakan tombol sebagai."
+
+msgid "Select from the list"
+msgstr "Pilih dari daftar"
+
+msgid "Share"
+msgstr "Bagikan"
+
+msgid "Share on D*"
+msgstr "Berbagi di D *"
+
+msgid "Share on Diaspora"
+msgstr "Berbagi di Diaspora"
+
+msgid "Share on Diaspora (ver. %s) Options"
+msgstr "Berbagi di Diaspora (ver. %s ) Pilihan"
+
+msgid "Sharing"
+msgstr "berbagi"
+
+msgid "Shorten URL (j.mp)"
+msgstr "Memperpendek URL (j.mp)"
+
+msgid "Small"
+msgstr "Kecil"
+
+msgid "Source code repository"
+msgstr "Source code repository"
+
+msgid "Square"
+msgstr "Kotak"
+
+msgid "Text and border color"
+msgstr "Teks dan perbatasan warna"
+
+msgid "Text and border color on mouse-over"
+msgstr "Teks dan perbatasan warna pada mouse-over"
+
+msgid "Text on the button"
+msgstr "Teks pada tombol"
+
+msgid ""
+"This is the list of Diaspora* pods that appear in the drop-down menu of the "
+"Share dialog window. To add a pod, type its name in the box below. To remove "
+"a pod, uncheck it. Press %s to apply changes."
+msgstr ""
+"Ini adalah daftar Diaspora * polong yang muncul dalam menu drop-down dari "
+"jendela Share dialog. Untuk menambahkan sebuah pod, ketik namanya di kotak "
+"di bawah. Untuk menghapus sebuah pod, hapus centang. Tekan %s untuk "
+"menerapkan perubahan."
+
+msgid "This plugin adds a \"Share on D*\" button at the bottom of your posts."
+msgstr ""
+"Plugin ini menambahkan \"Berbagi di D*\" tombol di bagian bawah posting Anda."
+
+msgid "Update"
+msgstr "Memperbarui"
+
+msgid "Upload button image"
+msgstr "Unggah gambar tombol"
+
+msgid "Upload new custom image"
+msgstr "Meng-upload gambar kustom baru"
+
+msgid "Use Markdown syntax for link"
+msgstr "Gunakan sintaks penurunan harga untuk link"
+
+msgid "Use custom image"
+msgstr "Gunakan gambar kustom"
+
+msgid ""
+"Use the parameters below to change the look and feel of your share button. "
+"All colors are six-digit hexadecimal numbers like %1$s or %2$s. Leave empty "
+"to restore the default value."
+msgstr ""
+"Menggunakan parameter di bawah ini untuk mengubah tampilan dan nuansa dari "
+"tombol share Anda. Semua warna yang enam digit nomor heksadesimal seperti "
+"%1$s atau %2$s . Biarkan kosong untuk mengembalikan nilai default."
+
+msgid "Use up/down keys to choose from the list of suggested pods."
+msgstr "Gunakan atas / bawah untuk memilih dari daftar polong yang disarankan."
+
+msgid "Value missing for %s. Reverting to default."
+msgstr "Nilai hilang untuk %s . Mengembalikan ke default."
+
+msgid "Vitalie Ciubotaru"
+msgstr "Vitalie Ciubotaru"
+
+msgid ""
+"You can choose a preset color profile for your button on this tab, or fine-"
+"tune it on the 'Button Options' tab"
+msgstr ""
+"Anda dapat memilih profil yang telah ditetapkan warna untuk tombol Anda pada "
+"tab ini, atau fine-tune pada tab 'Tombol Options'"
+
+msgid ""
+"You can install %s plugin to automatically retrieve and update the list of "
+"active Diaspora* pods."
+msgstr ""
+"Anda dapat menginstal %s plugin untuk secara otomatis mengambil dan "
+"memperbarui daftar aktif Diaspora * polong."
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Anda tidak memiliki izin yang memadai untuk mengakses halaman ini."
+
+msgid "[No image]"
+msgstr "[Tidak ada gambar]"
+
+msgid "https://github.com/ciubotaru"
+msgstr "https://github.com/ciubotaru"
+
+msgid "https://github.com/ciubotaru/share-on-diaspora"
+msgstr "https://github.com/ciubotaru/share-on-diaspora"
+
+msgid "or choose from history"
+msgstr "atau memilih dari sejarah"
+
+msgid "or introduce your pod URL"
+msgstr "atau memperkenalkan URL pod Anda"
