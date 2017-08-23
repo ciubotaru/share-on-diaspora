@@ -2,6 +2,15 @@ A WordPress plugin that adds a "Share on D*" button at the bottom of your posts.
 
 Diaspora to Wordpress plugin in [WP Plugin Directory](https://wordpress.org/plugins/share-on-diaspora/)
 
+- [Description](#description)
+- [i18n](#i18n)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Changelog](#changelog)
+- [Upgrade Notice](#upgrade-notice)
+- [ToDo](#todo)
+
 # Description
 This plugin adds a "Share on Diaspora" button at the bottom of your posts. Unlike other similar buttons,
 this one is not tied to one single pod. Instead it allows the users to select their favorite pod from the list,
@@ -9,11 +18,12 @@ or type it directly. The button is highly customizable, allowing blog admins to 
 accordance with the overall look and feel of their blogs.
 
 # i18n
-There is an ongoing effort to translate the plugin into other languages.
+There is an ongoing effort to translate the plugin into other languages. This way, the sharing UI stays in the same language as the rest of the website.
 So far, the following translations are available:
 
 * French -- contributed by Stef20 from stef20.info/blog and Se7h
 * German -- contributed by Georg Krause <mail@georg-krause.net> and JanRei
+* Indonesian -- contributed by https://www.chameleonjohn.com
 * Italian -- contributed by Sandro kensan <kensan@kensan.it> from www.kensan.it
 * Japanese
 * Portuguese (Brazil) -- contributed by Vostok <info@diaspbr.org>
@@ -23,6 +33,8 @@ So far, the following translations are available:
 * Spanish -- contributed by Andrew Kurtis from Webhostinghub.com and David Charte
 
 Please note, that some translations might be incomplete and lack latest changes.
+
+Currently, most translation efforts are concentrated on [PoEditor.com](poeditor.com). If you want to contribute a translation, or point out some errors in others' translations, check out [our project](https://poeditor.com/projects/view?id=10673).
 
 # Screenshots
 1. The "Share on D*" button under the default "Hello World"
@@ -89,6 +101,9 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.7.1
+* Bug-fix: a reflected XSS in share url parameters (patch provided by Framartin@GitHub).
+
 ## 0.7
 * Bug-fix: sharing functionality in RSS feeds.
 * Button in RSS feeds is made optional
@@ -179,6 +194,3 @@ Version 0.3.3 introduces new ways to customize you share button. The default val
 # ToDo
 * Think about how to add a graphical color-picker to the settings page. JavaScript?
 * Think how to update preview automatically. JavaScript?
-
-# Translations
-It is important to providing sharing UI in the same language as the rest o the website. Currently, all translation efforts are concentrated on [poeditor.com](poeditor.com). If you want to contribute a translation, or point out some errors in others' translations, check out [https://poeditor.com/projects/view?id=10673](https://poeditor.com/projects/view?id=10673).
