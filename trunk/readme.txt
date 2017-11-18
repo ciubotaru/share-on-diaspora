@@ -45,7 +45,7 @@ own.
 = I want to report a bug, request a feature or contribute code. What shall I do? =
 Bug reports, feature requests and real code are always welcome. Check out
 https://github.com/ciubotaru/share-on-diaspora or drop a line to "vitalie at
-ciubotaru dot tk".
+ciubotaru dot tokyo".
 
 = Does your plugin collect private information about blog visitors? =
 No.

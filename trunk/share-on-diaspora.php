@@ -10,7 +10,7 @@ Text Domain: share-on-diaspora
 License: GPL2
 */
 
-/*  Copyright 2013, 2014, 2015 Vitalie Ciubotaru (email : vitalie@ciubotaru.tk)
+/*  Copyright 2013, 2014, 2015 Vitalie Ciubotaru (email : vitalie@ciubotaru.tokyo)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
