@@ -101,8 +101,11 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
-## 0.7.1
+## 0.7.2
 * Bug-fix: a reflected XSS in share url parameters (patch provided by Framartin@GitHub).
+
+## 0.7.1
+* Moved translations to GlotPress
 
 ## 0.7
 * Bug-fix: sharing functionality in RSS feeds.
