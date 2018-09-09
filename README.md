@@ -101,6 +101,9 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.7.3
+* Bug-fix: updated code to fetch podlist from podupti.me
+
 ## 0.7.2
 * Bug-fix: a reflected XSS in share url parameters (patch provided by Framartin@GitHub).
 
