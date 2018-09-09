@@ -3,7 +3,7 @@ Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
 Tested up to: 4.8.1
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,7 +45,7 @@ own.
 = I want to report a bug, request a feature or contribute code. What shall I do? =
 Bug reports, feature requests and real code are always welcome. Check out
 https://github.com/ciubotaru/share-on-diaspora or drop a line to "vitalie at
-ciubotaru dot tk".
+ciubotaru dot tokyo".
 
 = Does your plugin collect private information about blog visitors? =
 No.
@@ -96,8 +96,11 @@ page, 'Pod list options' tab.
 
 
 == Changelog ==
-= 0.7.1 =
+= 0.7.2 =
 * Bug-fix: a reflected XSS in share url parameters (patch provided by Framartin@GitHub).
+
+= 0.7.1 =
+* Moved translations to GlotPress.
 
 = 0.7 =
 * Bug-fix: sharing functionality in RSS feeds.
