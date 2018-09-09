@@ -373,13 +373,8 @@ public function filter_plugin_actions($l, $file) {
 			}
 			$podlist_clean = $podlist_raw['pods'];
 			$output = array();
-			foreach ( $podlist_clean as $pod ) {
-				//if ($pod['network'] == "Diaspora") {
-				if ( $pod['hidden'] == 'no' ) {
-					// array_push($output, $pod['host']);
-					array_push( $output, $pod['domain'] );
-
-				}
+			for ($i = 0; $i < $podlist_raw['podcount']; $i++) {
+				array_push( $output, $podlist_clean[$i]['domain'] );
 			}
 			$input['podlist-all'] = $output;
 		} elseif ( empty($input['podlist']) ) {
