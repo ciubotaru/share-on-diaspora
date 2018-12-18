@@ -2,8 +2,8 @@
 Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
-Tested up to: 4.8.1
-Stable tag: 0.7.3
+Tested up to: 5.0.1
+Stable tag: 0.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ page, 'Pod list options' tab.
 
 
 == Changelog ==
+= 0.7.4 =
+* Bug-fix: compatibility with WP versions >= 5.0
+
 = 0.7.3 =
 * Bug-fix: updated code to fetch podlist from podupti.me
 
