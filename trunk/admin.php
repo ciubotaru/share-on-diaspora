@@ -65,7 +65,7 @@ public function filter_plugin_actions($l, $file) {
 	}
 
 	function my_admin_init() {
-		$button_defaults = $this -> button_defaults;
+		$button_defaults = parent::$button_defaults;
 		$image_defaults = $this -> image_defaults;
 		$podlist_defaults = $this -> podlist_defaults;
 		$plugin_version = $this -> plugin_version;
