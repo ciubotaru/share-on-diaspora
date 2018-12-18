@@ -31,7 +31,7 @@ class ShareOnDiaspora {
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
 
-	public $button_defaults = array(
+	public static $button_defaults = array(
 	'button_color' => '3c72c2',
 	'button_background' => 'ecf2f6',
 	'button_color_hover' => '3c72c2',
@@ -41,14 +41,14 @@ class ShareOnDiaspora {
 	'button_text' => 'share this'
 	);
 
-	public $image_defaults = array(
+	public static $image_defaults = array(
 	'image_file' => '',
 	'use_own_image' => '0'
 	);
 
-	public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
+	public static $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
 
-	public $color_profiles = array(
+	public static $color_profiles = array(
 	'Vitalie' => array(
 		'button_color' => '3b5998',
 		'button_background' => 'eceef5',
@@ -87,13 +87,13 @@ class ShareOnDiaspora {
 		)
 	);
 
-	public $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
+	public static $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
 
 	//public $podlist_update_url = 'http://the-federation.info/pods.json';
-	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
+	public static $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 
-	function generate_button($preview, $use_own_image, $is_feed) {
+	public static function generate_button($preview, $use_own_image, $is_feed) {
 		/**
 		 * if preview == TRUE && $use_own_image == '0', prepare fake link and output standard button
 		 * if preview == FALSE && $use_own_image == '0', prepare real link and output standard button
@@ -101,7 +101,7 @@ class ShareOnDiaspora {
 		 * if preview == TRUE && $use_own_image == '1', impossible
 		 * the button is inside, so let's prepare button first
 		 */
-		$button_defaults = $this -> button_defaults;
+		$button_defaults = ShareOnDiaspora::$button_defaults;
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		if ( $use_own_image ) {
 			//use own image
@@ -136,14 +136,14 @@ class ShareOnDiaspora {
 		return $button;
 	}
 
-	function diaspora_button_display($content) {
+	public static function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
 			if ( is_feed() ) {
 				// if 'show_in_feeds' is EITHER set to 1 (i.e. display button in feeds) OR not set at all (default to enabled), then add button to post content
-				if ( !array_key_exists( 'show_in_feeds', $options_array ) || $options_array['show_in_feeds'] == '1' ) $button_box = $this -> generate_button( false, $options_array['use_own_image'], true );
+				if ( !array_key_exists( 'show_in_feeds', $options_array ) || $options_array['show_in_feeds'] == '1' ) $button_box = ShareOnDiaspora::generate_button( false, $options_array['use_own_image'], true );
 				else return $content;
-			} else $button_box = $this -> generate_button( false, $options_array['use_own_image'], false );
+			} else $button_box = ShareOnDiaspora::generate_button( false, $options_array['use_own_image'], false );
 			return $content . $button_box;
 		} else { return $content; }
 	}
