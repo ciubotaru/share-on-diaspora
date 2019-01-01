@@ -11,10 +11,10 @@ class ShareOnDiaspora_Admin extends ShareOnDiaspora {
 	}
 
 	function set_default() {
-		$button_defaults = $this -> button_defaults;
-		$image_defaults = $this -> image_defaults;
-		$podlist_defaults = $this -> podlist_defaults;
-		$plugin_version = $this -> plugin_version;
+		$button_defaults = ShareOnDiaspora::$button_defaults;
+		$image_defaults = ShareOnDiaspora::$image_defaults;
+		$podlist_defaults = ShareOnDiaspora::$podlist_defaults;
+		$plugin_version = ShareOnDiaspora::plugin_version;
 		$defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		foreach ( $defaults as $key => $value ) {
@@ -31,7 +31,7 @@ class ShareOnDiaspora_Admin extends ShareOnDiaspora {
 <option>- " . __( 'Select from the list', 'share-on-diaspora' ) . ' -</option>';
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		if ( empty($options_array['podlist']) ) {
-			$options_array = $this -> podlist_defaults;
+			$options_array = ShareOnDiaspora::$podlist_defaults;
 		}
 		foreach ( $options_array['podlist'] as $key => $value ) {
 			$podlist_preview .= '<option  value="' . $value .'" class=dpod title="'.$key.'">'.$key.'</option>';
@@ -65,11 +65,11 @@ public function filter_plugin_actions($l, $file) {
 	}
 
 	function my_admin_init() {
-		$button_defaults = $this -> button_defaults;
-		$image_defaults = $this -> image_defaults;
-		$podlist_defaults = $this -> podlist_defaults;
-		$plugin_version = $this -> plugin_version;
-		$color_profiles = $this -> color_profiles;
+		$button_defaults = ShareOnDiaspora::$button_defaults;
+		$image_defaults = ShareOnDiaspora::$image_defaults;
+		$podlist_defaults = ShareOnDiaspora::$podlist_defaults;
+		$plugin_version = ShareOnDiaspora::$plugin_version;
+		$color_profiles = ShareOnDiaspora::$color_profiles;
 		$defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
 
 		//Let's check if it's a fresh install, a fresh update, or normal version
@@ -162,7 +162,7 @@ public function filter_plugin_actions($l, $file) {
 		foreach ( $podlist as $key => $value ) {
 			add_settings_field( $key, $key, array($this, 'my_checkboxes'), 'share_on_diaspora_options-podlist', 'section-podlist', array('podname' => $key) );
 		};
-		add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . ($this -> podlist_update_url) . "' target='_blank'>Podupti.me</a>" ), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist' );
+		add_settings_field( 'update_podlist', sprintf( __( 'Download the latest podlist from %s', 'share-on-diaspora' ), "<a href='" . (ShareOnDiaspora::$podlist_update_url) . "' target='_blank'>Podupti.me</a>" ), array($this, 'share_on_diaspora_update_podlist_callback'), 'share_on_diaspora_options-podlist', 'section-podlist' );
 
 		add_settings_section( 'section-misc', __( 'Miscellaneous settings', 'share-on-diaspora' ), array($this, 'section_misc_callback'), 'share_on_diaspora_options-misc' );
 		add_settings_field( 'show_in_feeds', __( 'Display button in RSS feeds', 'share-on-diaspora' ), array($this, 'show_feed_checkbox'), 'share_on_diaspora_options-misc', 'section-misc', array(
