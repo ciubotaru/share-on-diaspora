@@ -14,7 +14,7 @@ class ShareOnDiaspora_Admin extends ShareOnDiaspora {
 		$button_defaults = ShareOnDiaspora::$button_defaults;
 		$image_defaults = ShareOnDiaspora::$image_defaults;
 		$podlist_defaults = ShareOnDiaspora::$podlist_defaults;
-		$plugin_version = ShareOnDiaspora::plugin_version;
+		$plugin_version = ShareOnDiaspora::$plugin_version;
 		$defaults = $button_defaults + $image_defaults + $podlist_defaults + $plugin_version;
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		foreach ( $defaults as $key => $value ) {
