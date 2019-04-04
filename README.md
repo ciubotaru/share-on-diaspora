@@ -101,6 +101,9 @@ Alternatively, you can install an auxiliary plugin called
 that automatically retrieves a fresh list of active pods.
 
 # Changelog
+## 0.7.6
+* Bugfix: a missing $ sign
+
 ## 0.7.5
 * Buf-fix: some more compatibility iisues with WP versions >= 5.0
 
