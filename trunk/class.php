@@ -31,7 +31,7 @@ class ShareOnDiaspora {
 		wp_enqueue_script( 'share-on-diaspora' );
 	}
 
-	public $button_defaults = array(
+	public static $button_defaults = array(
 	'button_color' => '3c72c2',
 	'button_background' => 'ecf2f6',
 	'button_color_hover' => '3c72c2',
@@ -41,14 +41,14 @@ class ShareOnDiaspora {
 	'button_text' => 'share this'
 	);
 
-	public $image_defaults = array(
+	public static $image_defaults = array(
 	'image_file' => '',
 	'use_own_image' => '0'
 	);
 
-	public $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
+	public static $podlist_defaults = array( 'podlist' => array( 'example.com' => '1') );
 
-	public $color_profiles = array(
+	public static $color_profiles = array(
 	'Vitalie' => array(
 		'button_color' => '3b5998',
 		'button_background' => 'eceef5',
@@ -87,13 +87,13 @@ class ShareOnDiaspora {
 		)
 	);
 
-	public $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
+	public static $plugin_version = array( 'version' => SHARE_ON_DIASPORA_VERSION );
 
 	//public $podlist_update_url = 'http://the-federation.info/pods.json';
-	public $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
+	public static $podlist_update_url = 'http://podupti.me/api.php?format=json&key=4r45tg';
 
 
-	public function generate_button($preview, $use_own_image, $is_feed) {
+	public static function generate_button($preview, $use_own_image, $is_feed) {
 		/**
 		 * if preview == TRUE && $use_own_image == '0', prepare fake link and output standard button
 		 * if preview == FALSE && $use_own_image == '0', prepare real link and output standard button
@@ -101,7 +101,7 @@ class ShareOnDiaspora {
 		 * if preview == TRUE && $use_own_image == '1', impossible
 		 * the button is inside, so let's prepare button first
 		 */
-		$button_defaults = $this->button_defaults;
+		$button_defaults = self::$button_defaults;
 		$options_array = get_option( 'share-on-diaspora-settings' );
 		if ( $use_own_image ) {
 			//use own image
@@ -136,7 +136,7 @@ class ShareOnDiaspora {
 		return $button;
 	}
 
-	public static function diaspora_button_display($content) {
+	public function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
 			if ( is_feed() ) {
