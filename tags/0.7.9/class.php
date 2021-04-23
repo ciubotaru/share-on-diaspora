@@ -136,7 +136,7 @@ class ShareOnDiaspora {
 		return $button;
 	}
 
-	public function diaspora_button_display($content) {
+	public static function diaspora_button_display($content) {
 		if ( get_post_type() == 'post' && ( ! in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] )) ) {
 			$options_array = get_option( 'share-on-diaspora-settings' );
 			if ( is_feed() ) {

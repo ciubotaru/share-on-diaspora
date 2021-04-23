@@ -3,7 +3,7 @@ Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
 Tested up to: 5.2
-Stable tag: 0.7.8
+Stable tag: 0.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,8 +96,14 @@ page, 'Pod list options' tab.
 
 
 == Changelog ==
+= 0.7.9 =
+* Bug-fix: a missing 'static' qualifier
+
 = 0.7.8 =
 * Bug-fix: class function and class property visibility
+
+= 0.7.7 =
+* Bug-fix: removed static functions
 
 = 0.7.6 =
 * Bug-fix: a missing $ sign
