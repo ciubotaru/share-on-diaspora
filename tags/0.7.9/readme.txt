@@ -2,7 +2,7 @@
 Contributors: Vitalie Ciubotaru
 Tags: diaspora, share, button
 Requires at least: 3.2.1
-Tested up to: 5.2
+Tested up to: 5.7.1
 Stable tag: 0.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
